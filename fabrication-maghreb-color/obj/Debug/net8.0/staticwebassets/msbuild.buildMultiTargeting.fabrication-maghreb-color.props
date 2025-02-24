@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\fabrication-maghreb-color.props" />
+</Project>
