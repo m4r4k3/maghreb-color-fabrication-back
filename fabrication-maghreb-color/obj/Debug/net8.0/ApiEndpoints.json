@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "fabrication_maghreb_color.controller.ProjetController",
+    "Method": "Get",
+    "RelativePath": "api/Projet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.controller.ProjetController",
     "Method": "create",
     "RelativePath": "api/Projet/create",
     "HttpMethod": "POST",
@@ -29,6 +45,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.controller.ProjetController",
+    "Method": "GetTypes",
+    "RelativePath": "api/Projet/types",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

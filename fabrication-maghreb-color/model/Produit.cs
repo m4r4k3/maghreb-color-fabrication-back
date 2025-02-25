@@ -7,6 +7,7 @@ namespace fabrication_maghreb_color.model
         [Key]
         public Int32 Id { get; set; }
         public Decimal QuantiteDemande { get; set; }
+        public Decimal QuantiteTheorique { get; set; }
         public string ReferencePf { get; set; }
         public DateTime? DateProduction { get; set; }
 

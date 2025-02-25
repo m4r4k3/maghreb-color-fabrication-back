@@ -16,6 +16,19 @@ namespace fabrication_maghreb_color.controller
         {
             _service = projet;
         }
+        [HttpGet]
+        public IActionResult Get([FromQuery] int type)
+        {
+            try
+            {
+                return Ok(_service.GetAll(type));
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                return BadRequest(new { status = "error", message = "Error occured" });
+            }
+        }
         [HttpPost("create")]
         public IActionResult create([FromBody] Projet projet)
         {
@@ -32,6 +45,19 @@ namespace fabrication_maghreb_color.controller
             else
             {
                 return BadRequest(new { status = "error", message = "Projet not created" });
+            }
+        }
+        [HttpGet("types")]
+        public IActionResult GetTypes()
+        {
+            try
+            {
+                return Ok(_service.GetAllTypes());
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+                return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
     }
