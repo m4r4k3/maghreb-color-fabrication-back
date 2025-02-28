@@ -10,6 +10,7 @@ namespace fabrication_maghreb_color.Config.Contexts
         public DbSet<Matiere> MatiereDbo { get; set; }
         public DbSet<Projet> ProjetDbo { get; set; }
         public DbSet<TypeProjet> typeProjetDbo { get; set; }
+        public DbSet<Nomenclature> nomenclatureDbo {get; set;}
         private readonly IConfiguration? _configuration;
         public MainContext(DbContextOptions<MainContext> options, IConfiguration? configuration) : base(options)
         {
@@ -18,9 +19,6 @@ namespace fabrication_maghreb_color.Config.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // Configure your entity mappings here
-            // modelBuilder.Entity<YourEntity>().ToTable("YourTableName");
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using fabrication_maghreb_color.model;
 
 namespace fabrication_maghreb_color.service
 {
@@ -49,22 +50,24 @@ namespace fabrication_maghreb_color.service
             }
 
         }
-        public async Task<bool> checkUser(string username, string password)
+        public async Task<(bool, User?)> checkUser(string username, string password)
         {
-            var user = await _dbContext.UserDbo.FirstOrDefaultAsync(user => user.Username == username);
+            User user = await _dbContext.UserDbo.FirstOrDefaultAsync(user => user.Username == username);
 
             if (user == null || BCrypt.Net.BCrypt.Verify(password, user.Password) == false)
             {
-                return false;
+                return (false, null);
             }
-            return true;
+            return (true, user);
         }
 
-        public string UserToToken(string username)
+        public string UserToToken(string username, string role)
         {
             string secret = _configuration["AppSettings:JWT_KEY"];
             var payload = new[]{
-                new Claim(ClaimTypes.Name, username)
+                new Claim(ClaimTypes.Name, username) ,
+                new Claim(ClaimTypes.Role, role)
+
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

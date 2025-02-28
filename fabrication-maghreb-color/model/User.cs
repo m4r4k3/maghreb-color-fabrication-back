@@ -9,6 +9,7 @@ namespace fabrication_maghreb_color.model
         public Int32 Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; }
         public DateTime? CreatedAt { get; set; }
     }
 

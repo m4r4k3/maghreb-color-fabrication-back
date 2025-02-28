@@ -23,6 +23,7 @@ namespace fabrication_maghreb_color.service
             }
             catch (Exception err)
             {
+                Console.WriteLine(err );
                 _logger.LogError(err.ToString());
                 return false;
             }

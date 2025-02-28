@@ -154,12 +154,8 @@ C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-col
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.AssemblyInfo.cs
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.csproj.CoreCompileInputs.cache
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.RazorAssemblyInfo.cache
-C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.RazorAssemblyInfo.cs
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.sourcelink.json
-C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\scopedcss\bundle\fabrication-maghreb-color.styles.css
-C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\scopedcss\projectbundle\fabrication-maghreb-color.bundle.scp.css
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\staticwebassets.build.endpoints.json
@@ -175,4 +171,3 @@ C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-col
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.pdb
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.genruntimeconfig.cache
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\ref\fabrication-maghreb-color.dll
-C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

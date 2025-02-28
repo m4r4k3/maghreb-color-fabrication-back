@@ -29,10 +29,10 @@ namespace fabrication_maghreb_color.controller
         [HttpPost("login")]
         public async Task<IActionResult> login([FromBody] LoginModel loginModel)
         {
-            var check = await _userService.checkUser(loginModel.username, loginModel.password);
+            var (check , user) = await _userService.checkUser(loginModel.username, loginModel.password);
             if (check)
             {
-                HttpContext.Response.Cookies.Append("auth", _userService.UserToToken(loginModel.username), new CookieOptions
+                HttpContext.Response.Cookies.Append("auth", _userService.UserToToken(user.Username , user.Role), new CookieOptions
                 {
                     HttpOnly = true,
                     Secure = true,

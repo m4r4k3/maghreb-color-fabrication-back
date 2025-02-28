@@ -12,10 +12,15 @@ var configuration = builder.Configuration;
 builder.Services.AddDbContext<MainContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PROGRAM_DB")));
 
+builder.Services.AddDbContext<SageContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("SAGE_DB")));
+
 configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 var key = Encoding.ASCII.GetBytes(configuration["AppSettings:JWT_KEY"]);
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<ProduitService>();
 builder.Services.AddScoped<ProjetService>();
+builder.Services.AddScoped<ArticleService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
    .AddJwtBearer(options =>

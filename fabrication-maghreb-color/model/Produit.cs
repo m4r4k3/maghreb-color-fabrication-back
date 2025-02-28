@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace fabrication_maghreb_color.model
 {
+    [Table("produit")]
     public class Produit
     {
         [Key]
@@ -11,7 +13,8 @@ namespace fabrication_maghreb_color.model
         public string ReferencePf { get; set; }
         public DateTime? DateProduction { get; set; }
 
-        public int IdProjet { get; set; }
+        [Column("id_projet")]
+        public int ProjetId { get; set; }
     }
 
 }
