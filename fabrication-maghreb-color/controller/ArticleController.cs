@@ -17,11 +17,11 @@ namespace fabrication_maghreb_color.controller
             _service = projet;
         }
         [HttpGet("produits")]
-        public IActionResult GetProduits()
+        public IActionResult GetProduits([FromQuery] string? type)
         {
             try
             {
-                return Ok(_service.GetAllProducts());
+                return Ok(_service.GetAllProducts(type));
             }
             catch (Exception err)
             {

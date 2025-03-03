@@ -16,10 +16,19 @@ namespace fabrication_maghreb_color.service
             _DevContext = devContext;
             _logger = logger;
         }
-        public List<SageArticle> GetAllProducts()
+        public List<SageArticle> GetAllProducts(string? type)
         {
-            return _SageDbContext.SageArticleDbo.Where(e => EF.Functions.Like(e.Reference, "PF%")).ToList();
+            var query = _SageDbContext.SageArticleDbo.AsQueryable();
+
+            if (!string.IsNullOrEmpty(type))
+            {
+                string filterCode = type == "BOPP" ? "FPF00002" : "FPF00003";
+                query = query.Where(e => EF.Functions.Like(e.codeFamille, filterCode));
+            }
+
+            return query.ToList();
         }
+
         public List<dynamic> GetAllMaterialsByProduct()
         {
             var articles = _SageDbContext.SageArticleDbo
@@ -40,7 +49,7 @@ namespace fabrication_maghreb_color.service
               Designation = article.Designation,
               ProduitRef = nomenclature.ReferencePf,
               Quantity = nomenclature.Quantite,
-              pourcentage= nomenclature.Pourcentage
+              pourcentage = nomenclature.Pourcentage
 
           })
       .GroupBy(item => item.ProduitRef)
@@ -107,7 +116,7 @@ namespace fabrication_maghreb_color.service
                 {
                     var existingNomenclature = await _DevContext.nomenclatureDbo
                         .FirstOrDefaultAsync(n => n.Id == nomenclature.Id);
-                Console.WriteLine(nomenclature.Pourcentage) ;
+                    Console.WriteLine(nomenclature.Pourcentage);
                     if (existingNomenclature != null)
                     {
                         existingNomenclature.ReferenceMP = nomenclature.ReferenceMP;

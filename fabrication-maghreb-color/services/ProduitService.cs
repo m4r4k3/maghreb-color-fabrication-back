@@ -17,5 +17,9 @@ namespace fabrication_maghreb_color.service
         {
             return _dbContext.ProduitDbo.ToList();
         }
+        public void Create(Produit produit){
+            _dbContext.ProduitDbo.Add(produit) ;
+            _dbContext.SaveChanges( ) ;
+        }
     }
 }
