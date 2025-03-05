@@ -14,6 +14,7 @@ namespace fabrication_maghreb_color.model
         public DateTime? DateDebut
         { get; set; }
         public DateTime? DateFin { get; set; }
+        public DateTime? DateLivraison { get; set; }
         public string ReferenceClient { get; set; }
         [Column("id_typeprojet")]
         public int TypeProjet { get; set; }
