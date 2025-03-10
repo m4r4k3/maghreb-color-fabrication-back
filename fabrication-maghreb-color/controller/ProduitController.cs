@@ -29,20 +29,6 @@ namespace fabrication_maghreb_color.controller
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
-        [HttpPost]
-        public IActionResult Create([FromBody] Produit produit)
-        {
-            try
-            {
-                _service.Create(produit);
-                return Ok(new { message = "product created" });
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine(err);
-                return BadRequest(new { status = "error", message = "Error occured" });
-            }
-        }
-
+        
     }
 }

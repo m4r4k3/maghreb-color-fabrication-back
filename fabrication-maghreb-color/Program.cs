@@ -18,9 +18,9 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("SAGE_DB")));
 configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 var key = Encoding.ASCII.GetBytes(configuration["AppSettings:JWT_KEY"]);
 builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<ProduitService>();
 builder.Services.AddScoped<ProjetService>();
-builder.Services.AddScoped<ArticleService>();
+builder.Services.AddScoped<PreparationFabricationService>();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
    .AddJwtBearer(options =>
@@ -69,6 +69,13 @@ builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor(); // Add this line
 
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+    c.RoutePrefix = string.Empty; // Optional, to make Swagger UI accessible at root
+});
 
 
 // Configure the HTTP request pipeline.

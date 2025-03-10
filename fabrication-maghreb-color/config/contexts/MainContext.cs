@@ -6,8 +6,7 @@ namespace fabrication_maghreb_color.Config.Contexts
     public class MainContext : DbContext
     {
         public DbSet<User> UserDbo { get; set; }
-        public DbSet<Produit> ProduitDbo { get; set; }
-        public DbSet<Matiere> MatiereDbo { get; set; }
+        public DbSet<PreparationFabrication> PreparationFabricationsDbo { get; set; }
         public DbSet<Projet> ProjetDbo { get; set; }
         public DbSet<TypeProjet> typeProjetDbo { get; set; }
         public DbSet<Nomenclature> nomenclatureDbo {get; set;}

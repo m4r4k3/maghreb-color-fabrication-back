@@ -32,9 +32,16 @@ namespace fabrication_maghreb_color.service
         {
             return _dbContext.typeProjetDbo.ToList();
         }
-        public List<Projet> GetAll(int type)
+        public List<Projet> GetAll(int? type)
         {
-            return _dbContext.ProjetDbo.Where(e=>e.TypeProjet == type).ToList();
+            if (type.HasValue)
+            {
+                return _dbContext.ProjetDbo.Where(e => e.TypeProjet == type.Value).ToList();
+            }
+            else
+            {
+                return _dbContext.ProjetDbo.ToList();
+            }
         }
     }
 }

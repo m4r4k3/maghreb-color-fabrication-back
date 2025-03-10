@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -16,19 +16,9 @@
     ]
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.ArticleController",
+    "ContainingType": "FabricationMaghrebColor.Controllers.PreparationFabricationController",
     "Method": "Get",
-    "RelativePath": "api/Article",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "fabrication_maghreb_color.controller.ProduitController",
-    "Method": "Get",
-    "RelativePath": "api/Produit",
+    "RelativePath": "api/PreparationFabrication",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -45,7 +35,7 @@
     "Parameters": [
       {
         "Name": "type",
-        "Type": "System.Int32",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       }
     ],

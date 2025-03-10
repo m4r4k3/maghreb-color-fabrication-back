@@ -171,3 +171,8 @@ C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-col
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.pdb
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.genruntimeconfig.cache
 C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\ref\fabrication-maghreb-color.dll
+C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color\obj\Debug\net8.0\fabrication-maghreb-color.MvcApplicationPartsAssemblyInfo.cs

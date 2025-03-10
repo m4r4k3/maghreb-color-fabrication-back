@@ -17,7 +17,7 @@ namespace fabrication_maghreb_color.controller
             _service = projet;
         }
         [HttpGet]
-        public IActionResult Get([FromQuery] int type)
+        public IActionResult Get([FromQuery] int? type)
         {
             try
             {
