@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fabrication-maghreb-color")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6eb9851ba65a37213752e616557505c85969014b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+699736292e51806cb6d0537a56fa2c9b26179a48")]
 [assembly: System.Reflection.AssemblyProductAttribute("fabrication-maghreb-color")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fabrication-maghreb-color")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

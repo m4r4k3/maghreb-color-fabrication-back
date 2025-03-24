@@ -72,6 +72,7 @@ namespace FabricationMaghrebColor.Controllers
                 foreach(Matiere matiere in requestData.matieres)
                 {
                     matiere.Bon_id = bon.Id;
+                    matiere.DateAffection = DateTime.Now;
                      _serviceMatiere.creation(matiere);
                 }
                 return Ok(new
