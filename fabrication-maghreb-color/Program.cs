@@ -1,13 +1,15 @@
 using System.Net;
 using System.Text;
+using System.Text.Json.Serialization;
 using fabrication_maghreb_color.Config.Contexts;
-using fabrication_maghreb_color.service;
+using fabrication_maghreb_color.application.service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://0.0.0.0:5254"); 
 var configuration = builder.Configuration;
 builder.Services.AddDbContext<MainContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PROGRAM_DB")));
@@ -17,10 +19,23 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("SAGE_DB")));
 
 configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 var key = Encoding.ASCII.GetBytes(configuration["AppSettings:JWT_KEY"]);
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ProjetService>();
+builder.Services.AddScoped<ArticleService>();
+builder.Services.AddScoped<CompteService>();
+builder.Services.AddScoped<MatiereService>();
 builder.Services.AddScoped<PreparationFabricationService>();
+builder.Services.AddScoped<MachineService>();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+                            options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+
+            });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
    .AddJwtBearer(options =>
@@ -62,6 +77,11 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
+        policy.WithOrigins("http://192.168.1.247:5173")  // Frontend URL
+             .AllowAnyHeader()
+             .AllowAnyMethod()
+             .AllowCredentials();
+
     });
 });
 builder.Services.AddAuthorization();
@@ -93,9 +113,9 @@ app.UseCors("AllowSpecificOrigin");
 
 app.UseRouting();
 
-app.UseAuthentication();
+// app.UseAuthentication();
 
-app.UseAuthorization();
+// app.UseAuthorization();
 
 app.MapControllers();
 

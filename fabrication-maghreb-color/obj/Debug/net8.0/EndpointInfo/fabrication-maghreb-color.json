@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/": {
+    "/api/Article/produits": {
       "get": {
         "tags": [
-          "fabrication-maghreb-color"
+          "Article"
         ],
         "responses": {
           "200": {
@@ -17,10 +17,94 @@
         }
       }
     },
-    "/api/PreparationFabrication": {
+    "/api/Compte/clients": {
       "get": {
         "tags": [
-          "PreparationFabrication"
+          "Compte"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Fabrication/preparation": {
+      "get": {
+        "tags": [
+          "Fabrication"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Fabrication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Fabrication/bon": {
+      "post": {
+        "tags": [
+          "Fabrication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "fabrication-maghreb-color"
         ],
         "responses": {
           "200": {
@@ -166,6 +250,61 @@
         },
         "additionalProperties": false
       },
+      "PreparationFabrication": {
+        "required": [
+          "quantite_encre",
+          "quantite_vernis"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numDocument": {
+            "type": "string",
+            "nullable": true
+          },
+          "referenceArticleSup": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantite_encre": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantite_vernis": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "projet_Id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "projet": {
+            "$ref": "#/components/schemas/Projet"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PreparationRequest": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "$ref": "#/components/schemas/PreparationFabrication"
+          },
+          "support": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantite": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "Projet": {
         "type": "object",
         "properties": {
@@ -191,7 +330,7 @@
             "format": "date-time",
             "nullable": true
           },
-          "dateLivraison": {
+          "dateLivraisonPrev": {
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -203,6 +342,11 @@
           "typeProjet": {
             "type": "integer",
             "format": "int32"
+          },
+          "quantite": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false

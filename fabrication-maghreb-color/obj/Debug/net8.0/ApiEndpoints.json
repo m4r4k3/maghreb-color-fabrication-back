@@ -16,9 +16,9 @@
     ]
   },
   {
-    "ContainingType": "FabricationMaghrebColor.Controllers.PreparationFabricationController",
-    "Method": "Get",
-    "RelativePath": "api/PreparationFabrication",
+    "ContainingType": "fabrication_maghreb_color.api.controller.ArticleController",
+    "Method": "GetProduits",
+    "RelativePath": "api/Article/produits",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -26,7 +26,59 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.ProjetController",
+    "ContainingType": "FabricationMaghrebColor.Controllers.CompteController",
+    "Method": "Get",
+    "RelativePath": "api/Compte/clients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.FabricationController",
+    "Method": "CreateBon",
+    "RelativePath": "api/Fabrication/bon",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestData",
+        "Type": "FabricationMaghrebColor.Controllers.PreparationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.FabricationController",
+    "Method": "GetPrepartion",
+    "RelativePath": "api/Fabrication/preparation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.FabricationController",
+    "Method": "CreatePrepartion",
+    "RelativePath": "api/Fabrication/preparation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestData",
+        "Type": "FabricationMaghrebColor.Controllers.PreparationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.api.controller.ProjetController",
     "Method": "Get",
     "RelativePath": "api/Projet",
     "HttpMethod": "GET",
@@ -42,7 +94,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.ProjetController",
+    "ContainingType": "fabrication_maghreb_color.api.controller.ProjetController",
     "Method": "create",
     "RelativePath": "api/Projet/create",
     "HttpMethod": "POST",
@@ -51,14 +103,14 @@
     "Parameters": [
       {
         "Name": "projet",
-        "Type": "fabrication_maghreb_color.model.Projet",
+        "Type": "fabrication_maghreb_color.Infrastructure.model.Projet",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.ProjetController",
+    "ContainingType": "fabrication_maghreb_color.api.controller.ProjetController",
     "Method": "GetTypes",
     "RelativePath": "api/Projet/types",
     "HttpMethod": "GET",
@@ -68,7 +120,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.UserController",
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "check",
     "RelativePath": "api/User/check",
     "HttpMethod": "GET",
@@ -78,7 +130,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.UserController",
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "login",
     "RelativePath": "api/User/login",
     "HttpMethod": "POST",
@@ -87,14 +139,14 @@
     "Parameters": [
       {
         "Name": "loginModel",
-        "Type": "fabrication_maghreb_color.model.LoginModel",
+        "Type": "fabrication_maghreb_color.Infrastructure.model.LoginModel",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.controller.UserController",
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "logout",
     "RelativePath": "api/User/logout",
     "HttpMethod": "GET",
