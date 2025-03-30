@@ -22,11 +22,7 @@ namespace fabrication_maghreb_color.Infrastructure.model
 
         [ForeignKey("Projet_Id")]
         public virtual Projet? Projet { get; set; }
-        [Column("machine")] 
-        public int? MachineId { get; set; }
-        [ForeignKey("MachineId")]
-        public virtual ChampLibre? machine { get; set; }
-
+    
         public virtual List<BonFabrication>? Bons { get; set; }
 
         public decimal? quantiteConsomme => Bons?.Sum(e => e.quantite) ?? 0;

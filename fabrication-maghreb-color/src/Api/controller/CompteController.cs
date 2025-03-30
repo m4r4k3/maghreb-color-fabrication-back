@@ -8,7 +8,8 @@ namespace FabricationMaghrebColor.Controllers
     public class CompteController : ControllerBase
     {
         public readonly CompteService _service;
-        public CompteController(CompteService service)
+        ILogger<CompteController> _logger;
+        public CompteController(CompteService service, ILogger<CompteController> logger)
         {
             _service = service;
         }
@@ -22,7 +23,8 @@ namespace FabricationMaghrebColor.Controllers
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                _logger.LogError(err.ToString());
+
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }

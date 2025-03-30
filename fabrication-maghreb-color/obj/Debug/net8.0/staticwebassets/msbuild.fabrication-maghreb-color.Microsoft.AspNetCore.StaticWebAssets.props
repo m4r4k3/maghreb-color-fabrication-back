@@ -1080,5 +1080,113 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ri2vqtjltg</Fingerprint>
+      <Integrity>g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/21f08a62-8b36-4eb4-a4e1-c49da0211433.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2t4ic5tojy</Fingerprint>
+      <Integrity>1ngrkLp+H6t3Aik8ZQENwLnqbRrLFywrwTkR11yF9Ao=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/32ece732-6e7d-4888-9ebe-041c83fdaca9.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ri2vqtjltg</Fingerprint>
+      <Integrity>g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\54e525c6-5e7d-499c-8275-fde03caffba6.txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/54e525c6-5e7d-499c-8275-fde03caffba6.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ri2vqtjltg</Fingerprint>
+      <Integrity>g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\54e525c6-5e7d-499c-8275-fde03caffba6.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\778a9202-a852-4556-bddf-6790dfb11392.txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/778a9202-a852-4556-bddf-6790dfb11392.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ri2vqtjltg</Fingerprint>
+      <Integrity>g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\778a9202-a852-4556-bddf-6790dfb11392.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ri2vqtjltg</Fingerprint>
+      <Integrity>g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt'))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

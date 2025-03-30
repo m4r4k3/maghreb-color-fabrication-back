@@ -8,6 +8,7 @@ namespace fabrication_maghreb_color.Config.Contexts
         public DbSet<User> UserDbo { get; set; }
         public DbSet<BonFabrication> BonFabricationDbo { get; set; }
         public DbSet<PreparationFabrication> PreparationFabricationsDbo { get; set; }
+        public DbSet<chargeCompte> ChargeCompteDbo { get; set; }
         public DbSet<Matiere> MatiereDbo { get; set; }
         public DbSet<Projet> ProjetDbo { get; set; }
         public DbSet<TypeProjet> typeProjetDbo { get; set; }

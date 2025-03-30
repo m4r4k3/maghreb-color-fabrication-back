@@ -1,0 +1,418 @@
+2025-03-29 16:04:12.880 +01:00 [INF] Connecting ...
+2025-03-29 16:04:49.162 +01:00 [INF] Connected to Sage 100c successfully.
+2025-03-29 16:04:49.764 +01:00 [INF] User profile is available. Using 'C:\Users\M.AKCHAR\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-29 16:04:50.558 +01:00 [INF] Now listening on: http://0.0.0.0:5254
+2025-03-29 16:04:51.197 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-29 16:04:51.200 +01:00 [INF] Hosting environment: Development
+2025-03-29 16:04:51.202 +01:00 [INF] Content root path: C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color
+2025-03-29 16:04:58.670 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet - null null
+2025-03-29 16:04:59.103 +01:00 [WRN] Failed to determine the https port for redirect.
+2025-03-29 16:04:59.106 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:04:59.176 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:04:59.254 +01:00 [INF] Route matched with {action = "Get", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Int32]) on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:01.109 +01:00 [WRN] No store type was specified for the decimal property 'QuantiteSupport' on entity type 'BonFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-29 16:05:01.114 +01:00 [WRN] No store type was specified for the decimal property 'quantite' on entity type 'BonFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-29 16:05:01.118 +01:00 [WRN] No store type was specified for the decimal property 'Pourcentage' on entity type 'Matiere'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-29 16:05:01.125 +01:00 [WRN] No store type was specified for the decimal property 'QuantiteEncre' on entity type 'PreparationFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-29 16:05:01.128 +01:00 [WRN] No store type was specified for the decimal property 'QuantiteVernis' on entity type 'PreparationFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-29 16:05:01.135 +01:00 [WRN] No store type was specified for the decimal property 'quantite' on entity type 'Projet'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-29 16:05:03.268 +01:00 [INF] Executed DbCommand (241ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DateDebut], [p].[DateFin], [p].[DateLivraisonPrev], [p].[Description], [p].[Intitule], [p].[NumeroDossier], [p].[ReferenceArticle], [p].[ReferenceClient], [p].[TypeDescription], [p].[id_typeprojet], [p].[chargeCompte], [p].[quantite], [p0].[Id], [p0].[NumDocument], [p0].[Projet_Id], [p0].[QuantiteEncre], [p0].[QuantiteVernis], [p0].[ReferenceArticleSup], [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference], [c].[Id], [c].[Name]
+FROM [Projet] AS [p]
+LEFT JOIN [pf] AS [p0] ON [p].[Id] = [p0].[Projet_Id]
+INNER JOIN [TypeProjet] AS [t] ON [p].[id_typeprojet] = [t].[Id]
+INNER JOIN [chargeCompte] AS [c] ON [p].[chargeCompte] = [c].[Id]
+2025-03-29 16:05:03.321 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:03.322 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:03.342 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:03.350 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:03.353 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:03.354 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:03.363 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:03.365 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:03.690 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:03.725 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:03.736 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:03.739 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 361.9915ms
+2025-03-29 16:05:03.764 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:03.775 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:03.788 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:03.788 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 465.5856ms
+2025-03-29 16:05:03.800 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:03.800 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:03.829 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Projet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:03.839 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 462.2622ms
+2025-03-29 16:05:03.843 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:03.846 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet - null null
+2025-03-29 16:05:03.912 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:03.918 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:03.941 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:03.953 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:03.958 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 111.2641ms
+2025-03-29 16:05:03.961 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:03.967 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:03.980 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:03.983 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 660.6456ms
+2025-03-29 16:05:03.984 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:03.998 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:04.006 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color) in 4744.7826ms
+2025-03-29 16:05:04.006 +01:00 [INF] Route matched with {action = "Get", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Int32]) on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:04.029 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:04.035 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:04.047 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 311.8125ms
+2025-03-29 16:05:04.056 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:04.084 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet - 499 null application/json; charset=utf-8 5444.1584ms
+2025-03-29 16:05:04.112 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:04.193 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:04.198 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 58.0888ms
+2025-03-29 16:05:04.209 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:04.213 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:04.215 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 253.1896ms
+2025-03-29 16:05:04.218 +01:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DateDebut], [p].[DateFin], [p].[DateLivraisonPrev], [p].[Description], [p].[Intitule], [p].[NumeroDossier], [p].[ReferenceArticle], [p].[ReferenceClient], [p].[TypeDescription], [p].[id_typeprojet], [p].[chargeCompte], [p].[quantite], [p0].[Id], [p0].[NumDocument], [p0].[Projet_Id], [p0].[QuantiteEncre], [p0].[QuantiteVernis], [p0].[ReferenceArticleSup], [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference], [c].[Id], [c].[Name]
+FROM [Projet] AS [p]
+LEFT JOIN [pf] AS [p0] ON [p].[Id] = [p0].[Projet_Id]
+INNER JOIN [TypeProjet] AS [t] ON [p].[id_typeprojet] = [t].[Id]
+INNER JOIN [chargeCompte] AS [c] ON [p].[chargeCompte] = [c].[Id]
+2025-03-29 16:05:04.235 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:04.271 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Projet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:04.277 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 201.2365ms
+2025-03-29 16:05:04.280 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:04.290 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color) in 227.1968ms
+2025-03-29 16:05:04.292 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet - null null
+2025-03-29 16:05:04.300 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:04.310 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:04.316 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:04.329 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:04.339 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 495.6923ms
+2025-03-29 16:05:04.348 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:04.354 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet - 200 null application/json; charset=utf-8 507.4249ms
+2025-03-29 16:05:04.365 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:04.390 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:04.400 +01:00 [INF] Route matched with {action = "Get", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Int32]) on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:04.432 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:04.448 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DateDebut], [p].[DateFin], [p].[DateLivraisonPrev], [p].[Description], [p].[Intitule], [p].[NumeroDossier], [p].[ReferenceArticle], [p].[ReferenceClient], [p].[TypeDescription], [p].[id_typeprojet], [p].[chargeCompte], [p].[quantite], [p0].[Id], [p0].[NumDocument], [p0].[Projet_Id], [p0].[QuantiteEncre], [p0].[QuantiteVernis], [p0].[ReferenceArticleSup], [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference], [c].[Id], [c].[Name]
+FROM [Projet] AS [p]
+LEFT JOIN [pf] AS [p0] ON [p].[Id] = [p0].[Projet_Id]
+INNER JOIN [TypeProjet] AS [t] ON [p].[id_typeprojet] = [t].[Id]
+INNER JOIN [chargeCompte] AS [c] ON [p].[chargeCompte] = [c].[Id]
+2025-03-29 16:05:04.461 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:04.495 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Projet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:04.507 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 79.2107ms
+2025-03-29 16:05:04.519 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color) in 78.2382ms
+2025-03-29 16:05:04.526 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:04.532 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:04.540 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 260.2355ms
+2025-03-29 16:05:04.550 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet - 200 null application/json; charset=utf-8 258.3155ms
+2025-03-29 16:05:07.356 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:07.357 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:07.363 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.374 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.377 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:07.385 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:07.389 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:07.396 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:07.468 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:07.475 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:07.477 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 65.9487ms
+2025-03-29 16:05:07.480 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:07.500 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:07.505 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:07.519 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.532 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 59.8417ms
+2025-03-29 16:05:07.535 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:07.543 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 187.4535ms
+2025-03-29 16:05:07.552 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:07.557 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:07.573 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.595 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:07.596 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet - null null
+2025-03-29 16:05:07.599 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 242.8296ms
+2025-03-29 16:05:07.610 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:07.679 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:07.685 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.710 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:07.722 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 93.5254ms
+2025-03-29 16:05:07.724 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:07.731 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:07.747 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:07.749 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:07.758 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 278.2095ms
+2025-03-29 16:05:07.763 +01:00 [INF] Route matched with {action = "Get", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Int32]) on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:07.773 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:07.784 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.814 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DateDebut], [p].[DateFin], [p].[DateLivraisonPrev], [p].[Description], [p].[Intitule], [p].[NumeroDossier], [p].[ReferenceArticle], [p].[ReferenceClient], [p].[TypeDescription], [p].[id_typeprojet], [p].[chargeCompte], [p].[quantite], [p0].[Id], [p0].[NumDocument], [p0].[Projet_Id], [p0].[QuantiteEncre], [p0].[QuantiteVernis], [p0].[ReferenceArticleSup], [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference], [c].[Id], [c].[Name]
+FROM [Projet] AS [p]
+LEFT JOIN [pf] AS [p0] ON [p].[Id] = [p0].[Projet_Id]
+INNER JOIN [TypeProjet] AS [t] ON [p].[id_typeprojet] = [t].[Id]
+INNER JOIN [chargeCompte] AS [c] ON [p].[chargeCompte] = [c].[Id]
+2025-03-29 16:05:07.817 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:07.835 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 92.1554ms
+2025-03-29 16:05:07.837 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:07.861 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Projet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:07.863 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:07.871 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:07.886 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:07.903 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color) in 96.6187ms
+2025-03-29 16:05:07.907 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet - null null
+2025-03-29 16:05:07.988 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:07.988 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:07.997 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:08.001 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:08.009 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 473.9086ms
+2025-03-29 16:05:08.014 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:08.025 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 103.2322ms
+2025-03-29 16:05:08.029 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:08.037 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet - 200 null application/json; charset=utf-8 441.4176ms
+2025-03-29 16:05:08.067 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:08.072 +01:00 [INF] Route matched with {action = "Get", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Int32]) on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:08.077 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:08.113 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:08.130 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 405.9274ms
+2025-03-29 16:05:08.132 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[DateDebut], [p].[DateFin], [p].[DateLivraisonPrev], [p].[Description], [p].[Intitule], [p].[NumeroDossier], [p].[ReferenceArticle], [p].[ReferenceClient], [p].[TypeDescription], [p].[id_typeprojet], [p].[chargeCompte], [p].[quantite], [p0].[Id], [p0].[NumDocument], [p0].[Projet_Id], [p0].[QuantiteEncre], [p0].[QuantiteVernis], [p0].[ReferenceArticleSup], [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference], [c].[Id], [c].[Name]
+FROM [Projet] AS [p]
+LEFT JOIN [pf] AS [p0] ON [p].[Id] = [p0].[Projet_Id]
+INNER JOIN [TypeProjet] AS [t] ON [p].[id_typeprojet] = [t].[Id]
+INNER JOIN [chargeCompte] AS [c] ON [p].[chargeCompte] = [c].[Id]
+2025-03-29 16:05:08.141 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 77.4113ms
+2025-03-29 16:05:08.177 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Projet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:08.180 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:08.192 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color) in 67.2881ms
+2025-03-29 16:05:08.200 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 363.3923ms
+2025-03-29 16:05:08.205 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.Get (fabrication-maghreb-color)'
+2025-03-29 16:05:08.225 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet - 200 null application/json; charset=utf-8 318.7464ms
+2025-03-29 16:05:13.420 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - null null
+2025-03-29 16:05:13.429 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:13.438 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:13.444 +01:00 [INF] Route matched with {action = "GetPrepartion", controller = "Fabrication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetPrepartion() on controller FabricationMaghrebColor.Controllers.FabricationController (fabrication-maghreb-color).
+2025-03-29 16:05:13.555 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[NumDocument], [p].[Projet_Id], [p].[QuantiteEncre], [p].[QuantiteVernis], [p].[ReferenceArticleSup], [p0].[Id], [p0].[DateDebut], [p0].[DateFin], [p0].[DateLivraisonPrev], [p0].[Description], [p0].[Intitule], [p0].[NumeroDossier], [p0].[ReferenceArticle], [p0].[ReferenceClient], [p0].[TypeDescription], [p0].[id_typeprojet], [p0].[chargeCompte], [p0].[quantite], [b].[Id], [b].[DateCreation], [b].[Laize], [b].[machine], [b].[MetrageLineaire], [b].[NumPiece], [b].[Passe], [b].[Pf_id], [b].[QuantiteSupport], [b].[quantite]
+FROM [pf] AS [p]
+LEFT JOIN [Projet] AS [p0] ON [p].[Projet_Id] = [p0].[Id]
+LEFT JOIN [bf] AS [b] ON [p].[Id] = [b].[Pf_id]
+ORDER BY [p].[Id], [p0].[Id]
+2025-03-29 16:05:13.610 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.PreparationFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:13.639 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color) in 185.8554ms
+2025-03-29 16:05:13.643 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - null null
+2025-03-29 16:05:13.644 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:13.656 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:13.663 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - 200 null application/json; charset=utf-8 242.7685ms
+2025-03-29 16:05:13.669 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:13.690 +01:00 [INF] Route matched with {action = "GetPrepartion", controller = "Fabrication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetPrepartion() on controller FabricationMaghrebColor.Controllers.FabricationController (fabrication-maghreb-color).
+2025-03-29 16:05:13.703 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[NumDocument], [p].[Projet_Id], [p].[QuantiteEncre], [p].[QuantiteVernis], [p].[ReferenceArticleSup], [p0].[Id], [p0].[DateDebut], [p0].[DateFin], [p0].[DateLivraisonPrev], [p0].[Description], [p0].[Intitule], [p0].[NumeroDossier], [p0].[ReferenceArticle], [p0].[ReferenceClient], [p0].[TypeDescription], [p0].[id_typeprojet], [p0].[chargeCompte], [p0].[quantite], [b].[Id], [b].[DateCreation], [b].[Laize], [b].[machine], [b].[MetrageLineaire], [b].[NumPiece], [b].[Passe], [b].[Pf_id], [b].[QuantiteSupport], [b].[quantite]
+FROM [pf] AS [p]
+LEFT JOIN [Projet] AS [p0] ON [p].[Projet_Id] = [p0].[Id]
+LEFT JOIN [bf] AS [b] ON [p].[Id] = [b].[Pf_id]
+ORDER BY [p].[Id], [p0].[Id]
+2025-03-29 16:05:13.721 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.PreparationFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:13.726 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color) in 30.5414ms
+2025-03-29 16:05:13.737 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:13.747 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - 200 null application/json; charset=utf-8 103.9988ms
+2025-03-29 16:05:56.769 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:56.782 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:56.795 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:56.807 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:56.817 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:56.829 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:56.842 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:56.862 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:56.958 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:56.966 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:56.967 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 90.2731ms
+2025-03-29 16:05:56.971 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:57.000 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:57.011 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:57.024 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:57.038 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 75.6087ms
+2025-03-29 16:05:57.042 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:57.060 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 291.0617ms
+2025-03-29 16:05:57.075 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:57.087 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:57.105 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:57.139 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - null null
+2025-03-29 16:05:57.145 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:57.155 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 373.1687ms
+2025-03-29 16:05:57.160 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:57.174 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:57.254 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:57.270 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:57.283 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 95.8971ms
+2025-03-29 16:05:57.290 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - null null
+2025-03-29 16:05:57.300 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:57.309 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:57.327 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:57.356 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:57.359 +01:00 [INF] Route matched with {action = "GetPrepartion", controller = "Fabrication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetPrepartion() on controller FabricationMaghrebColor.Controllers.FabricationController (fabrication-maghreb-color).
+2025-03-29 16:05:57.366 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 395.483ms
+2025-03-29 16:05:57.378 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:57.403 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:57.426 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[NumDocument], [p].[Projet_Id], [p].[QuantiteEncre], [p].[QuantiteVernis], [p].[ReferenceArticleSup], [p0].[Id], [p0].[DateDebut], [p0].[DateFin], [p0].[DateLivraisonPrev], [p0].[Description], [p0].[Intitule], [p0].[NumeroDossier], [p0].[ReferenceArticle], [p0].[ReferenceClient], [p0].[TypeDescription], [p0].[id_typeprojet], [p0].[chargeCompte], [p0].[quantite], [b].[Id], [b].[DateCreation], [b].[Laize], [b].[machine], [b].[MetrageLineaire], [b].[NumPiece], [b].[Passe], [b].[Pf_id], [b].[QuantiteSupport], [b].[quantite]
+FROM [pf] AS [p]
+LEFT JOIN [Projet] AS [p0] ON [p].[Projet_Id] = [p0].[Id]
+LEFT JOIN [bf] AS [b] ON [p].[Id] = [b].[Pf_id]
+ORDER BY [p].[Id], [p0].[Id]
+2025-03-29 16:05:57.438 +01:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-03-29 16:05:57.460 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 107.1762ms
+2025-03-29 16:05:57.462 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - null null
+2025-03-29 16:05:57.500 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.PreparationFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:57.576 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:05:57.578 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:57.589 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:57.605 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color) in 187.0361ms
+2025-03-29 16:05:57.608 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - null null
+2025-03-29 16:05:57.615 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 98.6212ms
+2025-03-29 16:05:57.625 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:57.636 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 593.8027ms
+2025-03-29 16:05:57.648 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:57.665 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:05:57.674 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-03-29 16:05:57.685 +01:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-03-29 16:05:57.701 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - 200 null application/json; charset=utf-8 562.145ms
+2025-03-29 16:05:57.704 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:57.720 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-03-29 16:05:57.731 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/user/check - 200 null application/json; charset=utf-8 441.5047ms
+2025-03-29 16:05:57.754 +01:00 [INF] Route matched with {action = "GetPrepartion", controller = "Fabrication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetPrepartion() on controller FabricationMaghrebColor.Controllers.FabricationController (fabrication-maghreb-color).
+2025-03-29 16:05:57.774 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:57.820 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[NumDocument], [p].[Projet_Id], [p].[QuantiteEncre], [p].[QuantiteVernis], [p].[ReferenceArticleSup], [p0].[Id], [p0].[DateDebut], [p0].[DateFin], [p0].[DateLivraisonPrev], [p0].[Description], [p0].[Intitule], [p0].[NumeroDossier], [p0].[ReferenceArticle], [p0].[ReferenceClient], [p0].[TypeDescription], [p0].[id_typeprojet], [p0].[chargeCompte], [p0].[quantite], [b].[Id], [b].[DateCreation], [b].[Laize], [b].[machine], [b].[MetrageLineaire], [b].[NumPiece], [b].[Passe], [b].[Pf_id], [b].[QuantiteSupport], [b].[quantite]
+FROM [pf] AS [p]
+LEFT JOIN [Projet] AS [p0] ON [p].[Projet_Id] = [p0].[Id]
+LEFT JOIN [bf] AS [b] ON [p].[Id] = [b].[Pf_id]
+ORDER BY [p].[Id], [p0].[Id]
+2025-03-29 16:05:57.828 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 111.0465ms
+2025-03-29 16:05:57.860 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.PreparationFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:05:57.872 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-03-29 16:05:57.883 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color) in 69.2864ms
+2025-03-29 16:05:57.889 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/projet/types - 200 null application/json; charset=utf-8 426.9979ms
+2025-03-29 16:05:57.899 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.FabricationController.GetPrepartion (fabrication-maghreb-color)'
+2025-03-29 16:05:57.922 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/fabrication/preparation - 200 null application/json; charset=utf-8 313.9644ms
+2025-03-29 16:06:00.068 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/machine - null null
+2025-03-29 16:06:00.068 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP00002 - null null
+2025-03-29 16:06:00.068 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP000002 - null null
+2025-03-29 16:06:00.075 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:00.085 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:00.099 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:00.107 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.MachineController.Get (fabrication-maghreb-color)'
+2025-03-29 16:06:00.110 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:00.117 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:00.544 +01:00 [INF] Route matched with {action = "Get", controller = "Machine"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller FabricationMaghrebColor.Controllers.MachineController (fabrication-maghreb-color).
+2025-03-29 16:06:00.544 +01:00 [INF] Route matched with {action = "GetArticleByFamily", controller = "Article"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetArticleByFamily(System.String) on controller fabrication_maghreb_color.api.controller.ArticleController (fabrication-maghreb-color).
+2025-03-29 16:06:00.544 +01:00 [INF] Route matched with {action = "GetArticleByFamily", controller = "Article"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetArticleByFamily(System.String) on controller fabrication_maghreb_color.api.controller.ArticleController (fabrication-maghreb-color).
+2025-03-29 16:06:00.699 +01:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[cbmarq], [f].[EL_Intitule], [f].[N_File]
+FROM [F_ENUMLIBRECIAL] AS [f]
+WHERE [f].[N_File] = CAST(35 AS smallint)
+2025-03-29 16:06:00.720 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.ChampLibre, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:06:00.731 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.MachineController.Get (fabrication-maghreb-color) in 180.6794ms
+2025-03-29 16:06:00.736 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/machine - null null
+2025-03-29 16:06:00.738 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.MachineController.Get (fabrication-maghreb-color)'
+2025-03-29 16:06:00.763 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:00.771 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/machine - 200 null application/json; charset=utf-8 703.2383ms
+2025-03-29 16:06:00.780 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.MachineController.Get (fabrication-maghreb-color)'
+2025-03-29 16:06:00.855 +01:00 [INF] Executed DbCommand (158ms) [Parameters=[@__filter_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Ar_ref], [f].[Ar_design], [f].[AR_PrixTTC], [f].[Fa_codeFamille]
+FROM [F_ARTICLE] AS [f]
+WHERE [f].[Fa_codeFamille] = @__filter_0
+2025-03-29 16:06:00.855 +01:00 [INF] Executed DbCommand (158ms) [Parameters=[@__filter_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Ar_ref], [f].[Ar_design], [f].[AR_PrixTTC], [f].[Fa_codeFamille]
+FROM [F_ARTICLE] AS [f]
+WHERE [f].[Fa_codeFamille] = @__filter_0
+2025-03-29 16:06:00.862 +01:00 [INF] Route matched with {action = "Get", controller = "Machine"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller FabricationMaghrebColor.Controllers.MachineController (fabrication-maghreb-color).
+2025-03-29 16:06:00.896 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.SageArticle, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:06:00.896 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.SageArticle, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:06:00.909 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[cbmarq], [f].[EL_Intitule], [f].[N_File]
+FROM [F_ENUMLIBRECIAL] AS [f]
+WHERE [f].[N_File] = CAST(35 AS smallint)
+2025-03-29 16:06:00.915 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color) in 340.7798ms
+2025-03-29 16:06:00.919 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP000002 - null null
+2025-03-29 16:06:00.924 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color) in 329.9765ms
+2025-03-29 16:06:00.926 +01:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP00002 - null null
+2025-03-29 16:06:00.937 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.ChampLibre, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:06:00.944 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:00.957 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:00.964 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:00.975 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:00.986 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.MachineController.Get (fabrication-maghreb-color) in 82.2917ms
+2025-03-29 16:06:00.995 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP000002 - 200 null application/json; charset=utf-8 926.6312ms
+2025-03-29 16:06:00.999 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:01.006 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP00002 - 200 null application/json; charset=utf-8 938.4728ms
+2025-03-29 16:06:01.010 +01:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:01.020 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.MachineController.Get (fabrication-maghreb-color)'
+2025-03-29 16:06:01.047 +01:00 [INF] Route matched with {action = "GetArticleByFamily", controller = "Article"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetArticleByFamily(System.String) on controller fabrication_maghreb_color.api.controller.ArticleController (fabrication-maghreb-color).
+2025-03-29 16:06:01.073 +01:00 [INF] Route matched with {action = "GetArticleByFamily", controller = "Article"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetArticleByFamily(System.String) on controller fabrication_maghreb_color.api.controller.ArticleController (fabrication-maghreb-color).
+2025-03-29 16:06:01.078 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/machine - 200 null application/json; charset=utf-8 341.2635ms
+2025-03-29 16:06:01.106 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[@__filter_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Ar_ref], [f].[Ar_design], [f].[AR_PrixTTC], [f].[Fa_codeFamille]
+FROM [F_ARTICLE] AS [f]
+WHERE [f].[Fa_codeFamille] = @__filter_0
+2025-03-29 16:06:01.116 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__filter_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Ar_ref], [f].[Ar_design], [f].[AR_PrixTTC], [f].[Fa_codeFamille]
+FROM [F_ARTICLE] AS [f]
+WHERE [f].[Fa_codeFamille] = @__filter_0
+2025-03-29 16:06:01.146 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.SageArticle, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:06:01.164 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.SageArticle, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-29 16:06:01.174 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color) in 78.7151ms
+2025-03-29 16:06:01.188 +01:00 [INF] Executed action fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color) in 74.1512ms
+2025-03-29 16:06:01.201 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:01.209 +01:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ArticleController.GetArticleByFamily (fabrication-maghreb-color)'
+2025-03-29 16:06:01.214 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP000002 - 200 null application/json; charset=utf-8 295.8231ms
+2025-03-29 16:06:01.222 +01:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/article?filter=FMP00002 - 200 null application/json; charset=utf-8 295.1902ms
+2025-03-29 16:06:53.346 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://192.168.1.247:5254/api/fabrication/bon - null null
+2025-03-29 16:06:53.353 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:53.362 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://192.168.1.247:5254/api/fabrication/bon - 204 null null 16.6783ms
+2025-03-29 16:06:53.367 +01:00 [INF] Request starting HTTP/1.1 POST http://192.168.1.247:5254/api/fabrication/bon - application/json 284
+2025-03-29 16:06:53.390 +01:00 [INF] CORS policy execution successful.
+2025-03-29 16:06:53.401 +01:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.FabricationController.CreateBon (fabrication-maghreb-color)'
+2025-03-29 16:06:53.421 +01:00 [INF] Route matched with {action = "CreateBon", controller = "Fabrication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBon(fabrication_maghreb_color.Infrastructure.dto.BonRequest) on controller FabricationMaghrebColor.Controllers.FabricationController (fabrication-maghreb-color).
+2025-03-29 16:06:53.797 +01:00 [INF] Executed DbCommand (66ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [bf] ([DateCreation], [Laize], [machine], [MetrageLineaire], [NumPiece], [Passe], [Pf_id], [QuantiteSupport], [quantite])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2025-03-29 16:06:53.911 +01:00 [INF] Executed DbCommand (7ms) [Parameters=[@__bon_Pf_id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[DateDebut], [p].[DateFin], [p].[DateLivraisonPrev], [p].[Description], [p].[Intitule], [p].[NumeroDossier], [p].[ReferenceArticle], [p].[ReferenceClient], [p].[TypeDescription], [p].[id_typeprojet], [p].[chargeCompte], [p].[quantite], [p0].[Id], [p0].[NumDocument], [p0].[Projet_Id], [p0].[QuantiteEncre], [p0].[QuantiteVernis], [p0].[ReferenceArticleSup]
+FROM [Projet] AS [p]
+LEFT JOIN [pf] AS [p0] ON [p].[Id] = [p0].[Projet_Id]
+WHERE [p0].[Id] = @__bon_Pf_id_0
+2025-03-29 16:07:16.441 +01:00 [INF] Application is shutting down...
+2025-03-29 16:07:16.727 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Matiere] ([Bon_id], [DateAffection], [Pourcentage], [QuantiteUtilise], [ReferenceMP], [type])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-03-29 16:07:16.749 +01:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Matiere] ([Bon_id], [DateAffection], [Pourcentage], [QuantiteUtilise], [ReferenceMP], [type])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-03-29 16:07:16.769 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-03-29 16:07:16.787 +01:00 [INF] Executed action FabricationMaghrebColor.Controllers.FabricationController.CreateBon (fabrication-maghreb-color) in 23359.1984ms
+2025-03-29 16:07:16.792 +01:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.FabricationController.CreateBon (fabrication-maghreb-color)'
+2025-03-29 16:07:16.808 +01:00 [INF] Request finished HTTP/1.1 POST http://192.168.1.247:5254/api/fabrication/bon - 200 null application/json; charset=utf-8 23440.3936ms

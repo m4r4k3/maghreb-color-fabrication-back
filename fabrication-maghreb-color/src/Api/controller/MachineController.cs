@@ -8,9 +8,13 @@ namespace FabricationMaghrebColor.Controllers
     public class MachineController : ControllerBase
     {
         public readonly MachineService _service;
-        public MachineController(MachineService service)
+                public readonly ILogger<MachineController> _logger;
+
+        public MachineController(MachineService service, ILogger<MachineController> logger)
         {
             _service = service;
+                    _logger = logger;
+
         }
 
         [HttpGet]
@@ -22,7 +26,8 @@ namespace FabricationMaghrebColor.Controllers
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                              _logger.LogError(err.ToString());
+
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }

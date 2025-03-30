@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_6",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -17,8 +17,24 @@
   },
   {
     "ContainingType": "fabrication_maghreb_color.api.controller.ArticleController",
-    "Method": "GetProduits",
-    "RelativePath": "api/Article/produits",
+    "Method": "GetArticleByFamily",
+    "RelativePath": "api/Article",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filter",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.ChargeCompteController",
+    "Method": "Get",
+    "RelativePath": "api/ChargeCompte",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -45,7 +61,7 @@
     "Parameters": [
       {
         "Name": "requestData",
-        "Type": "FabricationMaghrebColor.Controllers.PreparationRequest",
+        "Type": "fabrication_maghreb_color.Infrastructure.dto.BonRequest",
         "IsRequired": true
       }
     ],
@@ -71,10 +87,20 @@
     "Parameters": [
       {
         "Name": "requestData",
-        "Type": "FabricationMaghrebColor.Controllers.PreparationRequest",
+        "Type": "fabrication_maghreb_color.Infrastructure.dto.PreparationRequest",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.MachineController",
+    "Method": "Get",
+    "RelativePath": "api/Machine",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -95,16 +121,326 @@
   },
   {
     "ContainingType": "fabrication_maghreb_color.api.controller.ProjetController",
-    "Method": "create",
+    "Method": "Create",
     "RelativePath": "api/Projet/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "projet",
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Intitule",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateDebut",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateFin",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "DateLivraisonPrev",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReferenceClient",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReferenceArticle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumeroDossier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "chargeCompteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeDescription",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeProjet",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantite",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.NumDocument",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.ReferenceArticleSup",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.QuantiteEncre",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.QuantiteVernis",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet_Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Intitule",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.DateDebut",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.DateFin",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.DateLivraisonPrev",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.ReferenceClient",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.ReferenceArticle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.NumeroDossier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.chargeCompteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.TypeDescription",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.TypeProjet",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.quantite",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.NumDocument",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.ReferenceArticleSup",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.QuantiteEncre",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.QuantiteVernis",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.Projet_Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.Projet",
         "Type": "fabrication_maghreb_color.Infrastructure.model.Projet",
-        "IsRequired": true
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.Bons",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.BonFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.quantiteConsomme",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Type.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Type.Intitule",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Type.Abrege",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.Type.Reference",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.ChargeCompte.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.ChargeCompte.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.hasPreparation",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Bons",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.BonFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.quantiteConsomme",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type.Intitule",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type.Abrege",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Type.Reference",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChargeCompte.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ChargeCompte.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "hasPreparation",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -149,6 +485,16 @@
     "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "logout",
     "RelativePath": "api/User/logout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "Method": "me",
+    "RelativePath": "api/User/me",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

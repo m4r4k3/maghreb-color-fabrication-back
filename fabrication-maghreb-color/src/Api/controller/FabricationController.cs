@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using fabrication_maghreb_color.application.service;
 using fabrication_maghreb_color.Infrastructure.model;
 using System.Text.Json;
-using FabricationMaghrebColor.Infrastructure.DTO;
+using fabrication_maghreb_color.Infrastructure.dto;
+using fabrication_maghreb_color.Config.Sage;
 
 namespace FabricationMaghrebColor.Controllers
 {
@@ -14,11 +15,15 @@ namespace FabricationMaghrebColor.Controllers
         public readonly PreparationFabricationService _service;
         public readonly ProjetService _serviceProjet;
         public readonly MatiereService _serviceMatiere;
-        public FabricationController(PreparationFabricationService service, ProjetService serviceProjet, MatiereService serviceMatiere)
+                public readonly ILogger<FabricationController> _logger;
+
+        public FabricationController(PreparationFabricationService service, ProjetService serviceProjet, MatiereService serviceMatiere, ILogger<FabricationController> logger)
         {
             _service = service;
             _serviceProjet = serviceProjet;
             _serviceMatiere = serviceMatiere;
+                        _logger = logger;
+
         }
 
         [HttpGet("preparation")]
@@ -30,7 +35,7 @@ namespace FabricationMaghrebColor.Controllers
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                _logger.LogError(err.ToString());
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
@@ -57,7 +62,7 @@ namespace FabricationMaghrebColor.Controllers
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                _logger.LogError(err.ToString());
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
@@ -68,12 +73,12 @@ namespace FabricationMaghrebColor.Controllers
             {
                 BonFabrication bon = requestData.bon;
                 bon.DateCreation = DateTime.Now;
-                await _service.CreateBon(bon);    
-                foreach(Matiere matiere in requestData.matieres)
+                await _service.CreateBon(bon);
+                foreach (Matiere matiere in requestData.matieres)
                 {
                     matiere.Bon_id = bon.Id;
                     matiere.DateAffection = DateTime.Now;
-                     _serviceMatiere.creation(matiere);
+                    _serviceMatiere.creation(matiere);
                 }
                 return Ok(new
                 {
@@ -82,7 +87,7 @@ namespace FabricationMaghrebColor.Controllers
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                _logger.LogError(err.ToString());
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }

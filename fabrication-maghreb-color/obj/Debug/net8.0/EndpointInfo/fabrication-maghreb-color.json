@@ -5,10 +5,19 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Article/produits": {
+    "/api/Article": {
       "get": {
         "tags": [
           "Article"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -79,17 +88,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PreparationRequest"
+                "$ref": "#/components/schemas/BonRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PreparationRequest"
+                "$ref": "#/components/schemas/BonRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PreparationRequest"
+                "$ref": "#/components/schemas/BonRequest"
               }
             }
           }
@@ -105,6 +114,18 @@
       "get": {
         "tags": [
           "fabrication-maghreb-color"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Machine": {
+      "get": {
+        "tags": [
+          "Machine"
         ],
         "responses": {
           "200": {
@@ -236,6 +257,73 @@
   },
   "components": {
     "schemas": {
+      "BonFabrication": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numPiece": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantite": {
+            "type": "number",
+            "format": "double"
+          },
+          "quantiteSupport": {
+            "type": "number",
+            "format": "double"
+          },
+          "dateCreation": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "pf_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preparationFabrication": {
+            "$ref": "#/components/schemas/PreparationFabrication"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BonRequest": {
+        "type": "object",
+        "properties": {
+          "bon": {
+            "$ref": "#/components/schemas/BonFabrication"
+          },
+          "matieres": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Matiere"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChampLibre": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "n_File": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginModel": {
         "type": "object",
         "properties": {
@@ -250,10 +338,48 @@
         },
         "additionalProperties": false
       },
+      "Matiere": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "referenceMP": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateAffection": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "quantiteUtilise": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pourcentage": {
+            "type": "number",
+            "format": "double"
+          },
+          "bon_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "bon": {
+            "$ref": "#/components/schemas/BonFabrication"
+          }
+        },
+        "additionalProperties": false
+      },
       "PreparationFabrication": {
         "required": [
-          "quantite_encre",
-          "quantite_vernis"
+          "quantiteEncre",
+          "quantiteVernis"
         ],
         "type": "object",
         "properties": {
@@ -269,13 +395,13 @@
             "type": "string",
             "nullable": true
           },
-          "quantite_encre": {
-            "type": "integer",
-            "format": "int32"
+          "quantiteEncre": {
+            "type": "number",
+            "format": "double"
           },
-          "quantite_vernis": {
-            "type": "integer",
-            "format": "int32"
+          "quantiteVernis": {
+            "type": "number",
+            "format": "double"
           },
           "projet_Id": {
             "type": "integer",
@@ -284,6 +410,27 @@
           },
           "projet": {
             "$ref": "#/components/schemas/Projet"
+          },
+          "machineId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "machine": {
+            "$ref": "#/components/schemas/ChampLibre"
+          },
+          "bons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BonFabrication"
+            },
+            "nullable": true
+          },
+          "quantiteConsomme": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -293,10 +440,6 @@
         "properties": {
           "document": {
             "$ref": "#/components/schemas/PreparationFabrication"
-          },
-          "support": {
-            "type": "string",
-            "nullable": true
           },
           "quantite": {
             "type": "number",
@@ -346,6 +489,38 @@
           "quantite": {
             "type": "number",
             "format": "double",
+            "nullable": true
+          },
+          "preparationFabrication": {
+            "$ref": "#/components/schemas/PreparationFabrication"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TypeProjet"
+          },
+          "hasPreparation": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TypeProjet": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "intitule": {
+            "type": "string",
+            "nullable": true
+          },
+          "abrege": {
+            "type": "string",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
             "nullable": true
           }
         },

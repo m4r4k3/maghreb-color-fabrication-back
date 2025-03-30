@@ -241,6 +241,30 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
+      "PackagePath": "staticwebassets\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt"
+    },
+    {
+      "Id": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt",
+      "PackagePath": "staticwebassets\\uploads\\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt"
+    },
+    {
+      "Id": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt",
+      "PackagePath": "staticwebassets\\uploads\\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt"
+    },
+    {
+      "Id": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt",
+      "PackagePath": "staticwebassets\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt"
+    },
+    {
+      "Id": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt",
+      "PackagePath": "staticwebassets\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt"
+    },
+    {
+      "Id": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt",
+      "PackagePath": "staticwebassets\\uploads\\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.fabrication-maghreb-color.props",
       "PackagePath": "build\\fabrication-maghreb-color.props"
     },

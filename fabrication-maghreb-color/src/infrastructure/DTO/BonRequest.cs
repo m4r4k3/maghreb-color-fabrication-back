@@ -1,6 +1,6 @@
 using fabrication_maghreb_color.Infrastructure.model;
 
-namespace FabricationMaghrebColor.Infrastructure.DTO
+namespace fabrication_maghreb_color.Infrastructure.dto
 {
     public class BonRequest
     {

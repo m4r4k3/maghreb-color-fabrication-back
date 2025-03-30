@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using fabrication_maghreb_color.Infrastructure.model;
+using fabrication_maghreb_color.Infrastructure.dto;
 using fabrication_maghreb_color.application.service;
 
 namespace fabrication_maghreb_color.api.controller
@@ -23,6 +24,15 @@ namespace fabrication_maghreb_color.api.controller
             return Ok(new
             {
                 isLoggedIn = _userService.ValidateToken(),
+            });
+        }
+        [HttpGet("me")]
+        public IActionResult me()
+        {
+            return Ok(new
+            {
+                status = "success",
+                data = _userService.GetUser()
             });
         }
         [AllowAnonymous]

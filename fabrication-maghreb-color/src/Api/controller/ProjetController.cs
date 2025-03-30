@@ -12,9 +12,13 @@ namespace fabrication_maghreb_color.api.controller
     public class ProjetController : ControllerBase
     {
         public readonly ProjetService _service;
-        public ProjetController(ProjetService projet)
+        public readonly ILogger<ProjetController> _logger;
+
+        public ProjetController(ProjetService projet, ILogger<ProjetController> logger)
         {
             _service = projet;
+            _logger = logger;
+
         }
         [HttpGet]
         public IActionResult Get([FromQuery] int? type)
@@ -25,15 +29,19 @@ namespace fabrication_maghreb_color.api.controller
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                _logger.LogError(err.ToString());
+
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
         [HttpPost("create")]
-        public IActionResult create([FromBody] Projet projet)
+        public async Task<IActionResult> Create([FromForm] Projet projet, [FromForm] IFormFile? descriptionFile)
         {
 
-            if (_service.create(projet))
+
+
+
+            if (await _service.create(projet, descriptionFile))
             {
                 return Ok(new
                 {
@@ -56,7 +64,8 @@ namespace fabrication_maghreb_color.api.controller
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                                _logger.LogError(err.ToString());
+
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }

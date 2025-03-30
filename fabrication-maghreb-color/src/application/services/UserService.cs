@@ -22,7 +22,17 @@ namespace fabrication_maghreb_color.application.service
             _configuration = configuration;
         }
 
-
+        public User? GetUser()
+        {
+            try
+            {
+                return  _dbContext.UserDbo.FirstOrDefault(user => user.Username == _httpContextAccessor.HttpContext.User.Identity.Name);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool ValidateToken()
         {
             try

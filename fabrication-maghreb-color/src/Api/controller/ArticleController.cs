@@ -12,9 +12,11 @@ namespace fabrication_maghreb_color.api.controller
     public class ArticleController : ControllerBase
     {
         public readonly ArticleService _service;
-        public ArticleController(ArticleService projet)
+        public readonly ILogger<ArticleService> _logger;
+        public ArticleController(ArticleService projet, ILogger<ArticleService> logger)
         {
             _service = projet;
+            _logger = logger;
         }
         [HttpGet]
         public IActionResult GetArticleByFamily(string filter)
@@ -25,7 +27,7 @@ namespace fabrication_maghreb_color.api.controller
             }
             catch (Exception err)
             {
-                Console.WriteLine(err);
+                _logger.LogError(err.ToString());
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
