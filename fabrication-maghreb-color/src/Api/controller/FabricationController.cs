@@ -73,7 +73,7 @@ namespace FabricationMaghrebColor.Controllers
             {
                 BonFabrication bon = requestData.bon;
                 bon.DateCreation = DateTime.Now;
-                await _service.CreateBon(bon);
+                await _service.CreateBon(bon , requestData.matieres);
                 foreach (Matiere matiere in requestData.matieres)
                 {
                     matiere.Bon_id = bon.Id;

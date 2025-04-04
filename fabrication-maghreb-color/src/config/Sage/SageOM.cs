@@ -98,54 +98,70 @@ namespace fabrication_maghreb_color.Config.Sage
 
 
 
-        public bool CreeBonFabrication(BonFabrication bon, string client)
+        public string CreeBonFabrication(BonFabrication bon, string client , List<Matiere> matieres)
         {
             try
             {
+                _logger.LogInformation("Starting document creation for stock fabrication.");
                 IPMDocument mProcessDoc = BaseCial.CreateProcess_Document(DocumentType.DocumentTypeStockFabrication);
-                IBODocumentStock3 bonSage = (IBODocumentStock3)BaseCial.FactoryDocumentStock.CreateType(DocumentType.DocumentTypeStockFabrication);
-                bonSage.DO_Date = bon.DateCreation;
-                bonSage.DO_Piece = bon.Id.ToString();
+                _logger.LogInformation("Process document created with type: DocumentTypeStockFabrication.");
+
+                mProcessDoc.Document.DO_Piece = bon.Id.ToString();
+                //IBODocumentStock3 bonSage = (IBODocumentStock3)BaseCial.FactoryDocumentStock.CreateType(DocumentType.DocumentTypeStockFabrication);
+                //bonSage.DO_Date = bon.DateCreation;
+                //_logger.LogInformation($"Created stock document with Date: {bon.DateCreation}, Piece ID: {bon.Id}");
+
+                // Adding the first article (product being fabricated)
                 IBODocumentStockLigne3 mLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
+                
+                mLig.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
+                mLig.ArticleCompose = BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle);
+                mLig.Write();
+                _logger.LogInformation($"Added article for fabrication: {bon.preparationFabrication.Projet.ReferenceArticle} with quantity {bon.preparationFabrication.Projet.quantite}");
 
-                IBODocumentStockLigne3 cLig = (IBODocumentStockLigne3)mProcessDoc.(BaseCial.FactoryArticle.ReadReference("MP000001"), (double)-1000);
+                // MP000001 is a consumed article, so we track its consumption
+                
+                foreach ( Matiere materiel in matieres)
+                {
+                    IBODocumentStockLigne3 cLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP),(double) materiel.QuantiteUtilise);
+                    cLig.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP), (double)materiel.QuantiteUtilise);
+                    cLig.ArticleCompose = BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP);
+                    cLig.Write();
+                    _logger.LogInformation($"Added consumed article: {materiel.ReferenceMP} with quantity {materiel.QuantiteUtilise}");
+                }
+             
+                _logger.LogInformation("Added consumed article: MP000001 with quantity 69.");
 
-                // hadi cration d article composé
-                IBODocumentVenteLigne3 DocLigneCompose = DocEntete.FactoryDocumentLigne.Create();
-                DocLigneCompose.SetDefaultArticle(bCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
+                // Optional: Handling composed article creation (commented-out)
+                    /*
+                IBIPersistObject DocLigneCompose = bonSage.FactoryDocumentLigne.Create();
+                DocLigneCompose.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
                 DocLigneCompose.ArticleCompose = bCial.FactoryArticle.ReadReference("MP000001");
                 DocLigneCompose.Write();
+                _logger.LogInformation("Composed article creation (optional) processed.");
+                */
 
-                // hadi les articles composants
-                foreach (var mIboArtItem in bCial.FactoryArticle.ReadReference("ENSHF").FactoryArticleNomenclature.List)
-                {
-                    IBODocumentVenteLigne3 DocLigneComposant = DocEntete.FactoryDocumentLigne.Create();
-                    DocLigneComposant.SetDefaultArticle(mIboArtItem.ArticleComposant, mIboArtItem.NO_Qte);
-                    DocLigneComposant.ArticleCompose = mIboArtItem.Article;
+                //bonSage.WriteDefault();
+                _logger.LogInformation("Stock document finalized and written.");
 
-                    // Ajout de la remise
-                    DocLigneComposant.Remise.Remise(1).REM_Type = RemiseType.RemiseTypePourcent;
-                    DocLigneComposant.Remise.Remise(1).REM_Valeur = dRemise;
-
-                    DocLigneComposant.Write();
-                }
-
-                //logger.LogAsync($"Article {item.Reference} ajouté au document d'achat.");
-
-                bonSage.WriteDefault();
-
+                // Process the document if ready
                 if (mProcessDoc.CanProcess)
                 {
                     mProcessDoc.Process();
-                    return true;
+                    _logger.LogInformation("Document processed successfully.");
+                    return mProcessDoc.Document.DO_Piece
+;
                 }
-                return true;
+
+                _logger.LogWarning("Document cannot be processed.");
+                return "";
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: " + ex.Message);
-                return false;
+                _logger.LogError($"Error occurred: {ex.Message}. Stack Trace: {ex.StackTrace}");
+                return "";
             }
+
         }
     }
 }

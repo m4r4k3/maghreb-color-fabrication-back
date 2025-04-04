@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "REt70C5/9dn9upycnI3yArYRuSTztHhX/nyaxJ8LcBE=",
+  "Hash": "VBeiUodhpqVaWZY3DHoFyzwognd8SdYLxldoeVRVwGI=",
   "Source": "fabrication-maghreb-color",
   "BasePath": "_content/fabrication-maghreb-color",
   "Mode": "Default",
@@ -1359,6 +1359,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt"
+    },
+    {
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt",
+      "SourceId": "fabrication-maghreb-color",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
+      "BasePath": "_content/fabrication-maghreb-color",
+      "RelativePath": "uploads/593037d1-4d66-4747-a7d8-223776e07532#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ri2vqtjltg",
+      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt"
     },
     {
       "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt",
@@ -6347,7 +6368,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 20:37:08 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6392,7 +6413,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 20:37:08 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6429,7 +6450,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 14:30:02 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6474,7 +6495,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 14:30:02 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6511,7 +6532,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 00:56:44 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6556,7 +6577,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 00:56:44 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6593,7 +6614,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 14:36:54 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6638,7 +6659,89 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 14:36:54 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/593037d1-4d66-4747-a7d8-223776e07532.ri2vqtjltg.txt",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 22:31:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ri2vqtjltg"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/593037d1-4d66-4747-a7d8-223776e07532.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/593037d1-4d66-4747-a7d8-223776e07532.txt",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 22:31:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6675,7 +6778,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:28:21 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6720,7 +6823,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:28:21 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6757,7 +6860,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 14:37:59 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6802,7 +6905,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 14:37:59 GMT"
+          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
         },
         {
           "Name": "Cache-Control",
