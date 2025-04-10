@@ -60,7 +60,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestData",
+        "Name": "request",
         "Type": "fabrication_maghreb_color.Infrastructure.dto.BonRequest",
         "IsRequired": true
       }

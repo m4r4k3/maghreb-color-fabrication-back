@@ -1080,6 +1080,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0df854ee-1cc3-4600-ad5e-2644d9417889.docx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>fabrication-maghreb-color</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/fabrication-maghreb-color</BasePath>
+      <RelativePath>uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>50vpki5g97</Fingerprint>
+      <Integrity>yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0df854ee-1cc3-4600-ad5e-2644d9417889.docx'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt'))">
       <SourceType>Package</SourceType>
       <SourceId>fabrication-maghreb-color</SourceId>

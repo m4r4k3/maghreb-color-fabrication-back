@@ -720,6 +720,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1117"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 19 Feb 2025 11:47:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/fabrication-maghreb-color/uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.50vpki5g97.docx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0df854ee-1cc3-4600-ad5e-2644d9417889.docx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"50vpki5g97"},{"Name":"integrity","Value":"sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="},{"Name":"label","Value":"_content/fabrication-maghreb-color/uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"957881"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},{"Name":"ETag","Value":"\u0022yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 11:54:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/fabrication-maghreb-color/uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0df854ee-1cc3-4600-ad5e-2644d9417889.docx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"957881"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"},{"Name":"ETag","Value":"\u0022yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Apr 2025 11:54:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/fabrication-maghreb-color/uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.ri2vqtjltg.txt">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

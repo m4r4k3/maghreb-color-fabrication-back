@@ -121,14 +121,14 @@ namespace fabrication_maghreb_color.Config.Sage
 
                 // MP000001 is a consumed article, so we track its consumption
                 
-                foreach ( Matiere materiel in matieres)
-                {
-                    IBODocumentStockLigne3 cLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP),(double) materiel.QuantiteUtilise);
-                    cLig.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP), (double)materiel.QuantiteUtilise);
-                    cLig.ArticleCompose = BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP);
-                    cLig.Write();
-                    _logger.LogInformation($"Added consumed article: {materiel.ReferenceMP} with quantity {materiel.QuantiteUtilise}");
-                }
+                // foreach ( Matiere materiel in matieres)
+                // {
+                //     IBODocumentStockLigne3 cLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP),(double) materiel.QuantiteUtilise);
+                //     cLig.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP), (double)materiel.QuantiteUtilise);
+                //     cLig.ArticleCompose = BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP);
+                //     cLig.Write();
+                    //     _logger.LogInformation($"Added consumed article: {materiel.ReferenceMP} with quantity {materiel.QuantiteUtilise}");
+                // }
              
                 _logger.LogInformation("Added consumed article: MP000001 with quantity 69.");
 

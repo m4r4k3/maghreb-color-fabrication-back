@@ -21,7 +21,7 @@ namespace fabrication_maghreb_color.application.service
         }
         public List<PreparationFabrication> GetAllPreparation()
         {
-            return _dbContext.PreparationFabricationsDbo.Include(e => e.Projet).Include(e => e.Projet.Type).Include(e => e.Bons)
+            return _dbContext.PreparationFabricationsDbo.Include(e => e.Projet).Include(e => e.Projet.Type).Include(e => e.Bons).ThenInclude(e => e.matieres).ThenInclude(e => e.Type)
                 .ToList();
 
         }
@@ -31,13 +31,24 @@ namespace fabrication_maghreb_color.application.service
             _dbContext.PreparationFabricationsDbo.Add(preparation);
             await _dbContext.SaveChangesAsync();
         }
-        public async Task CreateBon(BonFabrication bon, List<Matiere> matieres)
+      public async Task<List<Matiere>> CreateBon(BonFabrication bon, List<Matiere> matieres)
         {
             _dbContext.BonFabricationDbo.Add(bon);
             await _dbContext.SaveChangesAsync();
 
+            var bonWithRelated = await _dbContext.BonFabricationDbo
+    .Include(b => b.preparationFabrication) // Replace 'RelatedEntity' with the actual navigation property
+    .FirstOrDefaultAsync(b => b.Id == bon.Id);
+            Matiere support = new Matiere
+            {
+                ReferenceMP = bon.preparationFabrication.ReferenceArticleSup,
+                TypeId = 3,
+                DateAffection = DateTime.Now,
+                QuantiteUtilise = (int)bon.QuantiteSupport,
+                Pourcentage = 100,
+            };
 
-
+            matieres.Add(support);
             Console.WriteLine(_SageOm.CreeBonFabrication(
                  bon,
                _dbContext.ProjetDbo
@@ -46,7 +57,9 @@ namespace fabrication_maghreb_color.application.service
                      .ReferenceClient
 
             , matieres));
+            return matieres;
         }
+
 
     }
 }

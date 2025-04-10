@@ -15,14 +15,14 @@ namespace FabricationMaghrebColor.Controllers
         public readonly PreparationFabricationService _service;
         public readonly ProjetService _serviceProjet;
         public readonly MatiereService _serviceMatiere;
-                public readonly ILogger<FabricationController> _logger;
+        public readonly ILogger<FabricationController> _logger;
 
         public FabricationController(PreparationFabricationService service, ProjetService serviceProjet, MatiereService serviceMatiere, ILogger<FabricationController> logger)
         {
             _service = service;
             _serviceProjet = serviceProjet;
             _serviceMatiere = serviceMatiere;
-                        _logger = logger;
+            _logger = logger;
 
         }
 
@@ -67,30 +67,31 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
         [HttpPost("bon")]
-        public async Task<IActionResult> CreateBon([FromBody] BonRequest requestData)
-        {
-            try
-            {
-                BonFabrication bon = requestData.bon;
+        public async Task<IActionResult> CreateBon([FromBody] BonRequest request) {
+            try {
+                BonFabrication bon = request.bon;
                 bon.DateCreation = DateTime.Now;
-                await _service.CreateBon(bon , requestData.matieres);
-                foreach (Matiere matiere in requestData.matieres)
+
+                List<Matiere> matieres = await _service.CreateBon(bon, request.matieres);
+                foreach (Matiere matiere in matieres)
                 {
                     matiere.Bon_id = bon.Id;
                     matiere.DateAffection = DateTime.Now;
                     _serviceMatiere.creation(matiere);
                 }
+
+               
                 return Ok(new
                 {
                     message = "Prepartion créer"
                 });
-            }
-            catch (Exception err)
+            } catch (Exception err)
             {
                 _logger.LogError(err.ToString());
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
+
 
     }
 }

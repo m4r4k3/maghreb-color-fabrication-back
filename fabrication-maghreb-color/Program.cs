@@ -60,10 +60,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        // Preserve references to handle circular references
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
+
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -103,6 +103,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 // Configure CORS (Cross-Origin Resource Sharing)
 builder.Services.AddCors(options =>
+
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
@@ -123,7 +124,6 @@ builder.Services.AddCors(options =>
 builder.Services.AddAuthorization();
 
 // Add controllers
-builder.Services.AddControllers();
 
 // Add HTTP context accessor
 builder.Services.AddHttpContextAccessor();

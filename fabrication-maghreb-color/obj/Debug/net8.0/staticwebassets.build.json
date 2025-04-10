@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VBeiUodhpqVaWZY3DHoFyzwognd8SdYLxldoeVRVwGI=",
+  "Hash": "h/NEbT4m8v+x3pW1OvqOggee7t7I03r8+rguFNsNhks=",
   "Source": "fabrication-maghreb-color",
   "BasePath": "_content/fabrication-maghreb-color",
   "Mode": "Default",
@@ -1275,6 +1275,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "SourceId": "fabrication-maghreb-color",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
+      "BasePath": "_content/fabrication-maghreb-color",
+      "RelativePath": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889#[.{fingerprint}]?.docx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "50vpki5g97",
+      "Integrity": "yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
     },
     {
       "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
@@ -6342,6 +6363,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-16aFlqtpsG9RyieKZUUUjkJpqTgcJtWXwT312I4Iz1s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.50vpki5g97.docx",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "957881"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 11:54:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "50vpki5g97"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "957881"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 11:54:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="
         }
       ]
     },

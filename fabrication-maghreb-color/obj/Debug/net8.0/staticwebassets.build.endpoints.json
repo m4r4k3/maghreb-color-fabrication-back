@@ -4923,6 +4923,88 @@
       ]
     },
     {
+      "Route": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.50vpki5g97.docx",
+      "AssetFile": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "957881"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 11:54:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "50vpki5g97"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "AssetFile": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "957881"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 11:54:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="
+        }
+      ]
+    },
+    {
       "Route": "uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.ri2vqtjltg.txt",
       "AssetFile": "uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
       "Selectors": [],
