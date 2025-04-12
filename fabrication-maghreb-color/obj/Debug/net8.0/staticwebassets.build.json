@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h/NEbT4m8v+x3pW1OvqOggee7t7I03r8+rguFNsNhks=",
+  "Hash": "b8QRHmygsexUTILgx0Abs/G09LttpI7e7BSBxyuH63I=",
   "Source": "fabrication-maghreb-color",
   "BasePath": "_content/fabrication-maghreb-color",
   "Mode": "Default",
@@ -1277,12 +1277,96 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png",
       "SourceId": "fabrication-maghreb-color",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
       "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889#[.{fingerprint}]?.docx",
+      "RelativePath": "uploads/bf/08e16045-52cd-42eb-b1f3-ad2ab3ae090b#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0u1f6izuc5",
+      "Integrity": "+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\bf\\08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png"
+    },
+    {
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\54fcc431-1d55-4790-bca1-75af40bc39b7.png",
+      "SourceId": "fabrication-maghreb-color",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
+      "BasePath": "_content/fabrication-maghreb-color",
+      "RelativePath": "uploads/bf/54fcc431-1d55-4790-bca1-75af40bc39b7#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pmtlz5j99u",
+      "Integrity": "v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\bf\\54fcc431-1d55-4790-bca1-75af40bc39b7.png"
+    },
+    {
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\8094816e-fdd2-4e37-963f-0d6eaf15da7c.png",
+      "SourceId": "fabrication-maghreb-color",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
+      "BasePath": "_content/fabrication-maghreb-color",
+      "RelativePath": "uploads/bf/8094816e-fdd2-4e37-963f-0d6eaf15da7c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pmtlz5j99u",
+      "Integrity": "v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\bf\\8094816e-fdd2-4e37-963f-0d6eaf15da7c.png"
+    },
+    {
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png",
+      "SourceId": "fabrication-maghreb-color",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
+      "BasePath": "_content/fabrication-maghreb-color",
+      "RelativePath": "uploads/bf/8d835254-7d5c-41ce-bd56-cab8ac9a7f3a#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0u1f6izuc5",
+      "Integrity": "+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\bf\\8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png"
+    },
+    {
+      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\projet\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "SourceId": "fabrication-maghreb-color",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
+      "BasePath": "_content/fabrication-maghreb-color",
+      "RelativePath": "uploads/projet/0df854ee-1cc3-4600-ad5e-2644d9417889#[.{fingerprint}]?.docx",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1295,154 +1379,7 @@
       "Integrity": "yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri2vqtjltg",
-      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/21f08a62-8b36-4eb4-a4e1-c49da0211433#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "2t4ic5tojy",
-      "Integrity": "1ngrkLp+H6t3Aik8ZQENwLnqbRrLFywrwTkR11yF9Ao=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/32ece732-6e7d-4888-9ebe-041c83fdaca9#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri2vqtjltg",
-      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/54e525c6-5e7d-499c-8275-fde03caffba6#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri2vqtjltg",
-      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/593037d1-4d66-4747-a7d8-223776e07532#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri2vqtjltg",
-      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/778a9202-a852-4556-bddf-6790dfb11392#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri2vqtjltg",
-      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt"
-    },
-    {
-      "Identity": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt",
-      "SourceId": "fabrication-maghreb-color",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\",
-      "BasePath": "_content/fabrication-maghreb-color",
-      "RelativePath": "uploads/cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb#[.{fingerprint}]?.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ri2vqtjltg",
-      "Integrity": "g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt"
+      "OriginalItemSpec": "wwwroot\\uploads\\projet\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
     }
   ],
   "Endpoints": [
@@ -6367,8 +6304,336 @@
       ]
     },
     {
-      "Route": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.50vpki5g97.docx",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Route": "uploads/bf/08e16045-52cd-42eb-b1f3-ad2ab3ae090b.0u1f6izuc5.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16017"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:08:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0u1f6izuc5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/bf/08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16017"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:08:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/54fcc431-1d55-4790-bca1-75af40bc39b7.pmtlz5j99u.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\54fcc431-1d55-4790-bca1-75af40bc39b7.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "484358"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:10:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pmtlz5j99u"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/bf/54fcc431-1d55-4790-bca1-75af40bc39b7.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/54fcc431-1d55-4790-bca1-75af40bc39b7.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\54fcc431-1d55-4790-bca1-75af40bc39b7.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "484358"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:10:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/8094816e-fdd2-4e37-963f-0d6eaf15da7c.pmtlz5j99u.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\8094816e-fdd2-4e37-963f-0d6eaf15da7c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "484358"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:08:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pmtlz5j99u"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/bf/8094816e-fdd2-4e37-963f-0d6eaf15da7c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/8094816e-fdd2-4e37-963f-0d6eaf15da7c.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\8094816e-fdd2-4e37-963f-0d6eaf15da7c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "484358"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:08:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.0u1f6izuc5.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16017"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:10:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0u1f6izuc5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/bf/8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bf/8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\bf\\8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16017"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 11 Apr 2025 15:10:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/projet/0df854ee-1cc3-4600-ad5e-2644d9417889.50vpki5g97.docx",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\projet\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6403,7 +6668,7 @@
         },
         {
           "Name": "label",
-          "Value": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
+          "Value": "uploads/projet/0df854ee-1cc3-4600-ad5e-2644d9417889.docx"
         },
         {
           "Name": "integrity",
@@ -6412,8 +6677,8 @@
       ]
     },
     {
-      "Route": "uploads/0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "Route": "uploads/projet/0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
+      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\projet\\0df854ee-1cc3-4600-ad5e-2644d9417889.docx",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6445,580 +6710,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.ri2vqtjltg.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri2vqtjltg"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\196cdb68-8617-4047-a63d-fd1323a8a8fa.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/21f08a62-8b36-4eb4-a4e1-c49da0211433.2t4ic5tojy.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1ngrkLp+H6t3Aik8ZQENwLnqbRrLFywrwTkR11yF9Ao=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2t4ic5tojy"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/21f08a62-8b36-4eb4-a4e1-c49da0211433.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-1ngrkLp+H6t3Aik8ZQENwLnqbRrLFywrwTkR11yF9Ao="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/21f08a62-8b36-4eb4-a4e1-c49da0211433.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\21f08a62-8b36-4eb4-a4e1-c49da0211433.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1ngrkLp+H6t3Aik8ZQENwLnqbRrLFywrwTkR11yF9Ao=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-1ngrkLp+H6t3Aik8ZQENwLnqbRrLFywrwTkR11yF9Ao="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/32ece732-6e7d-4888-9ebe-041c83fdaca9.ri2vqtjltg.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri2vqtjltg"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/32ece732-6e7d-4888-9ebe-041c83fdaca9.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/32ece732-6e7d-4888-9ebe-041c83fdaca9.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\32ece732-6e7d-4888-9ebe-041c83fdaca9.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/54e525c6-5e7d-499c-8275-fde03caffba6.ri2vqtjltg.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri2vqtjltg"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/54e525c6-5e7d-499c-8275-fde03caffba6.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/54e525c6-5e7d-499c-8275-fde03caffba6.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\54e525c6-5e7d-499c-8275-fde03caffba6.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/593037d1-4d66-4747-a7d8-223776e07532.ri2vqtjltg.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 22:31:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri2vqtjltg"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/593037d1-4d66-4747-a7d8-223776e07532.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/593037d1-4d66-4747-a7d8-223776e07532.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\593037d1-4d66-4747-a7d8-223776e07532.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 22:31:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/778a9202-a852-4556-bddf-6790dfb11392.ri2vqtjltg.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri2vqtjltg"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/778a9202-a852-4556-bddf-6790dfb11392.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/778a9202-a852-4556-bddf-6790dfb11392.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\778a9202-a852-4556-bddf-6790dfb11392.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.ri2vqtjltg.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ri2vqtjltg"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt",
-      "AssetFile": "C:\\Users\\M.AKCHAR\\source\\repos\\fabrication-maghreb-color\\fabrication-maghreb-color\\wwwroot\\uploads\\cd0a6ce5-417e-4c81-b85e-91eb0e2c75bb.txt",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/plain"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 30 Mar 2025 18:21:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-g3zLYH4xKxcPrHOD18z9YfpQcnk/GaJedfustWU5uGs="
         }
       ]
     }

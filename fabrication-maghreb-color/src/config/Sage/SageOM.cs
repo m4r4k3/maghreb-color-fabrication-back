@@ -132,14 +132,6 @@ namespace fabrication_maghreb_color.Config.Sage
              
                 _logger.LogInformation("Added consumed article: MP000001 with quantity 69.");
 
-                // Optional: Handling composed article creation (commented-out)
-                    /*
-                IBIPersistObject DocLigneCompose = bonSage.FactoryDocumentLigne.Create();
-                DocLigneCompose.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
-                DocLigneCompose.ArticleCompose = bCial.FactoryArticle.ReadReference("MP000001");
-                DocLigneCompose.Write();
-                _logger.LogInformation("Composed article creation (optional) processed.");
-                */
 
                 //bonSage.WriteDefault();
                 _logger.LogInformation("Stock document finalized and written.");

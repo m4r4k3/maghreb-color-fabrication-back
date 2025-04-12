@@ -21,8 +21,15 @@ namespace fabrication_maghreb_color.application.service
         }
         public List<PreparationFabrication> GetAllPreparation()
         {
-            return _dbContext.PreparationFabricationsDbo.Include(e => e.Projet).Include(e => e.Projet.Type).Include(e => e.Bons).ThenInclude(e => e.matieres).ThenInclude(e => e.Type)
-                .ToList();
+            return _dbContext.PreparationFabricationsDbo
+      .Include(e => e.Projet)
+          .ThenInclude(p => p.Type)
+      .Include(e => e.Bons)
+          .ThenInclude(b => b.files)
+      .Include(e => e.Bons)
+          .ThenInclude(b => b.matieres)
+              .ThenInclude(m => m.Type)
+      .ToList();
 
         }
         public async Task CreatePreparition(PreparationFabrication preparation)
@@ -31,7 +38,7 @@ namespace fabrication_maghreb_color.application.service
             _dbContext.PreparationFabricationsDbo.Add(preparation);
             await _dbContext.SaveChangesAsync();
         }
-      public async Task<List<Matiere>> CreateBon(BonFabrication bon, List<Matiere> matieres)
+        public async Task<List<Matiere>> CreateBon(BonFabrication bon, List<Matiere> matieres)
         {
             _dbContext.BonFabricationDbo.Add(bon);
             await _dbContext.SaveChangesAsync();
@@ -59,7 +66,11 @@ namespace fabrication_maghreb_color.application.service
             , matieres));
             return matieres;
         }
-
+        public async Task StoreFile(BonFile bonFile)
+        {
+            _dbContext.BonFileDbo.Add(bonFile);
+            await _dbContext.SaveChangesAsync();
+        }
 
     }
 }

@@ -23,21 +23,20 @@ namespace fabrication_maghreb_color.application.service
         {
             try
             {
-                if (descriptionFile == null && projet.Description == null) throw new Exception("Description is required");
                 if (descriptionFile != null)
                 {
                     var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(descriptionFile.FileName)}";
 
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", uniqueFileName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/projet", uniqueFileName);
 
                     using (var stream = new FileStream(path, FileMode.Create))
                     {
                         await descriptionFile.CopyToAsync(stream);
-                        projet.Description =  "/uploads/" + uniqueFileName  ;
+                        projet.Description =  "/uploads/projet/" + uniqueFileName  ;
                         projet.TypeDescription = 1;
                     }
                 }
-                TypeProjet type = _dbContext.typeProjetDbo.Find(projet.TypeProjet);
+                TypeProjet type = _dbContext.TypeProjetDbo.Find(projet.TypeProjet);
                 string intitule = type.Abrege + " " + projet.ReferenceClient + " " + projet.quantite;
                 projet.ReferenceArticle = _sageOM.CreateArticle(intitule, type.Reference);
                 _dbContext.ProjetDbo.Add(projet);
@@ -52,7 +51,7 @@ namespace fabrication_maghreb_color.application.service
         }
         public List<TypeProjet> GetAllTypes()
         {
-            return _dbContext.typeProjetDbo.ToList();
+            return _dbContext.TypeProjetDbo.ToList();
         }
         public List<Projet> GetAll(int? type)
         {

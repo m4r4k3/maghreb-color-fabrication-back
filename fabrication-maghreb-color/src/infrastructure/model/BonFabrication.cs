@@ -27,7 +27,7 @@ namespace fabrication_maghreb_color.Infrastructure.model
         [ForeignKey("Pf_id")] 
         public virtual PreparationFabrication? preparationFabrication { get; set; }
         public virtual List<Matiere>? matieres { get; set; }
-
+        public virtual List<BonFile>? files { get; set; }
 
 }
 }

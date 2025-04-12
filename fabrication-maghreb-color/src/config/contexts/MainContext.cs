@@ -11,8 +11,9 @@ namespace fabrication_maghreb_color.Config.Contexts
         public DbSet<chargeCompte> ChargeCompteDbo { get; set; }
         public DbSet<Matiere> MatiereDbo { get; set; }
         public DbSet<Projet> ProjetDbo { get; set; }
-        public DbSet<TypeProjet> typeProjetDbo { get; set; }
-        public DbSet<TypeMatiere> typeMatieresDbo { get; set; }
+        public DbSet<TypeProjet> TypeProjetDbo { get; set; }
+        public DbSet<BonFile> BonFileDbo { get; set; }
+        public DbSet<TypeMatiere> TypeMatieresDbo { get; set; }
         private readonly IConfiguration? _configuration;
         public MainContext(DbContextOptions<MainContext> options, IConfiguration? configuration) : base(options)
         {

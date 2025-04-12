@@ -67,8 +67,10 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
         [HttpPost("bon")]
-        public async Task<IActionResult> CreateBon([FromBody] BonRequest request) {
-            try {
+        public async Task<IActionResult> CreateBon([FromForm] BonRequest request)
+        {
+            try
+            {
                 BonFabrication bon = request.bon;
                 bon.DateCreation = DateTime.Now;
 
@@ -80,12 +82,39 @@ namespace FabricationMaghrebColor.Controllers
                     _serviceMatiere.creation(matiere);
                 }
 
-               
+                string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/bf");
+
+                string[] allowedImageExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp" };
+
+                foreach (IFormFile file in request.files)
+                {
+                    var fileExtension = Path.GetExtension(file.FileName).ToLower();
+
+                    // Check if the file is an image based on the extension
+                    if (allowedImageExtensions.Contains(fileExtension))
+                    {
+                        var uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
+                        var path = Path.Combine(folderPath, uniqueFileName);
+
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                            await _service.StoreFile(new BonFile { BonId = bon.Id, FilePath = uniqueFileName });
+                        }
+                    }
+                    else
+                    {
+                        // Handle non-image files if needed
+                        Console.WriteLine($"File {file.FileName} is not a valid image.");
+                    }
+                }
+
                 return Ok(new
                 {
                     message = "Prepartion créer"
                 });
-            } catch (Exception err)
+            }
+            catch (Exception err)
             {
                 _logger.LogError(err.ToString());
                 return BadRequest(new { status = "error", message = "Error occured" });

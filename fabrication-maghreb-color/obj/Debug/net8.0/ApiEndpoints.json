@@ -60,9 +60,274 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "fabrication_maghreb_color.Infrastructure.dto.BonRequest",
-        "IsRequired": true
+        "Name": "bon.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.NumPiece",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.quantite",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.QuantiteSupport",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.Laize",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.MetrageLineaire",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.Passe",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.DateCreation",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.MachineId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.machine.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.machine.Label",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.machine.N_File",
+        "Type": "System.Int16",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.Pf_id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.NumDocument",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.ReferenceArticleSup",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.QuantiteEncre",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.QuantiteVernis",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet_Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Intitule",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.DateDebut",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.DateFin",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.DateLivraisonPrev",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.ReferenceClient",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.ReferenceArticle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.NumeroDossier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.chargeCompteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.TypeDescription",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.TypeProjet",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.quantite",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.NumDocument",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.ReferenceArticleSup",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.QuantiteEncre",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.QuantiteVernis",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.Projet_Id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.Projet",
+        "Type": "fabrication_maghreb_color.Infrastructure.model.Projet",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.Bons",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.BonFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.quantiteConsomme",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Type.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Type.Intitule",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Type.Abrege",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Type.Reference",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.ChargeCompte.Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.ChargeCompte.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.hasPreparation",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Bons",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.BonFabrication, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.quantiteConsomme",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.matieres",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Matiere, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.files",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.BonFile, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "matieres",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Matiere, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "files",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
