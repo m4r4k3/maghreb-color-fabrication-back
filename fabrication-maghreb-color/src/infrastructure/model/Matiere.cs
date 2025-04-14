@@ -12,7 +12,7 @@ namespace fabrication_maghreb_color.Infrastructure.model
 
         public string ReferenceMP { get; set; }
         public int TypeId { get; set; }
-        public DateTime DateAffection { get; set; }
+        public DateTime DateAffection { get; set; } = DateTime.Now;
         public int QuantiteUtilise { get; set; }
         public decimal Pourcentage { get; set; }
         public int? Bon_id { get; set; }

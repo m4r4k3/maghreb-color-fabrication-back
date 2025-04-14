@@ -14,6 +14,7 @@ namespace fabrication_maghreb_color.Config.Contexts
         public DbSet<TypeProjet> TypeProjetDbo { get; set; }
         public DbSet<BonFile> BonFileDbo { get; set; }
         public DbSet<TypeMatiere> TypeMatieresDbo { get; set; }
+        public DbSet<Nomenclature> NomenclatureDbo { get; set; }
         private readonly IConfiguration? _configuration;
         public MainContext(DbContextOptions<MainContext> options, IConfiguration? configuration) : base(options)
         {

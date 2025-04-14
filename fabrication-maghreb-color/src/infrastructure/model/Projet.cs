@@ -16,6 +16,8 @@ namespace fabrication_maghreb_color.Infrastructure.model
         public DateTime DateLivraisonPrev { get; set; }
         public string ReferenceClient { get; set; }
         public string? ReferenceArticle { get; set; }
+        public Boolean HasNomenclature { get; set; } = false;
+
         public string? NumeroDossier { get; set; }
         [Column("chargeCompte")]
         public int chargeCompteId { get; set; }
@@ -28,6 +30,7 @@ namespace fabrication_maghreb_color.Infrastructure.model
         public virtual TypeProjet? Type { get; set; }
         [ForeignKey("chargeCompteId")]
         public virtual chargeCompte? ChargeCompte { get; set; }
+        public virtual List<Nomenclature>? Nomenclatures { get; set; }
         public bool hasPreparation => preparationFabrication != null;
     }
 }

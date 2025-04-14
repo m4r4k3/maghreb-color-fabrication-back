@@ -23,6 +23,9 @@ namespace fabrication_maghreb_color.application.service
         {
             return _dbContext.PreparationFabricationsDbo
       .Include(e => e.Projet)
+                              .ThenInclude(e => e.Nomenclatures)
+      .Include(e => e.Projet)
+
           .ThenInclude(p => p.Type)
       .Include(e => e.Bons)
           .ThenInclude(b => b.files)
@@ -40,30 +43,65 @@ namespace fabrication_maghreb_color.application.service
         }
         public async Task<List<Matiere>> CreateBon(BonFabrication bon, List<Matiere> matieres)
         {
+            // Add the bon and save
             _dbContext.BonFabricationDbo.Add(bon);
             await _dbContext.SaveChangesAsync();
 
+            // Fetch related data
             var bonWithRelated = await _dbContext.BonFabricationDbo
-    .Include(b => b.preparationFabrication) // Replace 'RelatedEntity' with the actual navigation property
-    .FirstOrDefaultAsync(b => b.Id == bon.Id);
+                .Include(b => b.preparationFabrication)
+                    .ThenInclude(b => b.Projet)
+                .FirstOrDefaultAsync(b => b.Id == bon.Id);
+
+            if (bonWithRelated == null)
+            {
+                throw new InvalidOperationException($"Failed to retrieve newly created bon with ID {bon.Id}");
+            }
+
+            // Create support material
             Matiere support = new Matiere
             {
-                ReferenceMP = bon.preparationFabrication.ReferenceArticleSup,
+                ReferenceMP = bonWithRelated.preparationFabrication.ReferenceArticleSup,
                 TypeId = 3,
                 DateAffection = DateTime.Now,
-                QuantiteUtilise = (int)bon.QuantiteSupport,
+                QuantiteUtilise = (int)bonWithRelated.QuantiteSupport,
                 Pourcentage = 100,
             };
 
-            matieres.Add(support);
-            Console.WriteLine(_SageOm.CreeBonFabrication(
-                 bon,
-               _dbContext.ProjetDbo
-                     .Include(e => e.preparationFabrication)
-                     .FirstOrDefault(e => e.preparationFabrication.Id == bon.Pf_id)?
-                     .ReferenceClient
 
-            , matieres));
+            matieres.Add(support);
+
+            // Get the reference client cleanly
+            var projet = await _dbContext.ProjetDbo
+                .Include(e => e.preparationFabrication)
+                .FirstOrDefaultAsync(e => e.preparationFabrication.Id == bonWithRelated.Pf_id);
+
+            string referenceClient = projet?.ReferenceClient ?? string.Empty;
+
+            if (!projet.HasNomenclature)
+            {
+                await _SageOm.CreateNomenclature(projet.ReferenceArticle, matieres);
+                foreach (Matiere matiere in matieres)
+                {
+                    _dbContext.NomenclatureDbo.Add(new Nomenclature
+                    {
+                        ReferenceMP = matiere.ReferenceMP,
+                        ProjetId = projet.Id,
+                        Type = matiere.TypeId,
+                    });
+                    _dbContext.SaveChanges();
+                }
+                projet.HasNomenclature = true;
+                await _dbContext.SaveChangesAsync();
+            }
+
+
+            // Capture the result instead of writing to console
+            var result = _SageOm.CreeBonFabrication(bonWithRelated, referenceClient, matieres);
+
+            // Log or handle the result appropriately
+            // logger.Log(result);
+
             return matieres;
         }
         public async Task StoreFile(BonFile bonFile)

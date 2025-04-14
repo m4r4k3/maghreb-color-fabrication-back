@@ -78,9 +78,9 @@ namespace FabricationMaghrebColor.Controllers
                 foreach (Matiere matiere in matieres)
                 {
                     matiere.Bon_id = bon.Id;
-                    matiere.DateAffection = DateTime.Now;
                     _serviceMatiere.creation(matiere);
                 }
+                
 
                 string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/bf");
 

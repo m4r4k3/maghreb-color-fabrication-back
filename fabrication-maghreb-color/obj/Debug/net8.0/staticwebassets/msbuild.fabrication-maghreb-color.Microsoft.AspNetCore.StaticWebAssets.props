@@ -1080,30 +1080,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\d195673b-1364-4de5-9cce-22514206b29e.png'))">
       <SourceType>Package</SourceType>
       <SourceId>fabrication-maghreb-color</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/fabrication-maghreb-color</BasePath>
-      <RelativePath>uploads/bf/08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0u1f6izuc5</Fingerprint>
-      <Integrity>+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\08e16045-52cd-42eb-b1f3-ad2ab3ae090b.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\54fcc431-1d55-4790-bca1-75af40bc39b7.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>fabrication-maghreb-color</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/fabrication-maghreb-color</BasePath>
-      <RelativePath>uploads/bf/54fcc431-1d55-4790-bca1-75af40bc39b7.png</RelativePath>
+      <RelativePath>uploads/bf/d195673b-1364-4de5-9cce-22514206b29e.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1114,32 +1096,14 @@
       <Integrity>v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\54fcc431-1d55-4790-bca1-75af40bc39b7.png'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\d195673b-1364-4de5-9cce-22514206b29e.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\8094816e-fdd2-4e37-963f-0d6eaf15da7c.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\e3da5c13-3a9a-442a-b4a3-d111ec995c7d.png'))">
       <SourceType>Package</SourceType>
       <SourceId>fabrication-maghreb-color</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/fabrication-maghreb-color</BasePath>
-      <RelativePath>uploads/bf/8094816e-fdd2-4e37-963f-0d6eaf15da7c.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>pmtlz5j99u</Fingerprint>
-      <Integrity>v8+6iPYE+pfh2iNkiWmZ6ymYEMth6wBP3nUQeHtNrSU=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\8094816e-fdd2-4e37-963f-0d6eaf15da7c.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>fabrication-maghreb-color</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/fabrication-maghreb-color</BasePath>
-      <RelativePath>uploads/bf/8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png</RelativePath>
+      <RelativePath>uploads/bf/e3da5c13-3a9a-442a-b4a3-d111ec995c7d.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -1150,25 +1114,7 @@
       <Integrity>+Erx/Bn7+NCVWmLhJ/qYy+twnlE1nbi+IgvftTa0Vb0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\8d835254-7d5c-41ce-bd56-cab8ac9a7f3a.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\projet\0df854ee-1cc3-4600-ad5e-2644d9417889.docx'))">
-      <SourceType>Package</SourceType>
-      <SourceId>fabrication-maghreb-color</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/fabrication-maghreb-color</BasePath>
-      <RelativePath>uploads/projet/0df854ee-1cc3-4600-ad5e-2644d9417889.docx</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>50vpki5g97</Fingerprint>
-      <Integrity>yyr5zf/SK56YpQzN0wAX7gdCfoS4gadCQEigLlAYjxs=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\projet\0df854ee-1cc3-4600-ad5e-2644d9417889.docx'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bf\e3da5c13-3a9a-442a-b4a3-d111ec995c7d.png'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

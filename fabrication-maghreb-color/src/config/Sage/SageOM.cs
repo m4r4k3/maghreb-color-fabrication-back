@@ -1,7 +1,9 @@
 using System;
 using fabrication_maghreb_color.Infrastructure.model;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Configuration; // Add this using directive
 using Objets100cLib;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace fabrication_maghreb_color.Config.Sage
 {
@@ -67,6 +69,23 @@ namespace fabrication_maghreb_color.Config.Sage
                 return "";
             }
         }
+        public async Task CreateNomenclature(string projetRef, List<Matiere> matieres)
+        {
+            var mainArticle = BaseCial.FactoryArticle.ReadReference(projetRef); // Main article
+            Console.WriteLine("Main Article : " + projetRef.ToString());
+            foreach (Matiere matiere in matieres)
+            {
+                var compArticle = BaseCial.FactoryArticle.ReadReference(matiere.ReferenceMP);
+                IBOArticleNomenclature3 nomenclature = (IBOArticleNomenclature3)mainArticle.FactoryArticleNomenclature.Create();
+
+                nomenclature.ArticleComposant = compArticle;
+                nomenclature.NO_Qte = matiere.QuantiteUtilise;
+                nomenclature.NO_Type = ComposantType.ComposantTypeVariable;
+                nomenclature.Write();
+                Console.WriteLine("Matiere Composant :" + matiere.ReferenceMP.ToString());
+            }
+            mainArticle.Write();
+        }
         private string GenerateArticleReference()
         {
             try
@@ -98,61 +117,75 @@ namespace fabrication_maghreb_color.Config.Sage
 
 
 
-        public string CreeBonFabrication(BonFabrication bon, string client , List<Matiere> matieres)
+        public string CreeBonFabrication(BonFabrication bon, string client, List<Matiere> matieres)
         {
-            try
+        try
+{
+    _logger.LogInformation("Starting document creation for stock fabrication.");
+
+    // Create the process document for Stock Fabrication
+    IPMDocument mProcessDoc = BaseCial.CreateProcess_Document(DocumentType.DocumentTypeStockFabrication);
+    _logger.LogInformation("Process document created with type: DocumentTypeStockFabrication.");
+
+    // Assign a document number
+    mProcessDoc.Document.DO_Piece = bon.Id.ToString();
+
+    // Add the main article (the fabricated product) — Sage will auto-create nomenclature component lines
+    IBOArticle3 mainArticle = BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle);
+    IBODocumentStockLigne3 mLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(mainArticle, (double)bon.quantite);
+
+    _logger.LogInformation($"Added main fabrication article: {mainArticle.AR_Ref} with quantity {bon.quantite}.");
+
+    // Loop over all document lines to update component quantities
+    foreach (IBODocumentStockLigne3 ligne in mProcessDoc.Document.FactoryDocumentLigne.List)
+    {
+        // Check if it's a component line (nomenclature child)
+        if (ligne.ArticleCompose != null)
+        {
+            string componentRef = ligne.Article.AR_Ref;
+            Console.WriteLine($"Processing component: {componentRef}.");
+            var matiere = matieres.FirstOrDefault(e => e.ReferenceMP == componentRef);
+
+            if (matiere != null)
             {
-                _logger.LogInformation("Starting document creation for stock fabrication.");
-                IPMDocument mProcessDoc = BaseCial.CreateProcess_Document(DocumentType.DocumentTypeStockFabrication);
-                _logger.LogInformation("Process document created with type: DocumentTypeStockFabrication.");
+                double oldQuantity = ligne.DL_Qte;
+                ligne.SetDefaultArticle(ligne.Article, matiere.QuantiteUtilise);
+                ligne.Write();
 
-                mProcessDoc.Document.DO_Piece = bon.Id.ToString();
-                //IBODocumentStock3 bonSage = (IBODocumentStock3)BaseCial.FactoryDocumentStock.CreateType(DocumentType.DocumentTypeStockFabrication);
-                //bonSage.DO_Date = bon.DateCreation;
-                //_logger.LogInformation($"Created stock document with Date: {bon.DateCreation}, Piece ID: {bon.Id}");
-
-                // Adding the first article (product being fabricated)
-                IBODocumentStockLigne3 mLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
-                
-                mLig.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle), (double)bon.preparationFabrication.Projet.quantite);
-                mLig.ArticleCompose = BaseCial.FactoryArticle.ReadReference(bon.preparationFabrication.Projet.ReferenceArticle);
-                mLig.Write();
-                _logger.LogInformation($"Added article for fabrication: {bon.preparationFabrication.Projet.ReferenceArticle} with quantity {bon.preparationFabrication.Projet.quantite}");
-
-                // MP000001 is a consumed article, so we track its consumption
-                
-                // foreach ( Matiere materiel in matieres)
-                // {
-                //     IBODocumentStockLigne3 cLig = (IBODocumentStockLigne3)mProcessDoc.AddArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP),(double) materiel.QuantiteUtilise);
-                //     cLig.SetDefaultArticle(BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP), (double)materiel.QuantiteUtilise);
-                //     cLig.ArticleCompose = BaseCial.FactoryArticle.ReadReference(materiel.ReferenceMP);
-                //     cLig.Write();
-                    //     _logger.LogInformation($"Added consumed article: {materiel.ReferenceMP} with quantity {materiel.QuantiteUtilise}");
-                // }
-             
-                _logger.LogInformation("Added consumed article: MP000001 with quantity 69.");
-
-
-                //bonSage.WriteDefault();
-                _logger.LogInformation("Stock document finalized and written.");
-
-                // Process the document if ready
-                if (mProcessDoc.CanProcess)
-                {
-                    mProcessDoc.Process();
-                    _logger.LogInformation("Document processed successfully.");
-                    return mProcessDoc.Document.DO_Piece
-;
-                }
-
-                _logger.LogWarning("Document cannot be processed.");
-                return "";
+                Console.WriteLine($"✔ Updated {componentRef} quantity from {oldQuantity} to {matiere.QuantiteUtilise}.");
             }
-            catch (Exception ex)
+            else
             {
-                _logger.LogError($"Error occurred: {ex.Message}. Stack Trace: {ex.StackTrace}");
-                return "";
+                Console.WriteLine($"⚠ Component {componentRef} not found in your 'matieres' list — quantity left as {ligne.DL_Qte}.");
             }
+        }
+        else
+        {
+            // Log for non-component lines (main articles)
+            //Console.WriteLine($"Line {ligne.AR_Ref} is not a component (probably the main article). Skipped.");
+        }
+    }
+
+    _logger.LogInformation("All component lines reviewed and updated where matching 'matieres' were found.");
+
+    // Final document processing
+    if (mProcessDoc.CanProcess)
+    {
+        mProcessDoc.Process();
+        _logger.LogInformation($"Document {mProcessDoc.Document.DO_Piece} processed successfully.");
+        return mProcessDoc.Document.DO_Piece;
+    }
+    else
+    {
+        _logger.LogWarning("Document cannot be processed. Check for missing components or incomplete data.");
+        return "";
+    }
+}
+catch (Exception ex)
+{
+    _logger.LogError($"Error occurred: {ex.Message}. Stack Trace: {ex.StackTrace}");
+    return "";
+}
 
         }
     }

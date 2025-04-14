@@ -195,6 +195,11 @@
         "IsRequired": false
       },
       {
+        "Name": "bon.preparationFabrication.Projet.HasNomenclature",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
         "Name": "bon.preparationFabrication.Projet.NumeroDossier",
         "Type": "System.String",
         "IsRequired": false
@@ -292,6 +297,11 @@
       {
         "Name": "bon.preparationFabrication.Projet.ChargeCompte.Name",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.Nomenclatures",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Nomenclature, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {
@@ -433,6 +443,11 @@
         "IsRequired": false
       },
       {
+        "Name": "HasNomenclature",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
         "Name": "NumeroDossier",
         "Type": "System.String",
         "IsRequired": false
@@ -525,6 +540,11 @@
       {
         "Name": "preparationFabrication.Projet.ReferenceArticle",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.HasNomenclature",
+        "Type": "System.Boolean",
         "IsRequired": false
       },
       {
@@ -628,6 +648,11 @@
         "IsRequired": false
       },
       {
+        "Name": "preparationFabrication.Projet.Nomenclatures",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Nomenclature, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
         "Name": "preparationFabrication.Projet.hasPreparation",
         "Type": "System.Boolean",
         "IsRequired": false
@@ -670,6 +695,11 @@
       {
         "Name": "ChargeCompte.Name",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nomenclatures",
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Nomenclature, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
       },
       {

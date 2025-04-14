@@ -32,7 +32,7 @@ namespace fabrication_maghreb_color.application.service
                     using (var stream = new FileStream(path, FileMode.Create))
                     {
                         await descriptionFile.CopyToAsync(stream);
-                        projet.Description =  "/uploads/projet/" + uniqueFileName  ;
+                        projet.Description = "/uploads/projet/" + uniqueFileName;
                         projet.TypeDescription = 1;
                     }
                 }
@@ -58,8 +58,10 @@ namespace fabrication_maghreb_color.application.service
             if (type.HasValue)
             {
                 return _dbContext.ProjetDbo
+
                     .Include(p => p.preparationFabrication)
                     .Include(p => p.Type)
+
                     .Include(p => p.ChargeCompte)
                     .Where(e => e.TypeProjet == type.Value)
                     .ToList();
@@ -116,5 +118,6 @@ namespace fabrication_maghreb_color.application.service
 
             _dbContext.SaveChanges();
         }
+
     }
 }
