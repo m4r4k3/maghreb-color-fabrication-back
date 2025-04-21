@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using fabrication_maghreb_color.application.service;
+using fabrication_maghreb_color.Application.Services;
+using fabrication_maghreb_color.Application.Services;
 
 namespace FabricationMaghrebColor.Controllers
 {

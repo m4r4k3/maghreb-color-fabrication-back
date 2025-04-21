@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using fabrication_maghreb_color.Infrastructure.model;
-using fabrication_maghreb_color.application.service;
+using fabrication_maghreb_color.Application.Services;
 
 namespace fabrication_maghreb_color.api.controller
 {
@@ -21,11 +21,11 @@ namespace fabrication_maghreb_color.api.controller
 
         }
         [HttpGet]
-        public IActionResult Get([FromQuery] int? type)
+        public IActionResult Get()
         {
             try
             {
-                return Ok(_service.GetAll(type));
+                return Ok(_service.GetAll());
             }
             catch (Exception err)
             {
@@ -41,7 +41,7 @@ namespace fabrication_maghreb_color.api.controller
 
 
 
-            if (await _service.create(projet, descriptionFile))
+            if (await _service.Create(projet, descriptionFile))
             {
                 return Ok(new
                 {

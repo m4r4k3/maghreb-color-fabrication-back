@@ -1,0 +1,26 @@
+2025-04-21 09:37:51.384 +02:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/commande - null null
+2025-04-21 09:37:51.425 +02:00 [INF] CORS policy execution successful.
+2025-04-21 09:37:51.427 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.Api.controller.CommandeController.GetAllCommandes (fabrication-maghreb-color)'
+2025-04-21 09:37:51.431 +02:00 [INF] Route matched with {action = "GetAllCommandes", controller = "Commande"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[fabrication_maghreb_color.Infrastructure.model.Document]] GetAllCommandes() on controller fabrication_maghreb_color.Api.controller.CommandeController (fabrication-maghreb-color).
+2025-04-21 09:37:51.509 +02:00 [INF] Executed DbCommand (52ms) [Parameters=[@__type_0='?' (DbType = Int16)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[DO_Piece], [f].[DO_Tiers], [f].[DO_Date], [f].[DO_Statut], [f].[DO_Type], [f0].[cbMarq], [f0].[ar_ref], [f0].[DO_Piece], [f0].[dl_tnomencl], [f0].[dl_qte]
+FROM [F_DOCENTETE] AS [f]
+LEFT JOIN [F_DOCLIGNE] AS [f0] ON [f].[DO_Piece] = [f0].[DO_Piece]
+WHERE [f].[DO_Type] = @__type_0
+2025-04-21 09:37:51.517 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Document, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-21 09:37:51.522 +02:00 [INF] Executed action fabrication_maghreb_color.Api.controller.CommandeController.GetAllCommandes (fabrication-maghreb-color) in 85.5157ms
+2025-04-21 09:37:51.525 +02:00 [INF] Request starting HTTP/1.1 GET http://192.168.1.247:5254/api/commande - null null
+2025-04-21 09:37:51.527 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.Api.controller.CommandeController.GetAllCommandes (fabrication-maghreb-color)'
+2025-04-21 09:37:51.536 +02:00 [INF] CORS policy execution successful.
+2025-04-21 09:37:51.541 +02:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/commande - 200 null application/json; charset=utf-8 157.1679ms
+2025-04-21 09:37:51.543 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.Api.controller.CommandeController.GetAllCommandes (fabrication-maghreb-color)'
+2025-04-21 09:37:51.557 +02:00 [INF] Route matched with {action = "GetAllCommandes", controller = "Commande"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[fabrication_maghreb_color.Infrastructure.model.Document]] GetAllCommandes() on controller fabrication_maghreb_color.Api.controller.CommandeController (fabrication-maghreb-color).
+2025-04-21 09:37:51.564 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__type_0='?' (DbType = Int16)], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[DO_Piece], [f].[DO_Tiers], [f].[DO_Date], [f].[DO_Statut], [f].[DO_Type], [f0].[cbMarq], [f0].[ar_ref], [f0].[DO_Piece], [f0].[dl_tnomencl], [f0].[dl_qte]
+FROM [F_DOCENTETE] AS [f]
+LEFT JOIN [F_DOCLIGNE] AS [f0] ON [f].[DO_Piece] = [f0].[DO_Piece]
+WHERE [f].[DO_Type] = @__type_0
+2025-04-21 09:37:51.574 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Document, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-21 09:37:51.579 +02:00 [INF] Executed action fabrication_maghreb_color.Api.controller.CommandeController.GetAllCommandes (fabrication-maghreb-color) in 16.3919ms
+2025-04-21 09:37:51.584 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.Api.controller.CommandeController.GetAllCommandes (fabrication-maghreb-color)'
+2025-04-21 09:37:51.587 +02:00 [INF] Request finished HTTP/1.1 GET http://192.168.1.247:5254/api/commande - 200 null application/json; charset=utf-8 62.5269ms

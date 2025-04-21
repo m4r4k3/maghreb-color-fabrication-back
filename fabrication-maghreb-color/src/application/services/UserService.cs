@@ -7,7 +7,7 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using fabrication_maghreb_color.Infrastructure.model;
 
-namespace fabrication_maghreb_color.application.service
+namespace fabrication_maghreb_color.Application.Services
 {
     public class UserService
     {

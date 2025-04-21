@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using fabrication_maghreb_color.application.service;
+using fabrication_maghreb_color.Application.Services;
+using fabrication_maghreb_color.Infrastructure.model;
 
 namespace FabricationMaghrebColor.Controllers
 {
@@ -12,6 +13,7 @@ namespace FabricationMaghrebColor.Controllers
         public CompteController(CompteService service, ILogger<CompteController> logger)
         {
             _service = service;
+            _logger = logger ;
         }
 
         [HttpGet("clients")]
@@ -19,7 +21,22 @@ namespace FabricationMaghrebColor.Controllers
         {
             try
             {
-                return Ok(_service.getAllClients());
+                return Ok(_service.GetAllClients());
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.ToString());
+
+                return BadRequest(new { status = "error", message = "Error occured" });
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Compte compte)
+        {
+            try
+            {
+                await _service.CreateClient(compte);
+                return Ok();
             }
             catch (Exception err)
             {

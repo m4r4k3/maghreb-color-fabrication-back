@@ -1,23 +1,32 @@
-using fabrication_maghreb_color.Config.Contexts;
+using fabrication_maghreb_color.Infrastructure.Repositories;
 using fabrication_maghreb_color.Infrastructure.model;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using fabrication_maghreb_color.application.Interfaces;
 
-
-namespace fabrication_maghreb_color.application.service
+namespace fabrication_maghreb_color.Application.Services
 {
     public class MatiereService
     {
-        private readonly MainContext _context;
+        private readonly IMatiereRepository _repository;
         private readonly ILogger<MatiereService> _logger;
-        public MatiereService(MainContext context, ILogger<MatiereService> logger)
+
+        public MatiereService(IMatiereRepository repository, ILogger<MatiereService> logger)
         {
-            _context = context;
+            _repository = repository;
             _logger = logger;
         }
-        public void creation(Matiere matiere)
+
+        public void Creation(Matiere matiere)
         {
-            _context.MatiereDbo.Add(matiere);
-            _context.SaveChanges() ;
+            try
+            {
+                _repository.Create(matiere);
+                _logger.LogInformation("Matiere created successfully.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error creating Matiere: {ex.Message}");
+            }
         }
     }
 }

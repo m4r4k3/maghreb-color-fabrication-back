@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using fabrication_maghreb_color.application.service;
+using fabrication_maghreb_color.Application.Services;
 using fabrication_maghreb_color.Infrastructure.model;
 using System.Text.Json;
 using fabrication_maghreb_color.Infrastructure.dto;
@@ -39,6 +39,19 @@ namespace FabricationMaghrebColor.Controllers
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
+         [HttpGet("bon")]
+        public IActionResult GetBon()
+        {
+            try
+            {
+                return Ok(_service.GetAllBon());
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.ToString());
+                return BadRequest(new { status = "error", message = "Error occured" });
+            }
+        }
         [HttpPost("preparation")]
         public async Task<IActionResult> CreatePrepartion([FromBody] PreparationRequest requestData)
         {
@@ -47,13 +60,13 @@ namespace FabricationMaghrebColor.Controllers
 
                 Decimal quantite = requestData.Quantite;
                 dynamic document = requestData.Document;
-                await _service.CreatePreparition(document);
+                await _service.CreatePreparation(document);
 
                 var updateData = new Dictionary<string, object>
                 {
                     { "quantite", quantite }
                 };
-                await _serviceProjet.updateProjet(document.Projet_Id, updateData);
+                await _serviceProjet.UpdateProjet(document.Projet_Id, updateData);
 
                 return Ok(new
                 {
@@ -78,7 +91,7 @@ namespace FabricationMaghrebColor.Controllers
                 foreach (Matiere matiere in matieres)
                 {
                     matiere.Bon_id = bon.Id;
-                    _serviceMatiere.creation(matiere);
+                    _serviceMatiere.Creation(matiere);
                 }
                 
 
@@ -120,7 +133,23 @@ namespace FabricationMaghrebColor.Controllers
                 return BadRequest(new { status = "error", message = "Error occured" });
             }
         }
-
+        [HttpPost("finition")]
+        public async Task<IActionResult> CreateFinition ([FromBody] FinitionDto requestData)
+        {
+            try
+            {
+                await _service.Finir(requestData);
+                return Ok(new
+                {
+                    message = "Finition créer"
+                });
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.ToString());
+                return BadRequest(new { status = "error", message = "Error occured" });
+            }
+        }
 
     }
 }

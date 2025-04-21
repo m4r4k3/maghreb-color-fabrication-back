@@ -1,57 +1,59 @@
-using fabrication_maghreb_color.Config.Contexts;
 using fabrication_maghreb_color.Config.Sage;
 using fabrication_maghreb_color.Infrastructure.model;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
+using fabrication_maghreb_color.application.repository;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using fabrication_maghreb_color.application.Interfaces;
+using fabrication_maghreb_color.Infrastructure.dto;
 
-
-namespace fabrication_maghreb_color.application.service
+namespace fabrication_maghreb_color.Application.Services
 {
 
-    public class PreparationFabricationService
+
+    public class PreparationFabricationService : IPreparationFabricationService
     {
-        private readonly MainContext _dbContext;
-        public readonly SageOM _SageOm;
+        private readonly IFabricationRepository _repository;
+        private readonly IMachineRepository _machineRepository;
+        private readonly SageOM _sageOm;
 
-        public PreparationFabricationService(MainContext context, SageOM sageOm)
+        public PreparationFabricationService(
+            IFabricationRepository repository,
+            SageOM sageOm, 
+            IMachineRepository machineRepository)
         {
-            _dbContext = context;
-            _SageOm = sageOm;
-
+            _repository = repository;
+            _machineRepository = machineRepository;
+            _sageOm = sageOm;
         }
+
+        public List<BonFabrication> GetAllBon()
+        {
+            return _repository.GetAllBon();
+        }
+
         public List<PreparationFabrication> GetAllPreparation()
         {
-            return _dbContext.PreparationFabricationsDbo
-      .Include(e => e.Projet)
-                              .ThenInclude(e => e.Nomenclatures)
-      .Include(e => e.Projet)
-
-          .ThenInclude(p => p.Type)
-      .Include(e => e.Bons)
-          .ThenInclude(b => b.files)
-      .Include(e => e.Bons)
-          .ThenInclude(b => b.matieres)
-              .ThenInclude(m => m.Type)
-      .ToList();
-
+            return _repository.GetAllPreparation();
         }
-        public async Task CreatePreparition(PreparationFabrication preparation)
+
+        public async Task CreatePreparation(PreparationFabrication preparation)
         {
-
-            _dbContext.PreparationFabricationsDbo.Add(preparation);
-            await _dbContext.SaveChangesAsync();
+            await _repository.CreatePreparation(preparation);
         }
+
         public async Task<List<Matiere>> CreateBon(BonFabrication bon, List<Matiere> matieres)
         {
-            // Add the bon and save
-            _dbContext.BonFabricationDbo.Add(bon);
-            await _dbContext.SaveChangesAsync();
+            PreparationFabrication preparation = await _repository.GetPreparationById(bon.Pf_id);
+            if (preparation.Projet.quantite - preparation.quantiteConsomme - bon.quantite < 0)
+            {
+                throw new InvalidOperationException($"Insufficient quantity available for preparation with ID {bon.Pf_id}.");
+            }
+            // Create the bon
+            await _repository.CreateBon(bon);
 
             // Fetch related data
-            var bonWithRelated = await _dbContext.BonFabricationDbo
-                .Include(b => b.preparationFabrication)
-                    .ThenInclude(b => b.Projet)
-                .FirstOrDefaultAsync(b => b.Id == bon.Id);
+            var bonWithRelated = await _repository.GetBonWithRelatedData(bon.Id);
 
             if (bonWithRelated == null)
             {
@@ -59,56 +61,66 @@ namespace fabrication_maghreb_color.application.service
             }
 
             // Create support material
-            Matiere support = new Matiere
+            matieres.Add(new Matiere
             {
                 ReferenceMP = bonWithRelated.preparationFabrication.ReferenceArticleSup,
                 TypeId = 3,
                 DateAffection = DateTime.Now,
                 QuantiteUtilise = (int)bonWithRelated.QuantiteSupport,
                 Pourcentage = 100,
-            };
+            });
 
-
-            matieres.Add(support);
-
-            // Get the reference client cleanly
-            var projet = await _dbContext.ProjetDbo
-                .Include(e => e.preparationFabrication)
-                .FirstOrDefaultAsync(e => e.preparationFabrication.Id == bonWithRelated.Pf_id);
-
-            string referenceClient = projet?.ReferenceClient ?? string.Empty;
+            Projet projet = bonWithRelated.preparationFabrication.Projet;
 
             if (!projet.HasNomenclature)
             {
-                await _SageOm.CreateNomenclature(projet.ReferenceArticle, matieres);
+                // Create nomenclature in Sage
+                await _sageOm.CreateNomenclature(projet.ReferenceArticle, matieres);
+
+                // Add nomenclature entries to database
                 foreach (Matiere matiere in matieres)
                 {
-                    _dbContext.NomenclatureDbo.Add(new Nomenclature
+                    await _repository.AddNomenclature(new Nomenclature
                     {
                         ReferenceMP = matiere.ReferenceMP,
                         ProjetId = projet.Id,
                         Type = matiere.TypeId,
                     });
-                    _dbContext.SaveChanges();
                 }
-                projet.HasNomenclature = true;
-                await _dbContext.SaveChangesAsync();
+
+                // Update project's HasNomenclature flag
+                await _repository.UpdateProjectHasNomenclature(projet.Id);
             }
 
-
-            // Capture the result instead of writing to console
-            var result = _SageOm.CreeBonFabrication(bonWithRelated, referenceClient, matieres);
-
-            // Log or handle the result appropriately
-            // logger.Log(result);
-
+            // Return the updated list of materials
             return matieres;
         }
+
         public async Task StoreFile(BonFile bonFile)
         {
-            _dbContext.BonFileDbo.Add(bonFile);
-            await _dbContext.SaveChangesAsync();
+            await _repository.StoreFile(bonFile);
         }
+        public async Task Finir(FinitionDto finition)
+        {
+            var bon = await _repository.GetBonWithRelatedData(finition.BonId);
+            if (bon == null)
+            {
+                throw new InvalidOperationException($"Bon with ID {finition.BonId} not found.");
+            }
+            if(bon.Fini) {
+                throw new InvalidOperationException($"Bon with ID {finition.BonId} is already finished.");
+            }
 
+            bon.Fini = true;
+            bon.QuantiteFini = finition.QuantiteFini;
+            bon.NombreBobins = finition.NombreBobins;
+
+            await _repository.UpdateBon(bon);
+            bon.machine= await _machineRepository.MachineById(bon.MachineId);
+
+            
+            await _sageOm.CreeBonFabrication(bon, bon.preparationFabrication.Projet.ReferenceArticle, bon.matieres);
+
+        }
     }
 }

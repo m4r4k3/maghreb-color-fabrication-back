@@ -1,21 +1,21 @@
-using fabrication_maghreb_color.Config.Contexts;
+using fabrication_maghreb_color.Infrastructure.Repositories;
 using fabrication_maghreb_color.Infrastructure.model;
-using Microsoft.EntityFrameworkCore;
+using fabrication_maghreb_color.application.Interfaces;
 
-
-namespace fabrication_maghreb_color.application.service
+namespace fabrication_maghreb_color.Application.Services
 {
-
     public class MachineService
     {
-        private readonly SageContext _dbContext;
-        public MachineService(SageContext context)
+        private readonly IMachineRepository _repository;
+
+        public MachineService(IMachineRepository repository)
         {
-            _dbContext = context;
+            _repository = repository;
         }
+
         public List<ChampLibre> GetAllMachines()
         {
-            return _dbContext.Machine.ToList();
+            return _repository.GetAllMachines();
         }
     }
 }

@@ -6,6 +6,7 @@ namespace fabrication_maghreb_color.Config.Contexts
     public class SageContext : DbContext
     {
         public DbSet<SageArticle> SageArticleDbo { get; set; }
+        public DbSet<Document> Documents { get; set; }
         public DbSet<DocLigne> DocLigneDbo { get; set; }
         private DbSet<ChampLibre> _ChampLibreDbo { get; set; }
         public IQueryable<ChampLibre> Machine => _ChampLibreDbo.Where(c => c.N_File == 35);

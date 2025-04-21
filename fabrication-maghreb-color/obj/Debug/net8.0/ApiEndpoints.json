@@ -42,9 +42,55 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "fabrication_maghreb_color.Api.controller.CommandeController",
+    "Method": "GetAllCommandes",
+    "RelativePath": "api/Commande",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Document, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.CompteController",
+    "Method": "Post",
+    "RelativePath": "api/Compte",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "compte",
+        "Type": "fabrication_maghreb_color.Infrastructure.model.Compte",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FabricationMaghrebColor.Controllers.CompteController",
     "Method": "Get",
     "RelativePath": "api/Compte/clients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.FabricationController",
+    "Method": "GetBon",
+    "RelativePath": "api/Fabrication/bon",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -62,11 +108,6 @@
       {
         "Name": "bon.Id",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "bon.NumPiece",
-        "Type": "System.String",
         "IsRequired": false
       },
       {
@@ -97,6 +138,26 @@
       {
         "Name": "bon.DateCreation",
         "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.QuantiteFini",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.NombreBobins",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.Fini",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.Deleted",
+        "Type": "System.Boolean",
         "IsRequired": false
       },
       {
@@ -155,6 +216,16 @@
         "IsRequired": false
       },
       {
+        "Name": "bon.preparationFabrication.QuantiteSupportTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.LaizeTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "bon.preparationFabrication.Projet.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -176,12 +247,12 @@
       },
       {
         "Name": "bon.preparationFabrication.Projet.DateFin",
-        "Type": "System.DateTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
         "Name": "bon.preparationFabrication.Projet.DateLivraisonPrev",
-        "Type": "System.DateTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -205,23 +276,23 @@
         "IsRequired": false
       },
       {
-        "Name": "bon.preparationFabrication.Projet.chargeCompteId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "bon.preparationFabrication.Projet.TypeDescription",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "bon.preparationFabrication.Projet.TypeProjet",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
         "Name": "bon.preparationFabrication.Projet.quantite",
         "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.chargeCompteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.TypeProjet",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
@@ -252,6 +323,16 @@
       {
         "Name": "bon.preparationFabrication.Projet.preparationFabrication.Projet_Id",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.QuantiteSupportTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "bon.preparationFabrication.Projet.preparationFabrication.LaizeTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -344,6 +425,22 @@
   },
   {
     "ContainingType": "FabricationMaghrebColor.Controllers.FabricationController",
+    "Method": "CreateFinition",
+    "RelativePath": "api/Fabrication/finition",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestData",
+        "Type": "fabrication_maghreb_color.Infrastructure.dto.FinitionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.FabricationController",
     "Method": "GetPrepartion",
     "RelativePath": "api/Fabrication/preparation",
     "HttpMethod": "GET",
@@ -385,13 +482,7 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "type",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -424,12 +515,12 @@
       },
       {
         "Name": "DateFin",
-        "Type": "System.DateTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
         "Name": "DateLivraisonPrev",
-        "Type": "System.DateTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -453,23 +544,23 @@
         "IsRequired": false
       },
       {
-        "Name": "chargeCompteId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "TypeDescription",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TypeProjet",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
         "Name": "quantite",
         "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "chargeCompteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeProjet",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
@@ -503,6 +594,16 @@
         "IsRequired": false
       },
       {
+        "Name": "preparationFabrication.QuantiteSupportTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.LaizeTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "preparationFabrication.Projet.Id",
         "Type": "System.Int32",
         "IsRequired": false
@@ -524,12 +625,12 @@
       },
       {
         "Name": "preparationFabrication.Projet.DateFin",
-        "Type": "System.DateTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
         "Name": "preparationFabrication.Projet.DateLivraisonPrev",
-        "Type": "System.DateTime",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {
@@ -553,23 +654,23 @@
         "IsRequired": false
       },
       {
-        "Name": "preparationFabrication.Projet.chargeCompteId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "preparationFabrication.Projet.TypeDescription",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "preparationFabrication.Projet.TypeProjet",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
         "Name": "preparationFabrication.Projet.quantite",
         "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.chargeCompteId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.TypeProjet",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
@@ -600,6 +701,16 @@
       {
         "Name": "preparationFabrication.Projet.preparationFabrication.Projet_Id",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.QuantiteSupportTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.preparationFabrication.LaizeTheorique",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
       },
       {

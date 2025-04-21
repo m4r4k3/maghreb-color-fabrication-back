@@ -7,14 +7,21 @@ namespace fabrication_maghreb_color.Infrastructure.model
     [Table("F_DOCLIGNE")]
     public class DocLigne
     {
+
+        [Column("cbMarq")]
         [Key]
-        public string Do_piece { get; set; }
+        public int Id { get; set; }
+
         [Column("ar_ref")]
         public string Article { get; set; }
         [Column("dl_qte")]
-        public double quantite { get; set; }
+        public decimal quantite { get; set; }
         [Column("dl_tnomencl")]
-        public string isNomeclature { get; set; }
+        public short isNomeclature { get; set; }
+        [Column("DO_Piece")]
+        public string DocumentNumber { get; set; }
+        [ForeignKey("DocumentNumber")]
+        public virtual Document Document { get; set; }
     }
 }
 

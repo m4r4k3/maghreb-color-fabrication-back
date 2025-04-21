@@ -2,12 +2,15 @@ using System.Net;
 using System.Text;
 using System.Text.Json.Serialization;
 using fabrication_maghreb_color.Config.Contexts;
-using fabrication_maghreb_color.application.service;
+using fabrication_maghreb_color.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using fabrication_maghreb_color.Config.Sage;
 using Serilog;
+using fabrication_maghreb_color.application.Interfaces;
+using fabrication_maghreb_color.Infrastructure.Repositories;
+using fabrication_maghreb_color.application.repository;
 
 // Create the web application builder
 var builder = WebApplication.CreateBuilder(args);
@@ -43,6 +46,15 @@ configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: tr
 var key = Encoding.ASCII.GetBytes(configuration["AppSettings:JWT_KEY"]);
 
 // Register application services
+builder.Services.AddScoped<IProjetRepository, ProjetRepository>();
+builder.Services.AddScoped<IMachineRepository, MachineRepository>();
+builder.Services.AddScoped<IMatiereRepository, MatiereRepository>();
+builder.Services.AddScoped<ICompteRepository, CompteRepository>();
+builder.Services.AddScoped<IChargeCompteRepository, ChargeCompteRepository>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
+builder.Services.AddScoped<IFabricationRepository, FabricationRepository>();
+builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
+
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ProjetService>();
 builder.Services.AddScoped<ChargeCompteService>();
@@ -51,6 +63,8 @@ builder.Services.AddScoped<CompteService>();
 builder.Services.AddScoped<MatiereService>();
 builder.Services.AddScoped<PreparationFabricationService>();
 builder.Services.AddScoped<MachineService>();
+builder.Services.AddScoped<IDocumentService,DocumentService>();
+
 builder.Services.AddSingleton<SageOM>();
 
 // Add Swagger for API documentation

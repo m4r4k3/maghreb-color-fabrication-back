@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using fabrication_maghreb_color.Infrastructure.model;
-using fabrication_maghreb_color.application.service;
+using fabrication_maghreb_color.Application.Services;
 
 namespace fabrication_maghreb_color.api.controller
 {

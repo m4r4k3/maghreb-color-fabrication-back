@@ -1,32 +1,34 @@
-using fabrication_maghreb_color.Config.Contexts;
-using fabrication_maghreb_color.Config.Sage;
+using fabrication_maghreb_color.Infrastructure.Repositories;
 using fabrication_maghreb_color.Infrastructure.model;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using System.IO;
+using fabrication_maghreb_color.application.Interfaces;
+using fabrication_maghreb_color.Config.Sage;
 
-
-namespace fabrication_maghreb_color.application.service
+namespace fabrication_maghreb_color.Application.Services
 {
     public class ProjetService
     {
-        private readonly MainContext _dbContext;
+        private readonly IProjetRepository _projetRepository;
+        private readonly SageOM _sageOM;
         private readonly ILogger<ProjetService> _logger;
         public readonly IConfiguration? _configuration;
-        public readonly SageOM _sageOM;
-        public ProjetService(MainContext context, ILogger<ProjetService> logger, IConfiguration? configuration, SageOM sageOM)
+
+        public ProjetService(IProjetRepository projetRepository, ILogger<ProjetService> logger, IConfiguration? configuration, SageOM sageOM)
         {
-            _dbContext = context;
+            _projetRepository = projetRepository;
             _configuration = configuration;
             _sageOM = sageOM;
             _logger = logger;
         }
-        public async Task<bool> create(Projet projet, IFormFile descriptionFile)
+
+        public async Task<bool> Create(Projet projet, IFormFile descriptionFile)
         {
             try
             {
                 if (descriptionFile != null)
                 {
                     var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(descriptionFile.FileName)}";
-
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/projet", uniqueFileName);
 
                     using (var stream = new FileStream(path, FileMode.Create))
@@ -36,11 +38,13 @@ namespace fabrication_maghreb_color.application.service
                         projet.TypeDescription = 1;
                     }
                 }
-                TypeProjet type = _dbContext.TypeProjetDbo.Find(projet.TypeProjet);
+
+                TypeProjet type = _projetRepository.GetTypeById(projet.TypeProjet);
                 string intitule = type.Abrege + " " + projet.ReferenceClient + " " + projet.quantite;
-                projet.ReferenceArticle = _sageOM.CreateArticle(intitule, type.Reference);
-                _dbContext.ProjetDbo.Add(projet);
-                _dbContext.SaveChanges();
+                projet.ReferenceArticle = _sageOM.CreateArticle(intitule, type.Reference ,projet );
+
+                _projetRepository.Add(projet);
+                _projetRepository.SaveChanges();
                 return true;
             }
             catch (Exception err)
@@ -49,33 +53,20 @@ namespace fabrication_maghreb_color.application.service
                 return false;
             }
         }
+
         public List<TypeProjet> GetAllTypes()
         {
-            return _dbContext.TypeProjetDbo.ToList();
+            return _projetRepository.GetAllTypes();
         }
-        public List<Projet> GetAll(int? type)
+
+        public List<Projet> GetAll()
         {
-            if (type.HasValue)
-            {
-                return _dbContext.ProjetDbo
-
-                    .Include(p => p.preparationFabrication)
-                    .Include(p => p.Type)
-
-                    .Include(p => p.ChargeCompte)
-                    .Where(e => e.TypeProjet == type.Value)
-                    .ToList();
-            }
-            else
-            {
-                return _dbContext.ProjetDbo.Include(p => p.preparationFabrication)
-                    .Include(p => p.Type)
-                    .Include(p => p.ChargeCompte).ToList();
-            }
+            return _projetRepository.GetAll();
         }
-        public async Task updateProjet(int? id, Dictionary<string, object> updateValues)
+
+        public async Task UpdateProjet(int? id, Dictionary<string, object> updateValues)
         {
-            Projet projet = _dbContext.ProjetDbo.Include(p => p.preparationFabrication).FirstOrDefault(e => e.Id == id);
+            var projet = await _projetRepository.GetById(id ?? 0);
 
             if (projet == null)
             {
@@ -90,18 +81,14 @@ namespace fabrication_maghreb_color.application.service
                 var projectProperty = projet.GetType().GetProperty(propertyName);
                 if (projectProperty != null && projectProperty.CanWrite)
                 {
-
-                    // Handle nullable types properly
                     if (Nullable.GetUnderlyingType(projectProperty.PropertyType) != null)
                     {
-                        // If the property is nullable and value is null/empty, set it to null
                         if (string.IsNullOrEmpty(propertyValue))
                         {
                             projectProperty.SetValue(projet, null);
                         }
                         else
                         {
-                            // Convert to the underlying type of the nullable
                             var underlyingType = Nullable.GetUnderlyingType(projectProperty.PropertyType);
                             var convertedValue = Convert.ChangeType(propertyValue, underlyingType);
                             projectProperty.SetValue(projet, convertedValue);
@@ -109,15 +96,12 @@ namespace fabrication_maghreb_color.application.service
                     }
                     else
                     {
-                        // Handle non-nullable types as before
                         projectProperty.SetValue(projet, Convert.ChangeType(propertyValue, projectProperty.PropertyType));
                     }
-
                 }
             }
 
-            _dbContext.SaveChanges();
+            _projetRepository.SaveChanges();
         }
-
     }
 }

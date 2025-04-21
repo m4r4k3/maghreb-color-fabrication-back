@@ -14,7 +14,7 @@ namespace fabrication_maghreb_color.Infrastructure.model
 
         public string intitule { get; set; }
         [Column("ct_type")]
-        public Int16 type { get; set; }
+        public Int16 type { get; set; } = 0;
 
 
     }

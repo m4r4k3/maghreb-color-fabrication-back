@@ -1,17 +1,26 @@
-using fabrication_maghreb_color.Config.Contexts;
+using fabrication_maghreb_color.Infrastructure.Repositories;
 using fabrication_maghreb_color.Infrastructure.model;
+using fabrication_maghreb_color.application.Interfaces;
 
-namespace fabrication_maghreb_color.application.service
+namespace fabrication_maghreb_color.Application.Services
 {
     public class CompteService
     {
-        private readonly SageContext _dbContext;
-        public CompteService(SageContext context)
+        private readonly ICompteRepository _repository;
+
+        public CompteService(ICompteRepository repository)
         {
-            _dbContext = context;
+            _repository = repository;
         }
-        public List<Compte> getAllClients(){
-            return _dbContext.ComptetDbo.Where(e=>e.type == 0).ToList( );
+
+        public List<Compte> GetAllClients()
+        {
+            return _repository.GetAllClients();
+        }
+
+        public async Task CreateClient(Compte compte)
+        {
+            await _repository.CreateClient(compte);
         }
     }
 }
