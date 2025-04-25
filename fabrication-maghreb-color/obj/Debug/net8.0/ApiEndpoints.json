@@ -282,6 +282,11 @@
         "IsRequired": false
       },
       {
+        "Name": "bon.preparationFabrication.Projet.NumeroBC",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "bon.preparationFabrication.Projet.HasNomenclature",
         "Type": "System.Boolean",
         "IsRequired": false
@@ -560,6 +565,11 @@
         "IsRequired": false
       },
       {
+        "Name": "NumeroBC",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "HasNomenclature",
         "Type": "System.Boolean",
         "IsRequired": false
@@ -666,6 +676,11 @@
       },
       {
         "Name": "preparationFabrication.Projet.ReferenceArticle",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "preparationFabrication.Projet.NumeroBC",
         "Type": "System.String",
         "IsRequired": false
       },

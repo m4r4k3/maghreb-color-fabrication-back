@@ -47,41 +47,38 @@ namespace fabrication_maghreb_color.Config.Sage
             _logger.LogInformation("Connection closed.");
         }
 
-        public string CreateArticle(string description, string familyCode, Projet projet, chargeCompte charge)
+        public async Task<Dictionary<string, string>> CreateArticle(string description, string familyCode, Projet projet, chargeCompte charge)
         {
-            try
+
+            string reference = GenerateArticleReference(); // Automatically generate reference
+
+            IBOArticle3 article = (IBOArticle3)BaseCial.FactoryArticle.Create();
+
+            article.AR_Ref = reference;
+            article.AR_Design = description;
+            article.AR_Nomencl = NomenclatureType.NomenclatureTypeFabrication;
+            article.AR_SuiviStock = SuiviStockType.SuiviStockTypeCmup;
+
+            IBOFamille3 famille = BaseCial.FactoryFamille.ReadCode(FamilleType.FamilleTypeDetail, familyCode);
+            if (famille != null)
             {
-                string reference = GenerateArticleReference(); // Automatically generate reference
-
-                IBOArticle3 article = (IBOArticle3)BaseCial.FactoryArticle.Create();
-
-                article.AR_Ref = reference;
-                article.AR_Design = description;
-                article.AR_Nomencl = NomenclatureType.NomenclatureTypeFabrication;
-                article.AR_SuiviStock = SuiviStockType.SuiviStockTypeCmup;
-
-                IBOFamille3 famille = BaseCial.FactoryFamille.ReadCode(FamilleType.FamilleTypeDetail, familyCode);
-                if (famille != null)
-                {
-                    article.Famille = famille;  // Assign the family before saving
-                }
-                else
-                    throw new Exception("Invalid family code: " + familyCode);
-
-                article.Write(); // Save to database
-                CreerBonDeCommande(reference, projet, charge);
-
-                return reference;
+                article.Famille = famille;  // Assign the family before saving
             }
-            catch (Exception ex)
-            {
-                _logger.LogError("Error: " + ex.Message);
-                return "";
-            }
+            else
+                throw new Exception("Invalid family code: " + familyCode);
+
+            article.Write(); // Save to database
+            string numbBc = CreerBonDeCommande(reference, projet, charge);
+
+            return new Dictionary<string, string>
+{
+    { "Reference", reference },
+    { "NumeroBC", numbBc }
+};
+
         }
         public async Task CreateNomenclature(string projetRef, List<Matiere> matieres)
         {
-            Console.WriteLine("Main Article : " + projetRef.ToString());
             var mainArticle = BaseCial.FactoryArticle.ReadReference(projetRef); // Main article
             foreach (Matiere matiere in matieres)
             {
@@ -92,7 +89,6 @@ namespace fabrication_maghreb_color.Config.Sage
                 nomenclature.NO_Qte = (double)matiere.QuantiteUtilise;
                 nomenclature.NO_Type = ComposantType.ComposantTypeVariable;
                 nomenclature.Write();
-                Console.WriteLine("Matiere Composant :" + matiere.ReferenceMP.ToString());
             }
             mainArticle.Write();
         }
@@ -132,52 +128,46 @@ namespace fabrication_maghreb_color.Config.Sage
 
         public string CreerBonDeCommande(string codeArticle, Projet projet, chargeCompte chargecomp)
         {
-            try
+
+            // Création du process de document "Bon de Commande Client"
+            IPMDocument processusCommande = BaseCial.CreateProcess_Document(DocumentType.DocumentTypeVenteCommande);
+            IBODocumentVente3 bonCommande = (IBODocumentVente3)processusCommande.Document;
+
+            bonCommande.DO_Date = DateTime.Now;
+            bonCommande.DO_Ref = GenererReferenceBonCommande();
+
+            bonCommande.Collaborateur = BaseCpta.FactoryCollaborateur.ReadNomPrenom(chargecomp.nom, chargecomp.prenom);
+
+            IBOClient3 client = BaseCpta.FactoryClient.ReadNumero(projet.ReferenceClient);  // Remplace CLIENTCODE par le vrai code.
+            if (client == null)
             {
-                // Création du process de document "Bon de Commande Client"
-                IPMDocument processusCommande = BaseCial.CreateProcess_Document(DocumentType.DocumentTypeVenteCommande);
-                IBODocumentVente3 bonCommande = (IBODocumentVente3)processusCommande.Document;
-
-                bonCommande.DO_Date = DateTime.Now;
-                bonCommande.DO_Ref = GenererReferenceBonCommande();
-
-                bonCommande.Collaborateur = BaseCpta.FactoryCollaborateur.ReadNomPrenom(chargecomp.nom, chargecomp.prenom);
-
-                IBOClient3 client = BaseCpta.FactoryClient.ReadNumero(projet.ReferenceClient);  // Remplace CLIENTCODE par le vrai code.
-                if (client == null)
-                {
-                    _logger.LogError($"Client introuvable : CLIENTCODE");
-                    return "";
-                }
-                bonCommande.SetDefaultClient(client);
-                // Chargement de l'article
-                IBOArticle3 article = BaseCial.FactoryArticle.ReadReference(codeArticle);
-                if (article == null)
-                    throw new Exception("Article introuvable : " + codeArticle);
-
-                // Création de la ligne de commande
-                IBODocumentLigne3 ligneCommande = (IBODocumentLigne3)bonCommande.FactoryDocumentLigne.Create();
-                ligneCommande.SetDefaultArticle(article, (double)projet.quantite);
-                ligneCommande.Write();
-
-                // Validation via Process et non Write !
-                if (processusCommande.CanProcess)
-                {
-                    processusCommande.Process();
-                    _logger.LogInformation($"Bon de commande '{bonCommande.DO_Ref}' créé et validé.");
-                    return bonCommande.DO_Ref;
-                }
-                else
-                {
-                    _logger.LogError("Le bon de commande n'est pas valide : échec de validation (CanProcess = false).");
-                    return "";
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Erreur lors de la création du bon de commande : " + ex.Message);
+                _logger.LogError($"Client introuvable : CLIENTCODE");
                 return "";
             }
+            bonCommande.SetDefaultClient(client);
+            // Chargement de l'article
+            IBOArticle3 article = BaseCial.FactoryArticle.ReadReference(codeArticle);
+            if (article == null)
+                throw new Exception("Article introuvable : " + codeArticle);
+
+            // Création de la ligne de commande
+            IBODocumentLigne3 ligneCommande = (IBODocumentLigne3)bonCommande.FactoryDocumentLigne.Create();
+            ligneCommande.SetDefaultArticle(article, (double)projet.quantite);
+            ligneCommande.Write();
+
+            // Validation via Process et non Write !
+            if (processusCommande.CanProcess)
+            {
+                processusCommande.Process();
+                _logger.LogInformation($"Bon de commande '{bonCommande.DO_Piece}' créé et validé.");
+                return bonCommande.DO_Piece;
+            }
+            else
+            {
+                _logger.LogError("Le bon de commande n'est pas valide : échec de validation (CanProcess = false).");
+                return "";
+            }
+
         }
 
 
@@ -266,7 +256,7 @@ namespace fabrication_maghreb_color.Config.Sage
                     if (matiere != null)
                     {
                         double oldQuantity = ligne.DL_Qte;
-                        ligne.SetDefaultArticle(ligne.Article,(double) matiere.QuantiteUtilise);
+                        ligne.SetDefaultArticle(ligne.Article, (double)matiere.QuantiteUtilise);
                         ligne.Write();
 
                         Console.WriteLine($"✔ Updated {componentRef} quantity from {oldQuantity} to {matiere.QuantiteUtilise}.");
@@ -276,10 +266,7 @@ namespace fabrication_maghreb_color.Config.Sage
                         Console.WriteLine($"⚠ Component {componentRef} not found in your 'matieres' list — quantity left as {ligne.DL_Qte}.");
                     }
                 }
-                else
-                {
-                    // Log for non-component lines (main articles)
-                }
+
             }
 
             _logger.LogInformation("All component lines reviewed and updated where matching 'matieres' were found.");
@@ -292,21 +279,24 @@ namespace fabrication_maghreb_color.Config.Sage
             //     media.Write();
             // }
             // Final document processing
-            if (mProcessDoc.CanProcess)
-            {
-                mProcessDoc.Process();
-                _logger.LogInformation($"Document {mProcessDoc.Document.DO_Piece} processed successfully.");
-                return mProcessDoc.Document.DO_Piece;
-            }
-            else
-            {
 
-             
-                _logger.LogError("Document cannot be processed. Check for missing components or incomplete data.");
-                return "";
-            }
+            mProcessDoc.Process();
+            return mProcessDoc.Document.DO_Piece;
 
+        }
+        public void UpdateBCQuantity(string refBC, double quantiy)
+        {
+            IBODocumentVente3 doc = (IBODocumentVente3)BaseCial.FactoryDocumentVente.ReadPiece(DocumentType.DocumentTypeVenteCommande, refBC);
 
+            // Get the first line (index 1)
+            IBODocumentVenteLigne3 ligne = (IBODocumentVenteLigne3)doc.FactoryDocumentLigne.List[1];
+
+            // Update the quantity
+            ligne.DL_Qte = quantiy;
+            ligne.Write();
+
+            // Save changes to the document
+            doc.Write();
         }
     }
 }

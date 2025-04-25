@@ -6,5 +6,6 @@ namespace fabrication_maghreb_color.application.Interfaces
     {
         List<Compte> GetAllClients();
         Task CreateClient(Compte compte);
+        Task<Compte> GetClientById(string reference);
     }
 }

@@ -9,11 +9,12 @@ namespace FabricationMaghrebColor.Controllers
     public class CompteController : ControllerBase
     {
         public readonly CompteService _service;
-        ILogger<CompteController> _logger;
+        private readonly ILogger<CompteController> _logger;
+
         public CompteController(CompteService service, ILogger<CompteController> logger)
         {
             _service = service;
-            _logger = logger ;
+            _logger = logger;
         }
 
         [HttpGet("clients")]
@@ -21,28 +22,28 @@ namespace FabricationMaghrebColor.Controllers
         {
             try
             {
-                return Ok(_service.GetAllClients());
+                var clients = _service.GetAllClients();
+                return Ok(clients);
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des clients.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des clients. Veuillez réessayer plus tard." });
             }
         }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Compte compte)
         {
             try
             {
                 await _service.CreateClient(compte);
-                return Ok();
+                return Ok(new { message = "Client créé avec succès." });
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la création du client.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la création du client. Veuillez réessayer plus tard." });
             }
         }
     }

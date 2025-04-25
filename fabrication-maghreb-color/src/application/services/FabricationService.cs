@@ -23,12 +23,12 @@ namespace fabrication_maghreb_color.Application.Services
             SageOM sageOm,
             IMachineRepository machineRepository,
             IChargeCompteRepository chargeCompteRepository)
-            {
+        {
             _repository = repository;
             _machineRepository = machineRepository;
             _sageOm = sageOm;
             _chargeCompteRepository = chargeCompteRepository;
-            }
+        }
 
         public List<BonFabrication> GetAllBon()
         {
@@ -119,7 +119,6 @@ namespace fabrication_maghreb_color.Application.Services
             bon.QuantiteFini = finition.QuantiteFini;
             bon.NombreBobins = finition.NombreBobins;
 
-            await _repository.UpdateBon(bon);
             bon.machine = await _machineRepository.MachineById(bon.MachineId);
             int ChargeId = bon.preparationFabrication.Projet.chargeCompteId;
             Console.WriteLine("chargeId" + ChargeId);
@@ -128,6 +127,7 @@ namespace fabrication_maghreb_color.Application.Services
 
             await _sageOm.CreeBonFabrication(bon, charge);
 
+            await _repository.UpdateBon(bon);
         }
     }
 }

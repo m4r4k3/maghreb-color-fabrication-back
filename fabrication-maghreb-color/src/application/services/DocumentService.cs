@@ -20,36 +20,21 @@ namespace fabrication_maghreb_color.Application.Services
 
         public List<Document> GetAllDocuments()
         {
-            try
-            {
-                return _documentRepository.GetAllDocuments();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error retrieving documents", ex);
-            }
+
+            return _documentRepository.GetAllDocuments();
+
         }
         public List<Document> GetAllDocumentsByType(short type)
         {
-            try
-            {
-                return _documentRepository.GetAllDocumentsByType(type);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error retrieving documents by type", ex);
-            }
+
+            return _documentRepository.GetAllDocumentsByType(type);
+
         }
         public async Task TransformDocument(DocumentDto document)
         {
-            try
-            {
-                await _SageOm.TransformDocument(document);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error transforming document", ex);
-            }
+
+            await _SageOm.TransformDocument(document);
+
         }
     }
 }

@@ -8,7 +8,8 @@ namespace fabrication_maghreb_color.application.Interfaces
         List<TypeProjet> GetAllTypes();
         List<Projet> GetAll();
         void Add(Projet projet);
-        void SaveChanges();
+        void Update(Projet projet);
+
         TypeProjet GetTypeById(int typeProjetId);
     }
 }

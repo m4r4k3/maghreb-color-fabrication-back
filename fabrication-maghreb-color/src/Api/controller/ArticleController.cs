@@ -12,26 +12,27 @@ namespace fabrication_maghreb_color.api.controller
     public class ArticleController : ControllerBase
     {
         public readonly ArticleService _service;
-        public readonly ILogger<ArticleService> _logger;
-        public ArticleController(ArticleService projet, ILogger<ArticleService> logger)
+        public readonly ILogger<ArticleController> _logger;
+
+        public ArticleController(ArticleService service, ILogger<ArticleController> logger)
         {
-            _service = projet;
+            _service = service;
             _logger = logger;
         }
+
         [HttpGet]
         public IActionResult GetArticleByFamily(string filter)
         {
             try
             {
-                return Ok(_service.GetFilteredArticles(filter));
+                var articles = _service.GetFilteredArticles(filter);
+                return Ok(articles);
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des articles.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des articles. Veuillez réessayer plus tard." });
             }
         }
-
-
     }
 }

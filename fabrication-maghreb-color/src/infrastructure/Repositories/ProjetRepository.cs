@@ -36,16 +36,19 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
         public void Add(Projet projet)
         {
             _context.ProjetDbo.Add(projet);
+            _context.SaveChanges() ;
         }
 
-        public void SaveChanges()
-        {
-            _context.SaveChanges();
-        }
 
         public TypeProjet GetTypeById(int typeProjetId)
         {
             return _context.TypeProjetDbo.Find(typeProjetId);
+        }
+
+        public void Update(Projet projet)
+        {
+            _context.Entry(projet).State = EntityState.Modified;
+            _context.SaveChanges() ;
         }
     }
 }

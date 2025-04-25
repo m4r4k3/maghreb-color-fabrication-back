@@ -24,40 +24,29 @@ namespace fabrication_maghreb_color.Application.Services
 
         public User? GetUser()
         {
-            try
-            {
-                return  _dbContext.UserDbo.FirstOrDefault(user => user.Username == _httpContextAccessor.HttpContext.User.Identity.Name);
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+
+            return _dbContext.UserDbo.FirstOrDefault(user => user.Username == _httpContextAccessor.HttpContext.User.Identity.Name);
+
         }
         public bool ValidateToken()
         {
-            try
+
+            string token = _httpContextAccessor.HttpContext.Request.Cookies["auth"];
+            string SecretKey = _configuration["AppSettings:JWT_KEY"];
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(SecretKey);
+
+            var validationParameters = new TokenValidationParameters
             {
-                string token = _httpContextAccessor.HttpContext.Request.Cookies["auth"];
-                string SecretKey = _configuration["AppSettings:JWT_KEY"];
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.UTF8.GetBytes(SecretKey);
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey)),
+                ValidateIssuer = false
+            };
+            var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
 
-                var validationParameters = new TokenValidationParameters
-                {
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey)),
-                    ValidateIssuer = false
-                };
+            return true;
 
-                var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
 
         }
         public async Task<(bool, User?)> checkUser(string username, string password)

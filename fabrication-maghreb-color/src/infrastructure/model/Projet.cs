@@ -16,6 +16,7 @@ namespace fabrication_maghreb_color.Infrastructure.model
         public DateTime? DateLivraisonPrev { get; set; }
         public string ReferenceClient { get; set; }
         public string? ReferenceArticle { get; set; }
+        public string? NumeroBC { get; set; }
         public Boolean HasNomenclature { get; set; } = false;
 
         public string? NumeroDossier { get; set; }

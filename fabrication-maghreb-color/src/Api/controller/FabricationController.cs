@@ -7,7 +7,6 @@ using fabrication_maghreb_color.Config.Sage;
 
 namespace FabricationMaghrebColor.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class FabricationController : ControllerBase
@@ -23,7 +22,6 @@ namespace FabricationMaghrebColor.Controllers
             _serviceProjet = serviceProjet;
             _serviceMatiere = serviceMatiere;
             _logger = logger;
-
         }
 
         [HttpGet("preparation")]
@@ -31,35 +29,39 @@ namespace FabricationMaghrebColor.Controllers
         {
             try
             {
-                return Ok(_service.GetAllPreparation());
+                var preparations = _service.GetAllPreparation();
+                return Ok(preparations);
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des préparations.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des préparations. Veuillez réessayer plus tard." });
             }
         }
-         [HttpGet("bon")]
+
+        [HttpGet("bon")]
         public IActionResult GetBon()
         {
             try
             {
-                return Ok(_service.GetAllBon());
+                var bons = _service.GetAllBon();
+                return Ok(bons);
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des bons.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des bons. Veuillez réessayer plus tard." });
             }
         }
+
         [HttpPost("preparation")]
         public async Task<IActionResult> CreatePrepartion([FromBody] PreparationRequest requestData)
         {
             try
             {
-
                 Decimal quantite = requestData.Quantite;
                 dynamic document = requestData.Document;
+
                 await _service.CreatePreparation(document);
 
                 var updateData = new Dictionary<string, object>
@@ -68,17 +70,15 @@ namespace FabricationMaghrebColor.Controllers
                 };
                 await _serviceProjet.UpdateProjet(document.Projet_Id, updateData);
 
-                return Ok(new
-                {
-                    message = "Prepartion créer"
-                });
+                return Ok(new { message = "Préparation créée avec succès." });
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la création de la préparation.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la création de la préparation. Veuillez réessayer plus tard." });
             }
         }
+
         [HttpPost("bon")]
         public async Task<IActionResult> CreateBon([FromForm] BonRequest request)
         {
@@ -93,7 +93,6 @@ namespace FabricationMaghrebColor.Controllers
                     matiere.Bon_id = bon.Id;
                     _serviceMatiere.Creation(matiere);
                 }
-                
 
                 string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads/bf");
 
@@ -103,7 +102,6 @@ namespace FabricationMaghrebColor.Controllers
                 {
                     var fileExtension = Path.GetExtension(file.FileName).ToLower();
 
-                    // Check if the file is an image based on the extension
                     if (allowedImageExtensions.Contains(fileExtension))
                     {
                         var uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
@@ -117,39 +115,33 @@ namespace FabricationMaghrebColor.Controllers
                     }
                     else
                     {
-                        // Handle non-image files if needed
-                        Console.WriteLine($"File {file.FileName} is not a valid image.");
+                        _logger.LogWarning($"Le fichier {file.FileName} n'est pas une image valide.");
                     }
                 }
 
-                return Ok(new
-                {
-                    message = "Prepartion créer"
-                });
+                return Ok(new { message = "Bon créé avec succès." });
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la création du bon.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la création du bon. Veuillez réessayer plus tard." });
             }
         }
+
         [HttpPost("finition")]
-        public async Task<IActionResult> CreateFinition ([FromBody] FinitionDto requestData)
+        public async Task<IActionResult> CreateFinition([FromBody] FinitionDto requestData)
         {
             try
             {
                 await _service.Finir(requestData);
-                return Ok(new
-                {
-                    message = "Finition créer"
-                });
+
+                return Ok(new { message = "Finition créée avec succès." });
             }
             catch (Exception err)
             {
-                _logger.LogError(err.ToString());
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la création de la finition.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la création de la finition. Veuillez réessayer plus tard." });
             }
         }
-
     }
 }

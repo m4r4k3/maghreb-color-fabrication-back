@@ -8,13 +8,12 @@ namespace FabricationMaghrebColor.Controllers
     public class MachineController : ControllerBase
     {
         public readonly MachineService _service;
-                public readonly ILogger<MachineController> _logger;
+        public readonly ILogger<MachineController> _logger;
 
         public MachineController(MachineService service, ILogger<MachineController> logger)
         {
             _service = service;
-                    _logger = logger;
-
+            _logger = logger;
         }
 
         [HttpGet]
@@ -22,13 +21,14 @@ namespace FabricationMaghrebColor.Controllers
         {
             try
             {
-                return Ok(_service.GetAllMachines());
+                var machines = _service.GetAllMachines();
+               
+                return Ok(machines);
             }
             catch (Exception err)
             {
-                              _logger.LogError(err.ToString());
-
-                return BadRequest(new { status = "error", message = "Error occured" });
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des machines.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des machines. Veuillez réessayer plus tard." });
             }
         }
     }

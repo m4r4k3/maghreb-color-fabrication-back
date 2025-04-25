@@ -24,30 +24,16 @@ namespace fabrication_maghreb_color.Application.Services
 
         public List<SageArticle> GetFilteredArticles(string filter)
         {
-            try
-            {
-                _logger.LogInformation($"Fetching articles with filter: {filter}");
-                return _articleRepository.GetFilteredArticles(filter);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Error occurred while fetching articles with filter: {filter}");
-                throw;
-            }
+            _logger.LogInformation($"Fetching articles with filter: {filter}");
+            return _articleRepository.GetFilteredArticles(filter);
+
         }
 
         public async Task<List<SageArticle>> GetFilteredArticlesAsync(string filter)
         {
-            try
-            {
+          
                 _logger.LogInformation($"Fetching articles asynchronously with filter: {filter}");
                 return await _articleRepository.GetFilteredArticlesAsync(filter);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Error occurred while fetching articles asynchronously with filter: {filter}");
-                throw;
-            }
         }
     }
 }

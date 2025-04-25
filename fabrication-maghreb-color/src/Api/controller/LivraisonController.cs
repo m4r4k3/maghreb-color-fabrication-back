@@ -10,8 +10,8 @@ namespace fabrication_maghreb_color.Api.controller
     public class LivraisonController : ControllerBase
     {
         private readonly IDocumentService _documentService;
-
         private readonly ILogger<LivraisonController> _logger;
+
         public LivraisonController(IDocumentService documentService, ILogger<LivraisonController> logger)
         {
             _logger = logger;
@@ -28,8 +28,8 @@ namespace fabrication_maghreb_color.Api.controller
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while fetching documents.");
-                return StatusCode(500, "Internal server error");
+                _logger.LogError(ex, "Une erreur est survenue lors de la récupération des livraisons.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des livraisons. Veuillez réessayer plus tard." });
             }
         }
     }

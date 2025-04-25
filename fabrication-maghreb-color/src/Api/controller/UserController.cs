@@ -12,8 +12,10 @@ namespace fabrication_maghreb_color.api.controller
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;
-        public UserController(UserService userService)
+        private readonly Logger<UserController> _logger;
+        public UserController(UserService userService, Logger<UserController> logger)
         {
+            _logger = logger;
             _userService = userService;
         }
 
@@ -21,59 +23,108 @@ namespace fabrication_maghreb_color.api.controller
         [HttpGet("check")]
         public IActionResult check()
         {
-            return Ok(new
+            try
             {
-                isLoggedIn = _userService.ValidateToken(),
-            });
+                return Ok(new
+                {
+                    isLoggedIn = _userService.ValidateToken(),
+                });
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la vérification du statut de connexion."
+                });
+            }
         }
+
         [HttpGet("me")]
         public IActionResult me()
         {
-            return Ok(new
+            try
             {
-                status = "success",
-                data = _userService.GetUser()
-            });
+                return Ok(new
+                {
+                    status = "success",
+                    data = _userService.GetUser()
+                });
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la récupération des informations de l'utilisateur."
+                });
+            }
         }
+
         [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> login([FromBody] LoginModel loginModel)
         {
-            var (check , user) = await _userService.checkUser(loginModel.username, loginModel.password);
-            if (check)
+            try
             {
-                HttpContext.Response.Cookies.Append("auth", _userService.UserToToken(user.Username , user.Role), new CookieOptions
+                var (check, user) = await _userService.checkUser(loginModel.username, loginModel.password);
+                if (check)
                 {
-                    HttpOnly = true,
-                    Secure = true,
-                    Expires = DateTime.Now.AddDays(1),
-                    SameSite = SameSiteMode.None
-                });
-                return Ok(new
-                {
-                    status = "success",
-                    message = "Login successful",
+                    HttpContext.Response.Cookies.Append("auth", _userService.UserToToken(user.Username, user.Role), new CookieOptions
+                    {
+                        HttpOnly = true,
+                        Secure = true,
+                        Expires = DateTime.Now.AddDays(1),
+                        SameSite = SameSiteMode.None
+                    });
+                    return Ok(new
+                    {
+                        status = "success",
+                        message = "Connexion réussie",
+                    });
                 }
-);
-            }
 
-            return Unauthorized(new
-            {
-                status = "error",
-                message = "Invalid username or password",
-                details = "The username or password provided does not match our records. Please try again."
+                return Unauthorized(new
+                {
+                    status = "error",
+                    message = "Nom d'utilisateur ou mot de passe invalide",
+                    details = "Le nom d'utilisateur ou le mot de passe fourni ne correspond pas à nos enregistrements. Veuillez réessayer."
+                });
             }
-);
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la tentative de connexion."
+                });
+            }
         }
+
         [HttpGet("logout")]
         public IActionResult logout()
         {
-            HttpContext.Response.Cookies.Delete("auth");
-            return Ok(new
+            try
             {
-                status = "success",
-                message = "Logout successful"
-            });
+                HttpContext.Response.Cookies.Delete("auth");
+                return Ok(new
+                {
+                    status = "success",
+                    message = "Déconnexion réussie"
+                });
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);;
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la déconnexion."
+                });
+            }
         }
     }
 }

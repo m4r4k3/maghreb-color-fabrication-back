@@ -18,15 +18,10 @@ namespace fabrication_maghreb_color.Application.Services
 
         public void Creation(Matiere matiere)
         {
-            try
-            {
+           
                 _repository.Create(matiere);
                 _logger.LogInformation("Matiere created successfully.");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error creating Matiere: {ex.Message}");
-            }
+           
         }
     }
 }

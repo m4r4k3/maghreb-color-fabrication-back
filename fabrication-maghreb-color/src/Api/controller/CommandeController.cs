@@ -11,8 +11,8 @@ namespace fabrication_maghreb_color.Api.controller
     public class CommandeController : ControllerBase
     {
         private readonly IDocumentService _documentService;
-
         private readonly ILogger<CommandeController> _logger;
+
         public CommandeController(IDocumentService documentService, ILogger<CommandeController> logger)
         {
             _logger = logger;
@@ -29,24 +29,23 @@ namespace fabrication_maghreb_color.Api.controller
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while fetching documents.");
-                return StatusCode(500, "Internal server error");
+                _logger.LogError(ex, "Une erreur est survenue lors de la récupération des commandes.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des commandes. Veuillez réessayer plus tard." });
             }
         }
+
         [HttpPost("transform")]
         public async Task<ActionResult> TransformDocument([FromBody] DocumentDto document)
         {
             try
             {
-
-
                 await _documentService.TransformDocument(document);
-                return Ok("transformed successfully");
+                return Ok(new { message = "Document transformé avec succès." });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while transforming the document.");
-                return StatusCode(500, "Internal server error");
+                _logger.LogError(ex, "Une erreur est survenue lors de la transformation du document.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la transformation du document. Veuillez réessayer plus tard." });
             }
         }
     }
