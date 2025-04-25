@@ -12,8 +12,8 @@ namespace fabrication_maghreb_color.api.controller
     public class UserController : ControllerBase
     {
         private readonly UserService _userService;
-        private readonly Logger<UserController> _logger;
-        public UserController(UserService userService, Logger<UserController> logger)
+        private readonly ILogger<UserController> _logger;
+        public UserController(UserService userService, ILogger<UserController> logger)
         {
             _logger = logger;
             _userService = userService;

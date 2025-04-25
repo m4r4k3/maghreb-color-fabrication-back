@@ -30,12 +30,12 @@ namespace fabrication_maghreb_color.Application.Services
         }
         public bool ValidateToken()
         {
-
             string token = _httpContextAccessor.HttpContext.Request.Cookies["auth"];
             string SecretKey = _configuration["AppSettings:JWT_KEY"];
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(SecretKey);
 
+            if( token == null) return false ;
             var validationParameters = new TokenValidationParameters
             {
                 ValidateAudience = false,
