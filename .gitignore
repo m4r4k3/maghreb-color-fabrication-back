@@ -1,3 +1,5 @@
 .vs
-./bin
+**/bin/
 **/obj/
+./fabrication-maghreb-color/src/wwwroot/uploads/
+./fabrication-maghreb-color/src/logs/
