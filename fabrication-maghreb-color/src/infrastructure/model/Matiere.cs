@@ -22,11 +22,10 @@ namespace fabrication_maghreb_color.Infrastructure.model
         public DateTime DateAffection { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "La quantité utilisée est obligatoire.")]
-        [Range(1, int.MaxValue, ErrorMessage = "La quantité utilisée doit être supérieure à zéro.")]
-        public int QuantiteUtilise { get; set; }
+        // [Range(0, int.MaxValue, ErrorMessage = "La quantité utilisée doit être supérieure à zéro.")]
+        public Decimal QuantiteUtilise { get; set; }
 
         [Required(ErrorMessage = "Le pourcentage est obligatoire.")]
-        [Range(0.01, 100.0, ErrorMessage = "Le pourcentage doit être entre 0.01 et 100.")]
         public decimal Pourcentage { get; set; }
 
         public int? Bon_id { get; set; }

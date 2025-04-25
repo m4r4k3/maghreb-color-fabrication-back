@@ -5,5 +5,6 @@ namespace fabrication_maghreb_color.application.Interfaces
     public interface IChargeCompteRepository
     {
         List<chargeCompte> GetAll();
+        chargeCompte getById(int id);
     }
 }

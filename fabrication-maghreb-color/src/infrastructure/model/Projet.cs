@@ -30,8 +30,8 @@ namespace fabrication_maghreb_color.Infrastructure.model
         public virtual PreparationFabrication? preparationFabrication { get; set; }
         [ForeignKey("TypeProjet")]
         public virtual TypeProjet? Type { get; set; }
-        [ForeignKey("chargeCompteId")]
-        public virtual chargeCompte? ChargeCompte { get; set; }
+        // [ForeignKey("chargeCompteId")]
+        // public virtual chargeCompte? ChargeCompte { get; set; }
         public virtual List<Nomenclature>? Nomenclatures { get; set; }
         public bool hasPreparation => preparationFabrication != null;
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

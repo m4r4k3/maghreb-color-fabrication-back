@@ -15,17 +15,20 @@ namespace fabrication_maghreb_color.Application.Services
     {
         private readonly IFabricationRepository _repository;
         private readonly IMachineRepository _machineRepository;
+        private readonly IChargeCompteRepository _chargeCompteRepository;
         private readonly SageOM _sageOm;
 
         public PreparationFabricationService(
             IFabricationRepository repository,
-            SageOM sageOm, 
-            IMachineRepository machineRepository)
-        {
+            SageOM sageOm,
+            IMachineRepository machineRepository,
+            IChargeCompteRepository chargeCompteRepository)
+            {
             _repository = repository;
             _machineRepository = machineRepository;
             _sageOm = sageOm;
-        }
+            _chargeCompteRepository = chargeCompteRepository;
+            }
 
         public List<BonFabrication> GetAllBon()
         {
@@ -107,7 +110,8 @@ namespace fabrication_maghreb_color.Application.Services
             {
                 throw new InvalidOperationException($"Bon with ID {finition.BonId} not found.");
             }
-            if(bon.Fini) {
+            if (bon.Fini)
+            {
                 throw new InvalidOperationException($"Bon with ID {finition.BonId} is already finished.");
             }
 
@@ -116,10 +120,13 @@ namespace fabrication_maghreb_color.Application.Services
             bon.NombreBobins = finition.NombreBobins;
 
             await _repository.UpdateBon(bon);
-            bon.machine= await _machineRepository.MachineById(bon.MachineId);
+            bon.machine = await _machineRepository.MachineById(bon.MachineId);
+            int ChargeId = bon.preparationFabrication.Projet.chargeCompteId;
+            Console.WriteLine("chargeId" + ChargeId);
 
-            
-            await _sageOm.CreeBonFabrication(bon, bon.preparationFabrication.Projet.ReferenceArticle, bon.matieres);
+            chargeCompte charge = _chargeCompteRepository.getById(ChargeId);
+
+            await _sageOm.CreeBonFabrication(bon, charge);
 
         }
     }

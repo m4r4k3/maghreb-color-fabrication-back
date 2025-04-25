@@ -22,7 +22,7 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
         }
         public List<Document> GetAllDocumentsByType(short type)
         {
-            return _dbContext.Documents.Where(d => d.DocumentType == type).Include(e=>e.DocumentLine).ToList();
+            return _dbContext.Documents.Where(d => d.DocumentType.Equals( type)).Include(e=>e.DocumentLines).Include(e=>e.ChargeCompte).Include(e=>e.Customer).ToList();
         }
     }
 }

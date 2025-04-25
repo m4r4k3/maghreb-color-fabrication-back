@@ -11,19 +11,31 @@ namespace fabrication_maghreb_color.Infrastructure.model
         [Column("DO_Piece")]
         public string DocumentNumber { get; set; }
 
+        [Column("DO_Ref")]
+        public string DocumentReference { get; set; }
+
         [Column("DO_Date")]
         public DateTime DocumentDate { get; set; }
 
         [Column("DO_Tiers")]
-        public string CustomerCode { get; set; }
+        public string? CustomerCode { get; set; }
 
         [Column("DO_Statut")]
         public short DocumentStatus { get; set; }
 
         [Column("DO_Type")]
         public short DocumentType { get; set; }
-        
-        public virtual DocLigne DocumentLine { get; set; } = new DocLigne();
+
+        public virtual List<DocLigne>? DocumentLines { get; set; } 
+        [Column("co_no")]
+        public int? ChargeCompteId { get; set; }
+
+        [ForeignKey("ChargeCompteId")]
+        public virtual chargeCompte? ChargeCompte { get; set; }
+
+
+        [ForeignKey("CustomerCode")]
+        public virtual Compte? Customer { get; set; }
 
     }
 }

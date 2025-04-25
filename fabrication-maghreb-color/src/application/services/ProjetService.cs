@@ -10,12 +10,14 @@ namespace fabrication_maghreb_color.Application.Services
     public class ProjetService
     {
         private readonly IProjetRepository _projetRepository;
+        private readonly IChargeCompteRepository _chargeCompteRepository  ;
         private readonly SageOM _sageOM;
         private readonly ILogger<ProjetService> _logger;
         public readonly IConfiguration? _configuration;
 
-        public ProjetService(IProjetRepository projetRepository, ILogger<ProjetService> logger, IConfiguration? configuration, SageOM sageOM)
+        public ProjetService(IProjetRepository projetRepository, ILogger<ProjetService> logger, IConfiguration? configuration, SageOM sageOM , IChargeCompteRepository chargeCompteRepository)
         {
+            _chargeCompteRepository = chargeCompteRepository;
             _projetRepository = projetRepository;
             _configuration = configuration;
             _sageOM = sageOM;
@@ -41,7 +43,7 @@ namespace fabrication_maghreb_color.Application.Services
 
                 TypeProjet type = _projetRepository.GetTypeById(projet.TypeProjet);
                 string intitule = type.Abrege + " " + projet.ReferenceClient + " " + projet.quantite;
-                projet.ReferenceArticle = _sageOM.CreateArticle(intitule, type.Reference ,projet );
+                projet.ReferenceArticle = _sageOM.CreateArticle(intitule, type.Reference ,projet ,_chargeCompteRepository.getById(projet.chargeCompteId) );
 
                 _projetRepository.Add(projet);
                 _projetRepository.SaveChanges();

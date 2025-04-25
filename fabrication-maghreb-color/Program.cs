@@ -11,9 +11,17 @@ using Serilog;
 using fabrication_maghreb_color.application.Interfaces;
 using fabrication_maghreb_color.Infrastructure.Repositories;
 using fabrication_maghreb_color.application.repository;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 // Create the web application builder
 var builder = WebApplication.CreateBuilder(args);
+
+var cultureInfo = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
+
 
 //// Configure Serilog for logging with daily rolling file
 Log.Logger = new LoggerConfiguration()
@@ -131,8 +139,31 @@ builder.Services.AddCors(options =>
              .AllowAnyHeader()
              .AllowAnyMethod()
              .AllowCredentials();
+
+        policy.WithOrigins("http://192.168.1.210:5173")
+            .AllowAnyHeader()
+             .AllowAnyMethod()
+             .AllowCredentials();
+        
+        
+       
     });
 });
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder
+            .AllowAnyOrigin()     // Allow all origins (for development only!)
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
+
+// Add this BEFORE app.UseAuthorization();
+
 
 // Add authorization services
 builder.Services.AddAuthorization();
@@ -144,6 +175,14 @@ builder.Services.AddHttpContextAccessor();
 
 // Build the application
 var app = builder.Build();
+
+
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("en-US"),
+    SupportedCultures = new List<CultureInfo> { cultureInfo },
+    SupportedUICultures = new List<CultureInfo> { cultureInfo }
+});
 
 // Configure Swagger
 app.UseSwagger();

@@ -63,6 +63,7 @@ namespace fabrication_maghreb_color.application.repository
                 .Include(b => b.preparationFabrication)
                     .ThenInclude(b => b.Projet)
                     .Include(e=>e.matieres)
+                .Include(e=>e.files)
                 .FirstOrDefaultAsync(b => b.Id == bonId);
 
             return bonWithRelated;

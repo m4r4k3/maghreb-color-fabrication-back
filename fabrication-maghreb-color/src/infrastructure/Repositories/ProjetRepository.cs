@@ -18,7 +18,6 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
         {
             return _context.ProjetDbo.Include(p => p.preparationFabrication)
                                       .Include(p => p.Type)
-                                      .Include(p => p.ChargeCompte)
                                       .FirstOrDefaultAsync(p => p.Id == id);
         }
 
@@ -31,7 +30,6 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
         {
             return _context.ProjetDbo.Include(p => p.preparationFabrication)
                                       .Include(p => p.Type)
-                                      .Include(p => p.ChargeCompte)
                                       .ToList();
         }
 

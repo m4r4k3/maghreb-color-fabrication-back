@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_6",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_7",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -60,6 +60,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.Api.controller.CommandeController",
+    "Method": "TransformDocument",
+    "RelativePath": "api/Commande/transform",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "document",
+        "Type": "fabrication_maghreb_color.Infrastructure.dto.DocumentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "FabricationMaghrebColor.Controllers.CompteController",
@@ -371,16 +387,6 @@
         "IsRequired": false
       },
       {
-        "Name": "bon.preparationFabrication.Projet.ChargeCompte.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "bon.preparationFabrication.Projet.ChargeCompte.Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "bon.preparationFabrication.Projet.Nomenclatures",
         "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Nomenclature, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
@@ -464,6 +470,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.Api.controller.LivraisonController",
+    "Method": "GetAllLivraisons",
+    "RelativePath": "api/Livraison",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Document, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "FabricationMaghrebColor.Controllers.MachineController",
@@ -749,16 +775,6 @@
         "IsRequired": false
       },
       {
-        "Name": "preparationFabrication.Projet.ChargeCompte.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "preparationFabrication.Projet.ChargeCompte.Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "preparationFabrication.Projet.Nomenclatures",
         "Type": "System.Collections.Generic.List\u00601[[fabrication_maghreb_color.Infrastructure.model.Nomenclature, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": false
@@ -795,16 +811,6 @@
       },
       {
         "Name": "Type.Reference",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ChargeCompte.Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ChargeCompte.Name",
         "Type": "System.String",
         "IsRequired": false
       },

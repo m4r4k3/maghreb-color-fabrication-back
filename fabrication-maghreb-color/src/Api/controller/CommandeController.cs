@@ -1,6 +1,7 @@
 namespace fabrication_maghreb_color.Api.controller
 {
     using fabrication_maghreb_color.application.Interfaces;
+    using fabrication_maghreb_color.Infrastructure.dto;
     using fabrication_maghreb_color.Infrastructure.model;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
@@ -29,6 +30,22 @@ namespace fabrication_maghreb_color.Api.controller
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while fetching documents.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        [HttpPost("transform")]
+        public async Task<ActionResult> TransformDocument([FromBody] DocumentDto document)
+        {
+            try
+            {
+
+
+                await _documentService.TransformDocument(document);
+                return Ok("transformed successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while transforming the document.");
                 return StatusCode(500, "Internal server error");
             }
         }

@@ -7,9 +7,9 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
 {
     public class ChargeCompteRepository : IChargeCompteRepository
     {
-        private readonly MainContext _dbContext;
+        private readonly SageContext _dbContext;
 
-        public ChargeCompteRepository(MainContext dbContext)
+        public ChargeCompteRepository(SageContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -17,6 +17,10 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
         public List<chargeCompte> GetAll()
         {
             return _dbContext.ChargeCompteDbo.ToList();
+        }
+        public chargeCompte getById(int id)
+        {
+            return _dbContext.ChargeCompteDbo.FirstOrDefault(x => x.Id == id);
         }
     }
 }
