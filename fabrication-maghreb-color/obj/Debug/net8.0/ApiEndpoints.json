@@ -1,21 +1,5 @@
 [
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_7",
-    "RelativePath": "",
-    "HttpMethod": "GET",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "fabrication_maghreb_color.api.controller.ArticleController",
     "Method": "GetArticleByFamily",
     "RelativePath": "api/Article",
@@ -507,6 +491,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FabricationMaghrebColor.Controllers.PermissionsController",
+    "Method": "Get",
+    "RelativePath": "api/Permissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "fabrication_maghreb_color.api.controller.ProjetController",
     "Method": "Get",
     "RelativePath": "api/Projet",
@@ -883,6 +877,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FabricationMaghrebColor.Controllers.RoleController",
+    "Method": "Get",
+    "RelativePath": "api/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "check",
     "RelativePath": "api/User/check",
@@ -922,6 +926,16 @@
     "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "me",
     "RelativePath": "api/User/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "Method": "Permissions",
+    "RelativePath": "api/User/permissions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

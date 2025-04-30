@@ -4,6 +4,7 @@ using fabrication_maghreb_color.Infrastructure.model;
 using System.Text.Json;
 using fabrication_maghreb_color.Infrastructure.dto;
 using fabrication_maghreb_color.Config.Sage;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FabricationMaghrebColor.Controllers
 {
@@ -24,6 +25,7 @@ namespace FabricationMaghrebColor.Controllers
             _logger = logger;
         }
 
+        [Authorize("SeePreparationFabrication")]
         [HttpGet("preparation")]
         public IActionResult GetPrepartion()
         {
@@ -39,6 +41,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
+        [Authorize("SeeBonsFabrication")]
         [HttpGet("bon")]
         public IActionResult GetBon()
         {
@@ -54,6 +57,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
+        [Authorize("Préparer Projet")]
         [HttpPost("preparation")]
         public async Task<IActionResult> CreatePrepartion([FromBody] PreparationRequest requestData)
         {
@@ -79,6 +83,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
+[Authorize("MakeBonFabrication")]
         [HttpPost("bon")]
         public async Task<IActionResult> CreateBon([FromForm] BonRequest request)
         {
@@ -128,6 +133,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
+        [Authorize("MakeFinitionFabrication")]
         [HttpPost("finition")]
         public async Task<IActionResult> CreateFinition([FromBody] FinitionDto requestData)
         {

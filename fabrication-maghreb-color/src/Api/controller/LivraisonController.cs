@@ -2,6 +2,7 @@ namespace fabrication_maghreb_color.Api.controller
 {
     using fabrication_maghreb_color.application.Interfaces;
     using fabrication_maghreb_color.Infrastructure.model;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
 
@@ -17,7 +18,7 @@ namespace fabrication_maghreb_color.Api.controller
             _logger = logger;
             _documentService = documentService;
         }
-
+        [Authorize("SeeBonLivraison")]
         [HttpGet]
         public ActionResult<List<Document>> GetAllLivraisons()
         {

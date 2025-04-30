@@ -5,8 +5,10 @@ using fabrication_maghreb_color.Infrastructure.model;
 using fabrication_maghreb_color.Infrastructure.dto;
 using fabrication_maghreb_color.Application.Services;
 
+
 namespace fabrication_maghreb_color.api.controller
 {
+    [AllowAnonymous]
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
@@ -19,7 +21,24 @@ namespace fabrication_maghreb_color.api.controller
             _userService = userService;
         }
 
-        [AllowAnonymous]
+        [HttpGet("permissions")]
+        public IActionResult Permissions()
+        {
+            try
+            {
+                return Ok(_userService.GetCurrentUserPermissions());
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la vérification du statut de connexion."
+                });
+            }
+        }
+        
         [HttpGet("check")]
         public IActionResult check()
         {
@@ -40,6 +59,7 @@ namespace fabrication_maghreb_color.api.controller
                 });
             }
         }
+        [Authorize]
 
         [HttpGet("me")]
         public IActionResult me()
@@ -63,7 +83,6 @@ namespace fabrication_maghreb_color.api.controller
             }
         }
 
-        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> login([FromBody] LoginModel loginModel)
         {
@@ -72,12 +91,12 @@ namespace fabrication_maghreb_color.api.controller
                 var (check, user) = await _userService.checkUser(loginModel.username, loginModel.password);
                 if (check)
                 {
-                    HttpContext.Response.Cookies.Append("auth", _userService.UserToToken(user.Username, user.Role), new CookieOptions
+                    HttpContext.Response.Cookies.Append("auth", _userService.UserToToken(user.Username, user.role.Label), new CookieOptions
                     {
                         HttpOnly = true,
-                        Secure = true,
-                        Expires = DateTime.Now.AddDays(1),
-                        SameSite = SameSiteMode.None
+                        SameSite = SameSiteMode.None, // Critical for cross-domain requests
+                        Secure = true,                // Required when SameSite is None
+                        Path = "/"
                     });
                     return Ok(new
                     {
@@ -104,6 +123,7 @@ namespace fabrication_maghreb_color.api.controller
             }
         }
 
+        [Authorize]
         [HttpGet("logout")]
         public IActionResult logout()
         {
@@ -118,7 +138,7 @@ namespace fabrication_maghreb_color.api.controller
             }
             catch (Exception err)
             {
-                _logger.LogError(err.Message);;
+                _logger.LogError(err.Message); ;
                 return StatusCode(StatusCodes.Status500InternalServerError, new
                 {
                     status = "error",

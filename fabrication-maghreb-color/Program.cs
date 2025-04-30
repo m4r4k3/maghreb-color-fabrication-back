@@ -13,6 +13,10 @@ using fabrication_maghreb_color.Infrastructure.Repositories;
 using fabrication_maghreb_color.application.repository;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Authorization;
+using fabrication_maghreb_color.application.Authorization;
+using System.IO.Compression;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 // Create the web application builder
 var builder = WebApplication.CreateBuilder(args);
@@ -62,6 +66,8 @@ builder.Services.AddScoped<IChargeCompteRepository, ChargeCompteRepository>();
 builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IFabricationRepository, FabricationRepository>();
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
+builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
+
 
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ProjetService>();
@@ -71,21 +77,33 @@ builder.Services.AddScoped<CompteService>();
 builder.Services.AddScoped<MatiereService>();
 builder.Services.AddScoped<PreparationFabricationService>();
 builder.Services.AddScoped<MachineService>();
-builder.Services.AddScoped<IDocumentService,DocumentService>();
+builder.Services.AddScoped<IDocumentService, DocumentService>();
+builder.Services.AddScoped<IRolesRepository, RolesRepository>(); // or your implementation
+builder.Services.AddScoped<RoleService>();
+builder.Services.AddScoped<PermissionRepository>();
 
+builder.Services.AddScoped<IAuthorizationHandler, PermissionHandler>();
 builder.Services.AddSingleton<SageOM>();
+
 
 // Add Swagger for API documentation
 builder.Services.AddSwaggerGen();
 
 // Configure JSON serialization options
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
+builder.Services.AddControllers(options =>
+{
+    // Global authorization policy
+    var policy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
 
+    options.Filters.Add(new AuthorizeFilter(policy));
+})
+.AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 // Configure JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -123,47 +141,35 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
        };
    });
 
-// Configure CORS (Cross-Origin Resource Sharing)
-builder.Services.AddCors(options =>
+using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<MainContext>();
+    var permissions = context.PoliciesDbo.Select(e => e.Name).ToList();
 
+    builder.Services.AddAuthorization(options =>
+    {
+        foreach (var permission in permissions)
+        {
+            options.AddPolicy(permission, policy =>
+                policy.Requirements.Add(new PermissionRequirement(permission)));
+        }
+    });
+}
+
+
+builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        // Allow requests from specific frontend URLs
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://localhost:5173", "http://192.168.1.247:5173", "http://192.168.1.210:5173")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
-
-        policy.WithOrigins("http://192.168.1.247:5173")
-             .AllowAnyHeader()
-             .AllowAnyMethod()
-             .AllowCredentials();
-
-        policy.WithOrigins("http://192.168.1.210:5173")
-            .AllowAnyHeader()
-             .AllowAnyMethod()
-             .AllowCredentials();
-        
-        
-       
-    });
-});
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", builder =>
-    {
-        builder
-            .AllowAnyOrigin()     // Allow all origins (for development only!)
-            .AllowAnyMethod()
-            .AllowAnyHeader();
     });
 });
 
 
 // Add this BEFORE app.UseAuthorization();
-
 
 // Add authorization services
 builder.Services.AddAuthorization();
@@ -176,7 +182,15 @@ builder.Services.AddHttpContextAccessor();
 // Build the application
 var app = builder.Build();
 
+app.Use(async (context, next) =>
+{
+    // Add security headers
+    context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+    context.Response.Headers.Add("X-Frame-Options", "DENY");
+    context.Response.Headers.Add("X-XSS-Protection", "1; mode=block");
 
+    await next();
+});
 app.UseRequestLocalization(new RequestLocalizationOptions
 {
     DefaultRequestCulture = new RequestCulture("en-US"),
@@ -199,27 +213,18 @@ app.UseHttpsRedirection();
 // Serve static files
 app.UseStaticFiles();
 
-// Apply CORS policy
-app.UseCors("AllowSpecificOrigin");
-
 // Create a scope to resolve SageOM service
 using (var scope = app.Services.CreateScope())
 {
     var sageOM = scope.ServiceProvider.GetRequiredService<SageOM>();
 }
 
-// Configure routing
 app.UseRouting();
-
-// Note: Authentication and Authorization are currently commented out
-// app.UseAuthentication();
-// app.UseAuthorization();
-
-// Map controllers
+app.UseCors("AllowSpecificOrigin");    // <-- here
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
-// Default route returns Not Found
-app.MapGet("/", () => Results.NotFound());
 
 // Run the application
 app.Run();

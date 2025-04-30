@@ -8,7 +8,6 @@ namespace fabrication_maghreb_color.api.controller
 {
     [ApiController]
     [Route("api/[controller]")]
-    // [Authorize]
     public class ProjetController : ControllerBase
     {
         public readonly ProjetService _service;
@@ -19,7 +18,7 @@ namespace fabrication_maghreb_color.api.controller
             _service = projet;
             _logger = logger;
         }
-
+        [Authorize("Voir Projets")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -38,7 +37,7 @@ namespace fabrication_maghreb_color.api.controller
                 });
             }
         }
-
+        [Authorize("CreateProject")]
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromForm] Projet projet, [FromForm] IFormFile? descriptionFile)
         {
@@ -75,12 +74,12 @@ namespace fabrication_maghreb_color.api.controller
             try
             {
                 var projectTypes = _service.GetAllTypes();
-              
+
                 return Ok(projectTypes);
             }
             catch (Exception err)
             {
-                _logger.LogError(err.Message) ;
+                _logger.LogError(err.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, new
                 {
                     status = "error",

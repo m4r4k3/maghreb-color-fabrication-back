@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using fabrication_maghreb_color.Application.Services;
 using fabrication_maghreb_color.Infrastructure.model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FabricationMaghrebColor.Controllers
 {
@@ -17,6 +18,7 @@ namespace FabricationMaghrebColor.Controllers
             _logger = logger;
         }
 
+        [Authorize("SeeClients")]
         [HttpGet("clients")]
         public IActionResult Get()
         {
@@ -32,6 +34,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
+        [Authorize("AddClients")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Compte compte)
         {

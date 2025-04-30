@@ -14,6 +14,9 @@ namespace fabrication_maghreb_color.Config.Contexts
         public DbSet<BonFile> BonFileDbo { get; set; }
         public DbSet<TypeMatiere> TypeMatieresDbo { get; set; }
         public DbSet<Nomenclature> NomenclatureDbo { get; set; }
+        public DbSet<Role> RoleDbo { get; set; }
+        public DbSet<Policies> PoliciesDbo { get; set; }
+        public DbSet<RolePolicies> RolePoliciesDbo { get; set; }
         private readonly IConfiguration? _configuration;
         public MainContext(DbContextOptions<MainContext> options, IConfiguration? configuration) : base(options)
         {
@@ -22,6 +25,9 @@ namespace fabrication_maghreb_color.Config.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<RolePolicies>()
+                .HasKey(rp => new { rp.RoleId, rp.PolicyId });
         }
     }
 }

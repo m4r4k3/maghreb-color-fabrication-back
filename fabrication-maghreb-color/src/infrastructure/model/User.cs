@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Text.Json.Serialization;
 
@@ -14,11 +15,15 @@ namespace fabrication_maghreb_color.Infrastructure.model
         [JsonIgnore]
 
         public string Password { get; set; }
-        [JsonIgnore]
 
-        public string Role { get; set; }
         [JsonIgnore]
+        [Column("role")]
+        public int RoleId { get; set; }
+        [ForeignKey("RoleId")]
+        
+        public Role role { get; set; }
 
+        [JsonIgnore]
         public DateTime? CreatedAt { get; set; }
     }
 

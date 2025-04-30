@@ -3,6 +3,7 @@ namespace fabrication_maghreb_color.Api.controller
     using fabrication_maghreb_color.application.Interfaces;
     using fabrication_maghreb_color.Infrastructure.dto;
     using fabrication_maghreb_color.Infrastructure.model;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
 
@@ -19,6 +20,7 @@ namespace fabrication_maghreb_color.Api.controller
             _documentService = documentService;
         }
 
+        [Authorize("SeeBonCommande")]
         [HttpGet]
         public ActionResult<List<Document>> GetAllCommandes()
         {
@@ -34,6 +36,7 @@ namespace fabrication_maghreb_color.Api.controller
             }
         }
 
+        [Authorize("TransferBonCommande")]
         [HttpPost("transform")]
         public async Task<ActionResult> TransformDocument([FromBody] DocumentDto document)
         {
