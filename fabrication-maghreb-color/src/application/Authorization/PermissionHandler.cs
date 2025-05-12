@@ -18,12 +18,12 @@ namespace fabrication_maghreb_color.application.Authorization
         protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissionRequirement requirement)
         {
             var roleClaim = context.User.FindFirst(ClaimTypes.Role)?.Value;
-            Console.WriteLine("roleClaim :" + roleClaim) ;
+            Console.WriteLine("roleClaim :" + roleClaim);
             if (string.IsNullOrEmpty(roleClaim))
                 return;
 
             // Get permissions for this role from the repository
-            var permissions = _rolesRepository.GetRolesWithInclusion(roleClaim).rolePolicies.Select(rp => rp.policies)
+            var permissions = _rolesRepository.GetRolesWithInclusion(roleClaim).rolePolicies.Select(rp => rp.Policies)
         .ToList(); ;
 
             if (permissions.Any(e => e.Name == requirement.Permission))

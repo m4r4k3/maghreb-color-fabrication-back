@@ -887,6 +887,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FabricationMaghrebColor.Controllers.RoleController",
+    "Method": "Post",
+    "RelativePath": "api/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "role",
+        "Type": "fabrication_maghreb_color.Infrastructure.model.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FabricationMaghrebColor.Controllers.RoleController",
+    "Method": "Delete",
+    "RelativePath": "api/Role",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "Method": "ListUsers",
+    "RelativePath": "api/User/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
     "Method": "check",
     "RelativePath": "api/User/check",

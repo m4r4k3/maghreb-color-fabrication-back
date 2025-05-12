@@ -20,7 +20,7 @@ namespace fabrication_maghreb_color.Api.controller
             _documentService = documentService;
         }
 
-        [Authorize("SeeBonCommande")]
+        [Authorize("Voir Bons Commande")]
         [HttpGet]
         public ActionResult<List<Document>> GetAllCommandes()
         {
@@ -36,7 +36,7 @@ namespace fabrication_maghreb_color.Api.controller
             }
         }
 
-        [Authorize("TransferBonCommande")]
+        [Authorize("Transférer Bons Commande")]
         [HttpPost("transform")]
         public async Task<ActionResult> TransformDocument([FromBody] DocumentDto document)
         {

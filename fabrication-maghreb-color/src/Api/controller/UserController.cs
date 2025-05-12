@@ -21,6 +21,24 @@ namespace fabrication_maghreb_color.api.controller
             _userService = userService;
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                return Ok(_userService.GetAllUsers());
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la vérification du statut de connexion."
+                });
+            }
+
+        }
         [HttpGet("permissions")]
         public IActionResult Permissions()
         {
@@ -38,7 +56,7 @@ namespace fabrication_maghreb_color.api.controller
                 });
             }
         }
-        
+
         [HttpGet("check")]
         public IActionResult check()
         {
@@ -71,6 +89,26 @@ namespace fabrication_maghreb_color.api.controller
                     status = "success",
                     data = _userService.GetUser()
                 });
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, new
+                {
+                    status = "error",
+                    message = "Une erreur s'est produite lors de la récupération des informations de l'utilisateur."
+                });
+            }
+        }
+        [HttpGet("all")]
+        public IActionResult ListUsers()
+        {
+            try
+            {
+                return Ok(
+
+                  _userService.GetAllUsers())
+                          ;
             }
             catch (Exception err)
             {

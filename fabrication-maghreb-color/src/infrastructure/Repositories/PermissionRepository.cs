@@ -14,13 +14,10 @@ namespace fabrication_maghreb_color.Infrastructure.Repositories
         {
             _context = context;
         }
-
         public List<Policies> GetAllPermissions()
         {
-
-
             return _context.PoliciesDbo.Where(p => p.BelongsTo == null)
-    .Include(p => p.Children).ToList();
+             .Include(p => p.Children).ToList();
         }
 
     }

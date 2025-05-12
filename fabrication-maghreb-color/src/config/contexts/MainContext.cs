@@ -26,8 +26,17 @@ namespace fabrication_maghreb_color.Config.Contexts
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<RolePolicies>()
-                .HasKey(rp => new { rp.RoleId, rp.PolicyId });
+                    // Configure Role to RolePolicy relationship (one-to-many)
+            modelBuilder.Entity<Role>()
+                .HasMany(r => r.rolePolicies)
+                .WithOne(rp => rp.Role)
+                .OnDelete(DeleteBehavior.Cascade);
+                
+            // Configure Policy to RolePolicy relationship (one-to-many)
+            modelBuilder.Entity<Policies>()
+                .HasMany(p => p.RolePolicies)
+                .WithOne(rp => rp.Policies)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace FabricationMaghrebColor.Controllers
             _logger = logger;
         }
 
-        [Authorize("SeeClients")]
+        [Authorize("Voir Clients")]
         [HttpGet("clients")]
         public IActionResult Get()
         {
@@ -34,7 +34,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
-        [Authorize("AddClients")]
+        [Authorize("Ajouter Clients")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Compte compte)
         {

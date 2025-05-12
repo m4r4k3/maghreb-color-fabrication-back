@@ -18,7 +18,7 @@ namespace fabrication_maghreb_color.Api.controller
             _logger = logger;
             _documentService = documentService;
         }
-        [Authorize("SeeBonLivraison")]
+        [Authorize("Voir Bons Livraison")]
         [HttpGet]
         public ActionResult<List<Document>> GetAllLivraisons()
         {

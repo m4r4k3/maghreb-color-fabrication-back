@@ -37,7 +37,7 @@ namespace fabrication_maghreb_color.api.controller
                 });
             }
         }
-        [Authorize("CreateProject")]
+        [Authorize("Créer Projet")]
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromForm] Projet projet, [FromForm] IFormFile? descriptionFile)
         {

@@ -7,16 +7,17 @@ namespace fabrication_maghreb_color.Infrastructure.model
     public class RolePolicies
     {
         [Key]
-        [Column(Order = 0)]
+        public int Id { get; set; }
 
         public int RoleId { get; set; }
-        [Key]
-        [Column(Order = 1)]
 
         public int PolicyId { get; set; }
+
         [ForeignKey("RoleId")]
-        public virtual Role role { get; set; }
+        public virtual Role? Role { get; set; }
+
         [ForeignKey("PolicyId")]
-        public virtual Policies policies { get; set; }
+        public virtual Policies? Policies { get; set; }
     }
+
 }

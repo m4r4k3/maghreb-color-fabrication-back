@@ -26,6 +26,11 @@ namespace fabrication_maghreb_color.Application.Services
             _configuration = configuration;
         }
 
+        public List<User> GetAllUsers()
+        {
+            return _dbContext.UserDbo.Include(e=>e.role).ToList();
+        }
+      
         public User? GetUser()
         {
 
@@ -93,7 +98,7 @@ namespace fabrication_maghreb_color.Application.Services
             return _dbContext.UserDbo
                 .Where(user => user.Username == _httpContextAccessor.HttpContext.User.Identity.Name)
                 .SelectMany(user => user.role.rolePolicies)
-                .Select(rolePolicy => rolePolicy.policies)
+                .Select(rolePolicy => rolePolicy.Policies)
                 .ToList();
         }
 

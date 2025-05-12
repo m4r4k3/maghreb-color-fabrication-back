@@ -18,10 +18,23 @@ namespace fabrication_maghreb_color.Application.Services
 
         public List<Role> GetAll()
         {
-           
-                return _repository.GetAllRoles();
-                _logger.LogInformation("Matiere created successfully.");
-           
+
+            return _repository.GetAllRoles();
+            _logger.LogInformation("Matiere created successfully.");
+
         }
+        public string Create(Role role)
+        {
+
+            _repository.Create(role);
+            return "created";
+        }
+        public string Delete(int id)
+        {
+            Role role = _repository.GetById(id);
+            _repository.Delete(role);
+            return "deleted ";
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using fabrication_maghreb_color.Application.Services;
+using fabrication_maghreb_color.Infrastructure.model;
 
 namespace FabricationMaghrebColor.Controllers
 {
@@ -15,7 +16,6 @@ namespace FabricationMaghrebColor.Controllers
             _service = service;
             _logger = logger;
         }
-
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,5 +29,32 @@ namespace FabricationMaghrebColor.Controllers
                 return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des roles. Veuillez réessayer plus tard." });
             }
         }
+        [HttpPost]
+        public IActionResult Post([FromBody] Role role)
+        {
+            try
+            {
+                return Ok(_service.Create(role));
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des roles.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des roles. Veuillez réessayer plus tard." });
+            }
+        }
+        [HttpDelete]
+        public IActionResult Delete([FromQuery] int id)
+        {
+            try
+            {
+                return Ok(_service.Delete(id));
+            }
+            catch (Exception err)
+            {
+                _logger.LogError(err, "Une erreur est survenue lors de la récupération des roles.");
+                return StatusCode(500, new { status = "error", message = "Une erreur interne est survenue lors de la récupération des roles. Veuillez réessayer plus tard." });
+            }
+        }
+
     }
 }

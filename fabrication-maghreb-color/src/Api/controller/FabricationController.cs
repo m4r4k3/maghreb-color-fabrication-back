@@ -25,7 +25,7 @@ namespace FabricationMaghrebColor.Controllers
             _logger = logger;
         }
 
-        [Authorize("SeePreparationFabrication")]
+        [Authorize("Valider Fin Fabrication")]
         [HttpGet("preparation")]
         public IActionResult GetPrepartion()
         {
@@ -41,7 +41,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
-        [Authorize("SeeBonsFabrication")]
+        [Authorize("Voir Bons Fabrication")]
         [HttpGet("bon")]
         public IActionResult GetBon()
         {
@@ -83,7 +83,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
-[Authorize("MakeBonFabrication")]
+[Authorize("Créer Bon Fabrication")]
         [HttpPost("bon")]
         public async Task<IActionResult> CreateBon([FromForm] BonRequest request)
         {
@@ -133,7 +133,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
-        [Authorize("MakeFinitionFabrication")]
+        [Authorize("Créer Bon Finition")]
         [HttpPost("finition")]
         public async Task<IActionResult> CreateFinition([FromBody] FinitionDto requestData)
         {
