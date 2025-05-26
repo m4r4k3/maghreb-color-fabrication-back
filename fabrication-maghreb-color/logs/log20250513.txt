@@ -1,0 +1,140 @@
+2025-05-13 12:02:37.773 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5254/api/user/login - application/json 51
+2025-05-13 12:02:38.186 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.login (fabrication-maghreb-color)'
+2025-05-13 12:02:38.273 +02:00 [INF] Route matched with {action = "login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(fabrication_maghreb_color.Infrastructure.model.LoginModel) on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-13 12:02:38.938 +02:00 [INF] Executed DbCommand (129ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[LastName], [u].[Name], [u].[Password], [u].[role], [u].[Username], [r].[Id], [r].[Label]
+FROM [UserDbo] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[role] = [r].[Id]
+WHERE [u].[Username] = @__username_0
+2025-05-13 12:02:39.857 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-13 12:02:39.900 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.login (fabrication-maghreb-color) in 1610.2463ms
+2025-05-13 12:02:39.907 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.login (fabrication-maghreb-color)'
+2025-05-13 12:02:39.930 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:5254/api/user/login - 200 null application/json; charset=utf-8 2180.926ms
+2025-05-13 12:03:53.451 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/user/check - null null
+2025-05-13 12:03:53.511 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:53.716 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/user/check - 404 0 null 265.6361ms
+2025-05-13 12:03:53.725 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/user/check - null null
+2025-05-13 12:03:53.734 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5254/user/check, Response status code: 404
+2025-05-13 12:03:53.746 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:53.770 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/user/check - 404 0 null 45.0285ms
+2025-05-13 12:03:53.783 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/user/check - null null
+2025-05-13 12:03:53.793 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5254/user/check, Response status code: 404
+2025-05-13 12:03:53.818 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:53.838 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/user/check - 204 null null 54.7831ms
+2025-05-13 12:03:53.852 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/user/check - null null
+2025-05-13 12:03:53.871 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:53.874 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/user/check - 404 0 null 22.6111ms
+2025-05-13 12:03:53.887 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:5254/user/check, Response status code: 404
+2025-05-13 12:03:54.934 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/api/user/check - null null
+2025-05-13 12:03:54.939 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/api/user/check - null null
+2025-05-13 12:03:54.956 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:54.963 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:54.966 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/api/user/check - 204 null null 33.7105ms
+2025-05-13 12:03:54.974 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/user/check - null null
+2025-05-13 12:03:54.975 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/api/user/check - 204 null null 36.4111ms
+2025-05-13 12:03:55.023 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.042 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-05-13 12:03:55.064 +02:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-13 12:03:55.139 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-13 12:03:55.152 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 80.3224ms
+2025-05-13 12:03:55.158 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/user/check - null null
+2025-05-13 12:03:55.180 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-05-13 12:03:55.191 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.209 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/user/check - 200 null application/json; charset=utf-8 235.3796ms
+2025-05-13 12:03:55.216 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-05-13 12:03:55.241 +02:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-13 12:03:55.261 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-13 12:03:55.264 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/api/projet/types - null null
+2025-05-13 12:03:55.270 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/api/chargeCompte - null null
+2025-05-13 12:03:55.271 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/api/user/permissions - null null
+2025-05-13 12:03:55.271 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 19.6217ms
+2025-05-13 12:03:55.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/user/check - null null
+2025-05-13 12:03:55.289 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.299 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.310 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.318 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-05-13 12:03:55.329 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.333 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/api/projet/types - 204 null null 70.1895ms
+2025-05-13 12:03:55.342 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/projet/types - null null
+2025-05-13 12:03:55.350 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-05-13 12:03:55.353 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/api/user/permissions - 204 null null 82.7524ms
+2025-05-13 12:03:55.357 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/user/permissions - null null
+2025-05-13 12:03:55.360 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/user/check - 200 null application/json; charset=utf-8 202.8863ms
+2025-05-13 12:03:55.381 +02:00 [INF] Route matched with {action = "check", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult check() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-13 12:03:55.416 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/api/chargeCompte - 204 null null 146.9741ms
+2025-05-13 12:03:55.421 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/chargeCompte - null null
+2025-05-13 12:03:55.427 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.437 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-13 12:03:55.459 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.470 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:55.474 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.Permissions (fabrication-maghreb-color)'
+2025-05-13 12:03:55.482 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color) in 46.0321ms
+2025-05-13 12:03:55.486 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-05-13 12:03:55.488 +02:00 [INF] Executing endpoint 'FabricationMaghrebColor.Controllers.ChargeCompteController.Get (fabrication-maghreb-color)'
+2025-05-13 12:03:55.497 +02:00 [INF] Route matched with {action = "Permissions", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Permissions() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-13 12:03:55.503 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.check (fabrication-maghreb-color)'
+2025-05-13 12:03:55.509 +02:00 [INF] Route matched with {action = "GetTypes", controller = "Projet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTypes() on controller fabrication_maghreb_color.api.controller.ProjetController (fabrication-maghreb-color).
+2025-05-13 12:03:55.516 +02:00 [INF] Route matched with {action = "Get", controller = "ChargeCompte"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller FabricationMaghrebColor.Controllers.ChargeCompteController (fabrication-maghreb-color).
+2025-05-13 12:03:55.529 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/user/check - 200 null application/json; charset=utf-8 248.5158ms
+2025-05-13 12:03:55.670 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Abrege], [t].[Intitule], [t].[Reference]
+FROM [TypeProjet] AS [t]
+2025-05-13 12:03:55.686 +02:00 [WRN] No store type was specified for the decimal property 'MontantHT' on entity type 'DocLigne'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:03:55.697 +02:00 [WRN] No store type was specified for the decimal property 'PrixUnitaireTTC' on entity type 'DocLigne'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:03:55.699 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.TypeProjet, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 12:03:55.705 +02:00 [WRN] No store type was specified for the decimal property 'RemiseValeur' on entity type 'DocLigne'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:03:55.707 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@___httpContextAccessor_HttpContext_User_Identity_Name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[BelongsTo], [p].[Description], [p].[Name]
+FROM [UserDbo] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[role] = [r].[Id]
+INNER JOIN [RolePolicies] AS [r0] ON [r].[Id] = [r0].[RoleId]
+INNER JOIN [Policies] AS [p] ON [r0].[PolicyId] = [p].[Id]
+WHERE [u].[Username] = @___httpContextAccessor_HttpContext_User_Identity_Name_0
+2025-05-13 12:03:55.720 +02:00 [WRN] No store type was specified for the decimal property 'Taxe1' on entity type 'DocLigne'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:03:55.721 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color) in 180.588ms
+2025-05-13 12:03:55.744 +02:00 [WRN] No store type was specified for the decimal property 'quantite' on entity type 'DocLigne'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:03:55.753 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.ProjetController.GetTypes (fabrication-maghreb-color)'
+2025-05-13 12:03:55.758 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.Policies, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 12:03:55.769 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/projet/types - 200 null application/json; charset=utf-8 426.6474ms
+2025-05-13 12:03:55.797 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.Permissions (fabrication-maghreb-color) in 273.5414ms
+2025-05-13 12:03:55.801 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[co_no], [f].[co_nom], [f].[co_prenom]
+FROM [F_COLLABORATEUR] AS [f]
+2025-05-13 12:03:55.803 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.Permissions (fabrication-maghreb-color)'
+2025-05-13 12:03:55.817 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/user/permissions - 200 null application/json; charset=utf-8 460.1955ms
+2025-05-13 12:03:55.829 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[fabrication_maghreb_color.Infrastructure.model.chargeCompte, fabrication-maghreb-color, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-13 12:03:55.842 +02:00 [INF] Executed action FabricationMaghrebColor.Controllers.ChargeCompteController.Get (fabrication-maghreb-color) in 292.1738ms
+2025-05-13 12:03:55.850 +02:00 [INF] Executed endpoint 'FabricationMaghrebColor.Controllers.ChargeCompteController.Get (fabrication-maghreb-color)'
+2025-05-13 12:03:55.858 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/chargeCompte - 200 null application/json; charset=utf-8 437.1104ms
+2025-05-13 12:03:58.195 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:5254/api/user/logout - null null
+2025-05-13 12:03:58.203 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:58.208 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:5254/api/user/logout - 204 null null 13.3582ms
+2025-05-13 12:03:58.211 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5254/api/user/logout - null null
+2025-05-13 12:03:58.229 +02:00 [INF] CORS policy execution successful.
+2025-05-13 12:03:58.232 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.logout (fabrication-maghreb-color)'
+2025-05-13 12:03:58.238 +02:00 [INF] Route matched with {action = "logout", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult logout() on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-13 12:03:58.247 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-13 12:03:58.253 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.logout (fabrication-maghreb-color) in 8.4592ms
+2025-05-13 12:03:58.261 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.logout (fabrication-maghreb-color)'
+2025-05-13 12:03:58.265 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5254/api/user/logout - 200 null application/json; charset=utf-8 54.3535ms
+2025-05-13 12:04:33.151 +02:00 [WRN] No store type was specified for the decimal property 'NombreBobins' on entity type 'BonFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.255 +02:00 [WRN] No store type was specified for the decimal property 'QuantiteFini' on entity type 'BonFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.261 +02:00 [WRN] No store type was specified for the decimal property 'QuantiteSupport' on entity type 'BonFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.265 +02:00 [WRN] No store type was specified for the decimal property 'quantite' on entity type 'BonFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.272 +02:00 [WRN] No store type was specified for the decimal property 'Pourcentage' on entity type 'Matiere'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.276 +02:00 [WRN] No store type was specified for the decimal property 'QuantiteUtilise' on entity type 'Matiere'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.282 +02:00 [WRN] No store type was specified for the decimal property 'LaizeTheorique' on entity type 'PreparationFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.286 +02:00 [WRN] No store type was specified for the decimal property 'QuantiteEncre' on entity type 'PreparationFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.292 +02:00 [WRN] No store type was specified for the decimal property 'QuantiteSupportTheorique' on entity type 'PreparationFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.298 +02:00 [WRN] No store type was specified for the decimal property 'QuantiteVernis' on entity type 'PreparationFabrication'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:33.308 +02:00 [WRN] No store type was specified for the decimal property 'quantite' on entity type 'Projet'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-13 12:04:34.811 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Name]
+FROM [Policies] AS [p]
+2025-05-13 12:04:35.126 +02:00 [INF] Connecting ...
+2025-05-13 12:04:37.124 +02:00 [INF] Connected to Sage 100c successfully.
+2025-05-13 12:04:37.362 +02:00 [INF] User profile is available. Using 'C:\Users\M.AKCHAR\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-13 12:04:37.736 +02:00 [INF] Now listening on: https://0.0.0.0:5254
+2025-05-13 12:04:37.944 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-13 12:04:37.948 +02:00 [INF] Hosting environment: Development
+2025-05-13 12:04:37.950 +02:00 [INF] Content root path: C:\Users\M.AKCHAR\source\repos\fabrication-maghreb-color\fabrication-maghreb-color

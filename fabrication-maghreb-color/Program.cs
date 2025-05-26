@@ -37,7 +37,7 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 // Set the server to listen on all network interfaces
-builder.WebHost.UseUrls("http://0.0.0.0:5254");
+builder.WebHost.UseUrls("http://0.0.0.0:5253", "http://0.0.0.0:5254");
 
 // Get the configuration
 var configuration = builder.Configuration;
@@ -67,6 +67,7 @@ builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 builder.Services.AddScoped<IFabricationRepository, FabricationRepository>();
 builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
 builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
+builder.Services.AddScoped<IDetailsRepository, DetailsRepository>();
 
 
 builder.Services.AddScoped<UserService>();
@@ -81,6 +82,7 @@ builder.Services.AddScoped<IDocumentService, DocumentService>();
 builder.Services.AddScoped<IRolesRepository, RolesRepository>(); // or your implementation
 builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<PermissionRepository>();
+builder.Services.AddScoped<IDetailsService, DetailsService>();
 
 builder.Services.AddScoped<IAuthorizationHandler, PermissionHandler>();
 builder.Services.AddSingleton<SageOM>();
@@ -112,7 +114,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
        options.TokenValidationParameters = new TokenValidationParameters
        {
            ValidateIssuer = false,
-           ValidateAudience = false,
+        ValidateAudience = false,
            ValidateLifetime = true,
            IssuerSigningKey = new SymmetricSecurityKey(key)
        };
@@ -159,14 +161,16 @@ using (var scope = builder.Services.BuildServiceProvider().CreateScope())
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://192.168.1.247:5173", "http://192.168.1.210:5173")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        policy
+            .SetIsOriginAllowed(origin => true) // Allow all origins
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials(); // Allow credentials
     });
 });
+
 
 
 // Add this BEFORE app.UseAuthorization();
@@ -208,7 +212,6 @@ app.UseSwaggerUI(c =>
 
 // Redirect HTTP to HTTPS (commented out configuration for development)
 // Uncomment in production
-app.UseHttpsRedirection();
 
 // Serve static files
 app.UseStaticFiles();
@@ -220,11 +223,13 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseRouting();
-app.UseCors("AllowSpecificOrigin");    // <-- here
+
+app.UseCors("AllowAll");
+
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
 
+app.MapControllers();
 
 // Run the application
 app.Run();

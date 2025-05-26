@@ -414,6 +414,36 @@
         "Name": "files",
         "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
         "IsRequired": false
+      },
+      {
+        "Name": "offset.ProjetId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "offset.Largeur",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "offset.Longueur",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "offset.Papier",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "offset.Pose",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "offset.Grammage",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -919,7 +949,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "GetAll",
     "RelativePath": "api/User",
     "HttpMethod": "GET",
@@ -929,7 +959,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "ListUsers",
     "RelativePath": "api/User/all",
     "HttpMethod": "GET",
@@ -939,7 +969,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "check",
     "RelativePath": "api/User/check",
     "HttpMethod": "GET",
@@ -949,7 +979,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "login",
     "RelativePath": "api/User/login",
     "HttpMethod": "POST",
@@ -965,7 +995,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "logout",
     "RelativePath": "api/User/logout",
     "HttpMethod": "GET",
@@ -975,7 +1005,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "me",
     "RelativePath": "api/User/me",
     "HttpMethod": "GET",
@@ -985,7 +1015,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "fabrication_maghreb_color.api.controller.UserController",
+    "ContainingType": "SAGE_API.api.controller.UserController",
     "Method": "Permissions",
     "RelativePath": "api/User/permissions",
     "HttpMethod": "GET",

@@ -17,6 +17,7 @@ namespace fabrication_maghreb_color.Config.Contexts
         public DbSet<Role> RoleDbo { get; set; }
         public DbSet<Policies> PoliciesDbo { get; set; }
         public DbSet<RolePolicies> RolePoliciesDbo { get; set; }
+        public DbSet<InformationOffset> InformationOffsetDbo { get; set; }
         private readonly IConfiguration? _configuration;
         public MainContext(DbContextOptions<MainContext> options, IConfiguration? configuration) : base(options)
         {
@@ -26,12 +27,12 @@ namespace fabrication_maghreb_color.Config.Contexts
         {
             base.OnModelCreating(modelBuilder);
 
-                    // Configure Role to RolePolicy relationship (one-to-many)
+            // Configure Role to RolePolicy relationship (one-to-many)
             modelBuilder.Entity<Role>()
                 .HasMany(r => r.rolePolicies)
                 .WithOne(rp => rp.Role)
                 .OnDelete(DeleteBehavior.Cascade);
-                
+
             // Configure Policy to RolePolicy relationship (one-to-many)
             modelBuilder.Entity<Policies>()
                 .HasMany(p => p.RolePolicies)

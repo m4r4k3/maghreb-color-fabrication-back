@@ -1,0 +1,20 @@
+2025-05-16 10:53:27.755 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:5254/api/user/login - application/json 51
+2025-05-16 10:53:28.516 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '5/14/2025 10:02:39 AM', Current time (UTC): '5/16/2025 8:53:28 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-05-16 10:53:28.531 +02:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '5/14/2025 10:02:39 AM', Current time (UTC): '5/16/2025 8:53:28 AM'.
+2025-05-16 10:53:28.541 +02:00 [INF] Executing endpoint 'fabrication_maghreb_color.api.controller.UserController.login (fabrication-maghreb-color)'
+2025-05-16 10:53:28.635 +02:00 [INF] Route matched with {action = "login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(fabrication_maghreb_color.Infrastructure.model.LoginModel) on controller fabrication_maghreb_color.api.controller.UserController (fabrication-maghreb-color).
+2025-05-16 10:53:29.642 +02:00 [INF] Executed DbCommand (402ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[LastName], [u].[Name], [u].[Password], [u].[role], [u].[Username], [r].[Id], [r].[Label]
+FROM [UserDbo] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[role] = [r].[Id]
+WHERE [u].[Username] = @__username_0
+2025-05-16 10:53:30.500 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-16 10:53:30.548 +02:00 [INF] Executed action fabrication_maghreb_color.api.controller.UserController.login (fabrication-maghreb-color) in 1900.0761ms
+2025-05-16 10:53:30.554 +02:00 [INF] Executed endpoint 'fabrication_maghreb_color.api.controller.UserController.login (fabrication-maghreb-color)'
+2025-05-16 10:53:30.572 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:5254/api/user/login - 200 null application/json; charset=utf-8 2841.9216ms
+2025-05-16 10:54:42.481 +02:00 [INF] Application is shutting down...

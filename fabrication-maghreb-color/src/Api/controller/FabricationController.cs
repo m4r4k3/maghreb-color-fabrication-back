@@ -15,6 +15,7 @@ namespace FabricationMaghrebColor.Controllers
         public readonly PreparationFabricationService _service;
         public readonly ProjetService _serviceProjet;
         public readonly MatiereService _serviceMatiere;
+        public readonly DetailsService _detailsService ;
         public readonly ILogger<FabricationController> _logger;
 
         public FabricationController(PreparationFabricationService service, ProjetService serviceProjet, MatiereService serviceMatiere, ILogger<FabricationController> logger)
@@ -83,7 +84,7 @@ namespace FabricationMaghrebColor.Controllers
             }
         }
 
-[Authorize("Créer Bon Fabrication")]
+        [Authorize("Créer Bon Fabrication")]
         [HttpPost("bon")]
         public async Task<IActionResult> CreateBon([FromForm] BonRequest request)
         {

@@ -7,5 +7,6 @@ namespace fabrication_maghreb_color.Infrastructure.dto
         public BonFabrication bon { get; set; }
         public List<Matiere> matieres { get; set; }
         public List<IFormFile> files { get; set; } = new List<IFormFile>();
+        public InformationOffset? offset {get ;set;} 
     }
 }

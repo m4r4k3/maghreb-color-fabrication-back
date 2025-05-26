@@ -6,7 +6,7 @@ using fabrication_maghreb_color.Infrastructure.dto;
 using fabrication_maghreb_color.Application.Services;
 
 
-namespace fabrication_maghreb_color.api.controller
+namespace SAGE_API.api.controller
 {
     [AllowAnonymous]
     [ApiController]
